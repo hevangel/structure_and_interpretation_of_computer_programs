@@ -1,0 +1,91 @@
+[package]
+name = "sicp-rust-companion"
+version = "0.1.0"
+edition = "2021"
+publish = false
+rust-version = "1.85"
+description = "Independent Rust teaching examples for SICP"
+
+[[bin]]
+name = "ch01-newton-sqrt"
+path = "examples/ch01/section-01/newton-sqrt/main.rs"
+
+[[bin]]
+name = "ch01-factorial-processes"
+path = "examples/ch01/section-02/factorial-processes/main.rs"
+
+[[bin]]
+name = "ch01-fast-exponentiation"
+path = "examples/ch01/section-02/fast-exponentiation/main.rs"
+
+[[bin]]
+name = "ch01-euclidean-gcd"
+path = "examples/ch01/section-02/euclidean-gcd/main.rs"
+
+[[bin]]
+name = "ch01-fibonacci-processes"
+path = "examples/ch01/section-02/fibonacci-processes/main.rs"
+
+[[bin]]
+name = "ch01-prime-testing"
+path = "examples/ch01/section-02/prime-testing/main.rs"
+
+[[bin]]
+name = "ch01-accumulate"
+path = "examples/ch01/section-03/accumulate/main.rs"
+
+[[bin]]
+name = "ch01-fixed-point"
+path = "examples/ch01/section-03/fixed-point/main.rs"
+
+[[bin]]
+name = "ch01-simpson-integration"
+path = "examples/ch01/section-03/simpson-integration/main.rs"
+
+[[bin]]
+name = "ch01-continued-fraction"
+path = "examples/ch01/section-03/continued-fraction/main.rs"
+
+[[bin]]
+name = "ch02-rational-numbers"
+path = "examples/ch02/section-01/rational-numbers/main.rs"
+
+[[bin]]
+name = "ch02-interval-arithmetic"
+path = "examples/ch02/section-01/interval-arithmetic/main.rs"
+
+[[bin]]
+name = "ch02-church-numerals"
+path = "examples/ch02/section-01/church-numerals/main.rs"
+
+[[bin]]
+name = "ch02-recursive-trees"
+path = "examples/ch02/section-02/recursive-trees/main.rs"
+
+[[bin]]
+name = "ch02-matrix-operations"
+path = "examples/ch02/section-02/matrix-operations/main.rs"
+
+[[bin]]
+name = "ch02-picture-composition"
+path = "examples/ch02/section-02/picture-composition/main.rs"
+
+[[bin]]
+name = "ch02-symbolic-differentiation"
+path = "examples/ch02/section-03/symbolic-differentiation/main.rs"
+
+[[bin]]
+name = "ch02-binary-search-tree"
+path = "examples/ch02/section-03/binary-search-tree/main.rs"
+
+[[bin]]
+name = "ch02-huffman-coding"
+path = "examples/ch02/section-03/huffman-coding/main.rs"
+
+[[bin]]
+name = "ch02-complex-representations"
+path = "examples/ch02/section-04/complex-representations/main.rs"
+
+[[bin]]
+name = "ch02-generic-arithmetic"
+path = "examples/ch02/section-05/generic-arithmetic/main.rs"
