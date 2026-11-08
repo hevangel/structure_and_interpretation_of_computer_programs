@@ -1,0 +1,215 @@
+{
+  "project": "SICP Rust Companion",
+  "scope": "Representative examples only; not exhaustive",
+  "editions": [
+    "1984-scheme",
+    "1996-scheme",
+    "2022-javascript"
+  ],
+  "entries": [
+    {
+      "kind": "guide",
+      "title": "README — Start here",
+      "path": "README.md"
+    },
+    {
+      "kind": "guide",
+      "title": "Coverage tracker",
+      "path": "COVERAGE.md"
+    },
+    {
+      "kind": "guide",
+      "title": "Editions and differences",
+      "path": "docs/editions.md"
+    },
+    {
+      "kind": "guide",
+      "title": "How to port an example",
+      "path": "docs/porting-guide.md"
+    },
+    {
+      "kind": "chapter",
+      "title": "Building Abstractions with Procedures",
+      "chapter": "01",
+      "path": "chapters/ch01/README.md"
+    },
+    {
+      "kind": "chapter",
+      "title": "Building Abstractions with Data",
+      "chapter": "02",
+      "path": "chapters/ch02/README.md"
+    },
+    {
+      "kind": "chapter",
+      "title": "Modularity, Objects, and State",
+      "chapter": "03",
+      "path": "chapters/ch03/README.md"
+    },
+    {
+      "kind": "chapter",
+      "title": "Metalinguistic Abstraction",
+      "chapter": "04",
+      "path": "chapters/ch04/README.md"
+    },
+    {
+      "kind": "chapter",
+      "title": "Computing with Register Machines",
+      "chapter": "05",
+      "path": "chapters/ch05/README.md"
+    },
+    {
+      "kind": "section",
+      "title": "01.01 The Elements of Programming",
+      "chapter": "01",
+      "section": "01.01",
+      "path": "chapters/ch01/section-01/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "01.02 Procedures and the Processes They Generate",
+      "chapter": "01",
+      "section": "01.02",
+      "path": "chapters/ch01/section-02/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "01.03 Formulating Abstractions with Higher-Order Procedures",
+      "chapter": "01",
+      "section": "01.03",
+      "path": "chapters/ch01/section-03/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "02.01 Introduction to Data Abstraction",
+      "chapter": "02",
+      "section": "02.01",
+      "path": "chapters/ch02/section-01/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "02.02 Hierarchical Data and the Closure Property",
+      "chapter": "02",
+      "section": "02.02",
+      "path": "chapters/ch02/section-02/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "02.03 Symbolic Data",
+      "chapter": "02",
+      "section": "02.03",
+      "path": "chapters/ch02/section-03/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "02.04 Multiple Representations for Abstract Data",
+      "chapter": "02",
+      "section": "02.04",
+      "path": "chapters/ch02/section-04/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "02.05 Systems with Generic Operations",
+      "chapter": "02",
+      "section": "02.05",
+      "path": "chapters/ch02/section-05/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "03.01 Assignment and Local State",
+      "chapter": "03",
+      "section": "03.01",
+      "path": "chapters/ch03/section-01/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "03.02 The Environment Model of Evaluation",
+      "chapter": "03",
+      "section": "03.02",
+      "path": "chapters/ch03/section-02/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "03.03 Modeling with Mutable Data",
+      "chapter": "03",
+      "section": "03.03",
+      "path": "chapters/ch03/section-03/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "03.04 Concurrency: Time Is of the Essence",
+      "chapter": "03",
+      "section": "03.04",
+      "path": "chapters/ch03/section-04/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "03.05 Streams",
+      "chapter": "03",
+      "section": "03.05",
+      "path": "chapters/ch03/section-05/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "04.01 The Metacircular Evaluator",
+      "chapter": "04",
+      "section": "04.01",
+      "path": "chapters/ch04/section-01/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "04.02 Variations on a Scheme: Lazy Evaluation",
+      "chapter": "04",
+      "section": "04.02",
+      "path": "chapters/ch04/section-02/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "04.03 Variations on a Scheme: Nondeterministic Computing",
+      "chapter": "04",
+      "section": "04.03",
+      "path": "chapters/ch04/section-03/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "04.04 Logic Programming",
+      "chapter": "04",
+      "section": "04.04",
+      "path": "chapters/ch04/section-04/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "05.01 Designing Register Machines",
+      "chapter": "05",
+      "section": "05.01",
+      "path": "chapters/ch05/section-01/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "05.02 A Register-Machine Simulator",
+      "chapter": "05",
+      "section": "05.02",
+      "path": "chapters/ch05/section-02/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "05.03 Storage Allocation and Garbage Collection",
+      "chapter": "05",
+      "section": "05.03",
+      "path": "chapters/ch05/section-03/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "05.04 The Explicit-Control Evaluator",
+      "chapter": "05",
+      "section": "05.04",
+      "path": "chapters/ch05/section-04/INTRO.md"
+    },
+    {
+      "kind": "section",
+      "title": "05.05 Compilation",
+      "chapter": "05",
+      "section": "05.05",
+      "path": "chapters/ch05/section-05/INTRO.md"
+    }
+  ]
+}

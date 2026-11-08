@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SICP in Rust — The Wizard Book Companion</title>
+<style>
+:root{color-scheme:dark;--bg:#0a1020;--surface:#121c30;--border:#2e3b54;--ink:#eaf0fa;--sub:#a8bad0;--accent:#78d1c0;--gold:#e9b86b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,Segoe UI,sans-serif}
+header{padding:1.2rem 1.6rem;border-bottom:1px solid var(--border);background:#10192a}header h1{margin:0;color:var(--gold);font-size:1.45rem}header p{margin:.2rem 0;color:var(--sub)}
+.layout{display:grid;grid-template-columns:minmax(230px,310px) minmax(0,1fr);min-height:calc(100vh - 110px)}nav{border-right:1px solid var(--border);padding:1rem;overflow:auto;max-height:calc(100vh - 110px);position:sticky;top:0}
+main{padding:2rem;min-width:0;max-width:1150px}#filter{width:100%;background:var(--surface);color:var(--ink);border:1px solid var(--border);padding:.65rem;border-radius:8px}
+#catalog{margin-top:1rem}#catalog button{width:100%;text-align:left;border:0;border-radius:6px;color:var(--ink);background:transparent;padding:.35rem .5rem;cursor:pointer;font:inherit}#catalog button:hover,#catalog button[aria-current=true]{background:#243753}
+.group{margin-top:1rem;color:var(--gold);font-weight:700;font-size:.9rem}.sub{padding-left:12px}.kind{font-size:.69rem;color:var(--accent);margin-right:.4rem;text-transform:uppercase}
+h1,h2,h3{line-height:1.3}h1{font-size:2rem}h2{margin-top:2rem;border-bottom:1px solid var(--border);padding-bottom:.4rem}a{color:var(--accent)}a:hover{text-decoration-thickness:2px}
+article{overflow-wrap:anywhere}p,li{max-width:80ch}pre{background:#080e19;border:1px solid var(--border);border-radius:9px;padding:1rem;overflow:auto;font:13px/1.6 ui-monospace,Consolas,monospace}code{font-family:ui-monospace,Consolas,monospace}
+p code,li code{background:#243149;border-radius:3px;padding:.1rem .25rem}table{border-collapse:collapse;width:100%}td,th{border:1px solid var(--border);padding:.5rem;text-align:left}
+.meta{display:flex;gap:1rem;flex-wrap:wrap;color:var(--sub);font-size:.85rem}.meta a{color:var(--accent)}
+mark{background:#3e4f28;color:#fff}
+@media(max-width:760px){.layout{grid-template-columns:1fr}nav{position:static;max-height:35vh;border-right:0;border-bottom:1px solid var(--border)}main{padding:1rem}}
+</style></head>
+<body><header><h1>🧙 Structure and Interpretation of Computer Programs · Rust</h1><p>Original examples, guided reading, edition crosswalk, and source browser</p></header>
+<div class="layout"><nav aria-label="Documentation navigation"><input id="filter" type="search" placeholder="Search chapters, sections, examples..." aria-label="Filter entries"><div id="catalog">Loading index…</div></nav><main><div id="location" class="meta"></div><article id="document"><h1>Welcome</h1><p>Select a chapter, section, or runnable example on the left.</p><p>This is a work in progress; <a href="COVERAGE.md">coverage is not exhaustive</a>.</p></article></main></div>
+<script>
+"use strict";
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+function inline(s){
+ let t=esc(s);
+ t=t.replace(/`([^`]+)`/g,(_,c)=>"<code>"+c+"</code>");
+ t=t.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|[\w./#-]+)\)/g,(_,label,url)=>'<a href="'+url+'" rel="noopener noreferrer">'+label+'</a>');
+ t=t.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>");
+ t=t.replace(/\*([^*]+)\*/g,"<em>$1</em>");
+ return t;
+}
+function markdown(raw){
+ const lines=raw.replace(/\r/g,"").split("\n");let out=[],i=0;
+ while(i<lines.length){let line=lines[i],m;
+  if(line.startsWith("```")){const language=line.slice(3).trim();i++;let body=[];while(i<lines.length&&!lines[i].startsWith("```"))body.push(lines[i++]);i++;out.push('<pre><code class="language-'+esc(language)+'">'+esc(body.join("\n"))+'</code></pre>');continue;}
+  if((m=/^(#{1,6})\s+(.*)$/.exec(line))){const depth=m[1].length;out.push('<h'+depth+'>'+inline(m[2])+'</h'+depth+'>');i++;continue;}
+  if(/^\|/.test(line)){let data=[];while(i<lines.length&&/^\|/.test(lines[i]))data.push(lines[i++]);const rows=data.filter(v=>!/^\|\s*:?-+/.test(v)).map(v=>'<tr>'+v.replace(/^\||\|$/g,'').split('|').map(c=>'<td>'+inline(c.trim())+'</td>').join('')+'</tr>');out.push('<table>'+rows.join('')+'</table>');continue;}
+  if(/^\s*[-*] /.test(line)){let b=[];while(i<lines.length&&/^\s*[-*] /.test(lines[i]))b.push('<li>'+inline(lines[i++].replace(/^\s*[-*] /,''))+'</li>');out.push('<ul>'+b.join('')+'</ul>');continue;}
+  if(/^\s*\d+\. /.test(line)){let b=[];while(i<lines.length&&/^\s*\d+\. /.test(lines[i]))b.push('<li>'+inline(lines[i++].replace(/^\s*\d+\. /,''))+'</li>');out.push('<ol>'+b.join('')+'</ol>');continue;}
+  if(!line.trim()){i++;continue;}
+  let parts=[];while(i<lines.length&&lines[i].trim()&&!/^(#{1,6})\s|^```|^\|/.test(lines[i]))parts.push(lines[i++]);out.push('<p>'+inline(parts.join(' '))+'</p>');
+ }
+ return out.join("\n");
+}
+let items=[];
+const catalog=document.getElementById("catalog"),article=document.getElementById("document"),locationBar=document.getElementById("location");
+function renderList(query=""){
+ const q=query.trim().toLowerCase();let out=[],last="";
+ for(const x of items){if(q&&![x.title,x.path,x.section||"",x.edition||""].join(" ").toLowerCase().includes(q))continue;
+  const group=x.chapter?"Chapter "+Number(x.chapter):"Reference";
+  if(last!==group){out.push('<div class="group">'+esc(group)+'</div>');last=group;}
+  out.push('<div class="sub"><button data-id="'+esc(x.path)+'"><span class="kind">'+esc(x.kind)+'</span>'+esc(x.title)+'</button></div>');
+ }
+ catalog.innerHTML=out.join("")||"<p>No matching entries.</p>";
+ catalog.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>show(b.dataset.id)));
+}
+async function show(path){
+ const item=items.find(x=>x.path===path);if(!item)return;
+ locationBar.textContent="Loading "+path;
+ try{const response=await fetch(encodeURI(path));if(!response.ok)throw Error("HTTP "+response.status);
+ const raw=await response.text(),isCode=path.endsWith(".rs");
+ article.innerHTML=isCode?'<h1>'+esc(item.title)+'</h1><pre><code>'+esc(raw)+'</code></pre>':markdown(raw);
+ locationBar.innerHTML='<span>'+esc(item.kind)+' · '+esc(item.edition||"shared")+'</span><a href="'+encodeURI(path)+'" target="_blank" rel="noopener">Open raw file</a>';
+ history.replaceState(null,"","#"+encodeURIComponent(path));
+ document.querySelectorAll("#catalog button").forEach(b=>b.setAttribute("aria-current",String(b.dataset.id===path)));
+ }catch(e){locationBar.textContent="Unable to load file";article.textContent=e.message+" — Host this repository through a web server or GitHub Pages.";}
+}
+document.getElementById("filter").addEventListener("input",e=>renderList(e.target.value));
+fetch("manifest.json").then(r=>{if(!r.ok)throw Error(r.status);return r.json();}).then(data=>{items=data.entries;renderList();const selected=decodeURIComponent(location.hash.slice(1));show(items.some(x=>x.path===selected)?selected:"README.md");}).catch(e=>{catalog.textContent="Cannot load manifest.json: "+e.message+". Serve through HTTP(S), not file://.";});
+</script></body></html>
