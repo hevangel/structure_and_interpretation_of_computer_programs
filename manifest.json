@@ -588,6 +588,294 @@
       "section": "2.5",
       "edition": "shared",
       "path": "examples/ch02/section-05/generic-arithmetic/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.1 Stateful bank account with invariants",
+      "chapter": "03",
+      "section": "3.1",
+      "edition": "shared",
+      "path": "examples/ch03/section-01/bank-account/README.md",
+      "source": "examples/ch03/section-01/bank-account/main.rs",
+      "bin": "ch03-bank-account"
+    },
+    {
+      "kind": "source",
+      "title": "3.1 Stateful bank account with invariants — Rust source",
+      "chapter": "03",
+      "section": "3.1",
+      "edition": "shared",
+      "path": "examples/ch03/section-01/bank-account/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.2 Lexical scope and environment frames",
+      "chapter": "03",
+      "section": "3.2",
+      "edition": "shared",
+      "path": "examples/ch03/section-02/lexical-environments/README.md",
+      "source": "examples/ch03/section-02/lexical-environments/main.rs",
+      "bin": "ch03-lexical-environments"
+    },
+    {
+      "kind": "source",
+      "title": "3.2 Lexical scope and environment frames — Rust source",
+      "chapter": "03",
+      "section": "3.2",
+      "edition": "shared",
+      "path": "examples/ch03/section-02/lexical-environments/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.3 Mutable FIFO queue abstraction",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/mutable-queue/README.md",
+      "source": "examples/ch03/section-03/mutable-queue/main.rs",
+      "bin": "ch03-mutable-queue"
+    },
+    {
+      "kind": "source",
+      "title": "3.3 Mutable FIFO queue abstraction — Rust source",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/mutable-queue/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.4 Concurrency and serialized transfers",
+      "chapter": "03",
+      "section": "3.4",
+      "edition": "shared",
+      "path": "examples/ch03/section-04/serialized-transfers/README.md",
+      "source": "examples/ch03/section-04/serialized-transfers/main.rs",
+      "bin": "ch03-serialized-transfers"
+    },
+    {
+      "kind": "source",
+      "title": "3.4 Concurrency and serialized transfers — Rust source",
+      "chapter": "03",
+      "section": "3.4",
+      "edition": "shared",
+      "path": "examples/ch03/section-04/serialized-transfers/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.5 Lazy streams with Rust iterators",
+      "chapter": "03",
+      "section": "3.5",
+      "edition": "shared",
+      "path": "examples/ch03/section-05/lazy-streams/README.md",
+      "source": "examples/ch03/section-05/lazy-streams/main.rs",
+      "bin": "ch03-lazy-streams"
+    },
+    {
+      "kind": "source",
+      "title": "3.5 Lazy streams with Rust iterators — Rust source",
+      "chapter": "03",
+      "section": "3.5",
+      "edition": "shared",
+      "path": "examples/ch03/section-05/lazy-streams/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "4.1 Expression evaluator with lexical bindings",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "shared",
+      "path": "examples/ch04/section-01/tiny-evaluator/README.md",
+      "source": "examples/ch04/section-01/tiny-evaluator/main.rs",
+      "bin": "ch04-tiny-evaluator"
+    },
+    {
+      "kind": "source",
+      "title": "4.1 Expression evaluator with lexical bindings — Rust source",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "shared",
+      "path": "examples/ch04/section-01/tiny-evaluator/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "4.2 Call-by-need with a memoized thunk",
+      "chapter": "04",
+      "section": "4.2",
+      "edition": "shared",
+      "path": "examples/ch04/section-02/memoized-thunk/README.md",
+      "source": "examples/ch04/section-02/memoized-thunk/main.rs",
+      "bin": "ch04-memoized-thunk"
+    },
+    {
+      "kind": "source",
+      "title": "4.2 Call-by-need with a memoized thunk — Rust source",
+      "chapter": "04",
+      "section": "4.2",
+      "edition": "shared",
+      "path": "examples/ch04/section-02/memoized-thunk/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "4.3 N-queens nondeterministic search",
+      "chapter": "04",
+      "section": "4.3",
+      "edition": "shared",
+      "path": "examples/ch04/section-03/n-queens-search/README.md",
+      "source": "examples/ch04/section-03/n-queens-search/main.rs",
+      "bin": "ch04-n-queens-search"
+    },
+    {
+      "kind": "source",
+      "title": "4.3 N-queens nondeterministic search — Rust source",
+      "chapter": "04",
+      "section": "4.3",
+      "edition": "shared",
+      "path": "examples/ch04/section-03/n-queens-search/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "4.4 Relational queries with variable bindings",
+      "chapter": "04",
+      "section": "4.4",
+      "edition": "shared",
+      "path": "examples/ch04/section-04/logic-relations/README.md",
+      "source": "examples/ch04/section-04/logic-relations/main.rs",
+      "bin": "ch04-logic-relations"
+    },
+    {
+      "kind": "source",
+      "title": "4.4 Relational queries with variable bindings — Rust source",
+      "chapter": "04",
+      "section": "4.4",
+      "edition": "shared",
+      "path": "examples/ch04/section-04/logic-relations/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "4.1 Expression parsing with operator precedence",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "2022-javascript",
+      "path": "examples/ch04/section-01/javascript-parser/README.md",
+      "source": "examples/ch04/section-01/javascript-parser/main.rs",
+      "bin": "ch04-javascript-parser"
+    },
+    {
+      "kind": "source",
+      "title": "4.1 Expression parsing with operator precedence — Rust source",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "2022-javascript",
+      "path": "examples/ch04/section-01/javascript-parser/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "5.1 Design a register-machine controller",
+      "chapter": "05",
+      "section": "5.1",
+      "edition": "shared",
+      "path": "examples/ch05/section-01/register-gcd/README.md",
+      "source": "examples/ch05/section-01/register-gcd/main.rs",
+      "bin": "ch05-register-gcd"
+    },
+    {
+      "kind": "source",
+      "title": "5.1 Design a register-machine controller — Rust source",
+      "chapter": "05",
+      "section": "5.1",
+      "edition": "shared",
+      "path": "examples/ch05/section-01/register-gcd/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "5.2 Small register-machine simulator",
+      "chapter": "05",
+      "section": "5.2",
+      "edition": "shared",
+      "path": "examples/ch05/section-02/register-simulator/README.md",
+      "source": "examples/ch05/section-02/register-simulator/main.rs",
+      "bin": "ch05-register-simulator"
+    },
+    {
+      "kind": "source",
+      "title": "5.2 Small register-machine simulator — Rust source",
+      "chapter": "05",
+      "section": "5.2",
+      "edition": "shared",
+      "path": "examples/ch05/section-02/register-simulator/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "5.3 Reachability-based mark/sweep garbage collection",
+      "chapter": "05",
+      "section": "5.3",
+      "edition": "shared",
+      "path": "examples/ch05/section-03/mark-sweep-gc/README.md",
+      "source": "examples/ch05/section-03/mark-sweep-gc/main.rs",
+      "bin": "ch05-mark-sweep-gc"
+    },
+    {
+      "kind": "source",
+      "title": "5.3 Reachability-based mark/sweep garbage collection — Rust source",
+      "chapter": "05",
+      "section": "5.3",
+      "edition": "shared",
+      "path": "examples/ch05/section-03/mark-sweep-gc/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "5.4 Explicit-control expression evaluator",
+      "chapter": "05",
+      "section": "5.4",
+      "edition": "shared",
+      "path": "examples/ch05/section-04/explicit-control/README.md",
+      "source": "examples/ch05/section-04/explicit-control/main.rs",
+      "bin": "ch05-explicit-control"
+    },
+    {
+      "kind": "source",
+      "title": "5.4 Explicit-control expression evaluator — Rust source",
+      "chapter": "05",
+      "section": "5.4",
+      "edition": "shared",
+      "path": "examples/ch05/section-04/explicit-control/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "5.5 Compile expressions to stack-machine bytecode",
+      "chapter": "05",
+      "section": "5.5",
+      "edition": "shared",
+      "path": "examples/ch05/section-05/bytecode-compiler/README.md",
+      "source": "examples/ch05/section-05/bytecode-compiler/main.rs",
+      "bin": "ch05-bytecode-compiler"
+    },
+    {
+      "kind": "source",
+      "title": "5.5 Compile expressions to stack-machine bytecode — Rust source",
+      "chapter": "05",
+      "section": "5.5",
+      "edition": "shared",
+      "path": "examples/ch05/section-05/bytecode-compiler/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "5.5 Tail calls through a trampoline",
+      "chapter": "05",
+      "section": "5.5",
+      "edition": "2022-javascript",
+      "path": "examples/ch05/section-05/javascript-tail-calls/README.md",
+      "source": "examples/ch05/section-05/javascript-tail-calls/main.rs",
+      "bin": "ch05-javascript-tail-calls"
+    },
+    {
+      "kind": "source",
+      "title": "5.5 Tail calls through a trampoline — Rust source",
+      "chapter": "05",
+      "section": "5.5",
+      "edition": "2022-javascript",
+      "path": "examples/ch05/section-05/javascript-tail-calls/main.rs"
     }
   ]
 }

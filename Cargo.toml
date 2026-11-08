@@ -89,3 +89,67 @@ path = "examples/ch02/section-04/complex-representations/main.rs"
 [[bin]]
 name = "ch02-generic-arithmetic"
 path = "examples/ch02/section-05/generic-arithmetic/main.rs"
+
+[[bin]]
+name = "ch03-bank-account"
+path = "examples/ch03/section-01/bank-account/main.rs"
+
+[[bin]]
+name = "ch03-lexical-environments"
+path = "examples/ch03/section-02/lexical-environments/main.rs"
+
+[[bin]]
+name = "ch03-mutable-queue"
+path = "examples/ch03/section-03/mutable-queue/main.rs"
+
+[[bin]]
+name = "ch03-serialized-transfers"
+path = "examples/ch03/section-04/serialized-transfers/main.rs"
+
+[[bin]]
+name = "ch03-lazy-streams"
+path = "examples/ch03/section-05/lazy-streams/main.rs"
+
+[[bin]]
+name = "ch04-tiny-evaluator"
+path = "examples/ch04/section-01/tiny-evaluator/main.rs"
+
+[[bin]]
+name = "ch04-memoized-thunk"
+path = "examples/ch04/section-02/memoized-thunk/main.rs"
+
+[[bin]]
+name = "ch04-n-queens-search"
+path = "examples/ch04/section-03/n-queens-search/main.rs"
+
+[[bin]]
+name = "ch04-logic-relations"
+path = "examples/ch04/section-04/logic-relations/main.rs"
+
+[[bin]]
+name = "ch04-javascript-parser"
+path = "examples/ch04/section-01/javascript-parser/main.rs"
+
+[[bin]]
+name = "ch05-register-gcd"
+path = "examples/ch05/section-01/register-gcd/main.rs"
+
+[[bin]]
+name = "ch05-register-simulator"
+path = "examples/ch05/section-02/register-simulator/main.rs"
+
+[[bin]]
+name = "ch05-mark-sweep-gc"
+path = "examples/ch05/section-03/mark-sweep-gc/main.rs"
+
+[[bin]]
+name = "ch05-explicit-control"
+path = "examples/ch05/section-04/explicit-control/main.rs"
+
+[[bin]]
+name = "ch05-bytecode-compiler"
+path = "examples/ch05/section-05/bytecode-compiler/main.rs"
+
+[[bin]]
+name = "ch05-javascript-tail-calls"
+path = "examples/ch05/section-05/javascript-tail-calls/main.rs"
