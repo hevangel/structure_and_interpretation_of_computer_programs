@@ -996,6 +996,42 @@
       "path": "examples/ch03/section-03/mutable-queue/main.rs"
     },
     {
+      "kind": "example",
+      "title": "3.3 Bidirectional constraint propagation",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/constraint-propagation/README.md",
+      "source": "examples/ch03/section-03/constraint-propagation/main.rs",
+      "bin": "ch03-constraint-propagation"
+    },
+    {
+      "kind": "source",
+      "title": "3.3 Bidirectional constraint propagation — Rust source",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/constraint-propagation/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.3 Event-driven digital circuit simulator",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/digital-circuit-simulator/README.md",
+      "source": "examples/ch03/section-03/digital-circuit-simulator/main.rs",
+      "bin": "ch03-digital-circuit-simulator"
+    },
+    {
+      "kind": "source",
+      "title": "3.3 Event-driven digital circuit simulator — Rust source",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/digital-circuit-simulator/main.rs"
+    },
+    {
       "kind": "section",
       "title": "03.04 Concurrency: Time Is of the Essence",
       "chapter": "03",
@@ -1109,6 +1145,24 @@
       "path": "examples/ch03/section-05/lazy-streams/main.rs"
     },
     {
+      "kind": "example",
+      "title": "3.5 Numerical integration as a lazy stream",
+      "chapter": "03",
+      "section": "3.5",
+      "edition": "1996-scheme",
+      "path": "examples/ch03/section-05/stream-integration/README.md",
+      "source": "examples/ch03/section-05/stream-integration/main.rs",
+      "bin": "ch03-stream-integration"
+    },
+    {
+      "kind": "source",
+      "title": "3.5 Numerical integration as a lazy stream — Rust source",
+      "chapter": "03",
+      "section": "3.5",
+      "edition": "1996-scheme",
+      "path": "examples/ch03/section-05/stream-integration/main.rs"
+    },
+    {
       "kind": "chapter",
       "title": "Metalinguistic Abstraction",
       "chapter": "04",
@@ -1201,6 +1255,24 @@
       "section": "4.1",
       "edition": "shared",
       "path": "examples/ch04/section-01/tiny-evaluator/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "4.1 Evaluator with lexical closures",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "shared",
+      "path": "examples/ch04/section-01/lexical-closures/README.md",
+      "source": "examples/ch04/section-01/lexical-closures/main.rs",
+      "bin": "ch04-lexical-closures"
+    },
+    {
+      "kind": "source",
+      "title": "4.1 Evaluator with lexical closures — Rust source",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "shared",
+      "path": "examples/ch04/section-01/lexical-closures/main.rs"
     },
     {
       "kind": "example",

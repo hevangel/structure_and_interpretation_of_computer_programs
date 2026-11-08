@@ -153,3 +153,19 @@ path = "examples/ch05/section-05/bytecode-compiler/main.rs"
 [[bin]]
 name = "ch05-javascript-tail-calls"
 path = "examples/ch05/section-05/javascript-tail-calls/main.rs"
+
+[[bin]]
+name = "ch03-digital-circuit-simulator"
+path = "examples/ch03/section-03/digital-circuit-simulator/main.rs"
+
+[[bin]]
+name = "ch03-constraint-propagation"
+path = "examples/ch03/section-03/constraint-propagation/main.rs"
+
+[[bin]]
+name = "ch03-stream-integration"
+path = "examples/ch03/section-05/stream-integration/main.rs"
+
+[[bin]]
+name = "ch04-lexical-closures"
+path = "examples/ch04/section-01/lexical-closures/main.rs"
