@@ -41,6 +41,96 @@
       "path": "chapters/ch01/section-01/INTRO.md"
     },
     {
+      "kind": "subsection",
+      "title": "1.1.1 Expressions",
+      "chapter": "01",
+      "section": "1.1",
+      "number": "1.1.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-01/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.1.2 Naming and the Environment",
+      "chapter": "01",
+      "section": "1.1",
+      "number": "1.1.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-01/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.1.3 Evaluating Combinations",
+      "chapter": "01",
+      "section": "1.1",
+      "number": "1.1.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-01/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.1.4 Compound Procedures and Functions",
+      "chapter": "01",
+      "section": "1.1",
+      "number": "1.1.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-01/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.1.5 The Substitution Model",
+      "chapter": "01",
+      "section": "1.1",
+      "number": "1.1.5",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-01/subsection-05/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.1.6 Conditionals and Predicates",
+      "chapter": "01",
+      "section": "1.1",
+      "number": "1.1.6",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-01/subsection-06/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.1.7 Square Roots by Newton's Method",
+      "chapter": "01",
+      "section": "1.1",
+      "number": "1.1.7",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-01/subsection-07/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.1.8 Black-Box Abstractions",
+      "chapter": "01",
+      "section": "1.1",
+      "number": "1.1.8",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-01/subsection-08/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "1.1 Square roots by iterative improvement",
+      "chapter": "01",
+      "section": "1.1",
+      "edition": "shared",
+      "path": "examples/ch01/section-01/newton-sqrt/README.md",
+      "source": "examples/ch01/section-01/newton-sqrt/main.rs",
+      "bin": "ch01-newton-sqrt"
+    },
+    {
+      "kind": "source",
+      "title": "1.1 Square roots by iterative improvement — Rust source",
+      "chapter": "01",
+      "section": "1.1",
+      "edition": "shared",
+      "path": "examples/ch01/section-01/newton-sqrt/main.rs"
+    },
+    {
       "kind": "section",
       "title": "01.02 Procedures and the Processes They Generate",
       "chapter": "01",
@@ -48,11 +138,263 @@
       "path": "chapters/ch01/section-02/INTRO.md"
     },
     {
+      "kind": "subsection",
+      "title": "1.2.1 Linear Recursion and Iteration",
+      "chapter": "01",
+      "section": "1.2",
+      "number": "1.2.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-02/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.2.2 Tree Recursion",
+      "chapter": "01",
+      "section": "1.2",
+      "number": "1.2.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-02/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.2.3 Orders of Growth",
+      "chapter": "01",
+      "section": "1.2",
+      "number": "1.2.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-02/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.2.4 Exponentiation",
+      "chapter": "01",
+      "section": "1.2",
+      "number": "1.2.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-02/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.2.5 Greatest Common Divisors",
+      "chapter": "01",
+      "section": "1.2",
+      "number": "1.2.5",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-02/subsection-05/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.2.6 Testing for Primality",
+      "chapter": "01",
+      "section": "1.2",
+      "number": "1.2.6",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-02/subsection-06/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "1.2 Recursive and iterative factorial",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/factorial-processes/README.md",
+      "source": "examples/ch01/section-02/factorial-processes/main.rs",
+      "bin": "ch01-factorial-processes"
+    },
+    {
+      "kind": "source",
+      "title": "1.2 Recursive and iterative factorial — Rust source",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/factorial-processes/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.2 Exponentiation by repeated squaring",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/fast-exponentiation/README.md",
+      "source": "examples/ch01/section-02/fast-exponentiation/main.rs",
+      "bin": "ch01-fast-exponentiation"
+    },
+    {
+      "kind": "source",
+      "title": "1.2 Exponentiation by repeated squaring — Rust source",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/fast-exponentiation/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.2 Euclid's greatest-common-divisor algorithm",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/euclidean-gcd/README.md",
+      "source": "examples/ch01/section-02/euclidean-gcd/main.rs",
+      "bin": "ch01-euclidean-gcd"
+    },
+    {
+      "kind": "source",
+      "title": "1.2 Euclid's greatest-common-divisor algorithm — Rust source",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/euclidean-gcd/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.2 Fibonacci recurrence and process shape",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/fibonacci-processes/README.md",
+      "source": "examples/ch01/section-02/fibonacci-processes/main.rs",
+      "bin": "ch01-fibonacci-processes"
+    },
+    {
+      "kind": "source",
+      "title": "1.2 Fibonacci recurrence and process shape — Rust source",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/fibonacci-processes/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.2 Trial-division primality test",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/prime-testing/README.md",
+      "source": "examples/ch01/section-02/prime-testing/main.rs",
+      "bin": "ch01-prime-testing"
+    },
+    {
+      "kind": "source",
+      "title": "1.2 Trial-division primality test — Rust source",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/prime-testing/main.rs"
+    },
+    {
       "kind": "section",
       "title": "01.03 Formulating Abstractions with Higher-Order Procedures",
       "chapter": "01",
       "section": "01.03",
       "path": "chapters/ch01/section-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.3.1 Functions as Arguments",
+      "chapter": "01",
+      "section": "1.3",
+      "number": "1.3.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-03/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.3.2 Lambda Expressions",
+      "chapter": "01",
+      "section": "1.3",
+      "number": "1.3.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-03/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.3.3 Functions as General Methods",
+      "chapter": "01",
+      "section": "1.3",
+      "number": "1.3.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-03/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "1.3.4 Functions as Returned Values",
+      "chapter": "01",
+      "section": "1.3",
+      "number": "1.3.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch01/section-03/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "1.3 Higher-order accumulation",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/accumulate/README.md",
+      "source": "examples/ch01/section-03/accumulate/main.rs",
+      "bin": "ch01-accumulate"
+    },
+    {
+      "kind": "source",
+      "title": "1.3 Higher-order accumulation — Rust source",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/accumulate/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.3 Fixed-point iteration",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/fixed-point/README.md",
+      "source": "examples/ch01/section-03/fixed-point/main.rs",
+      "bin": "ch01-fixed-point"
+    },
+    {
+      "kind": "source",
+      "title": "1.3 Fixed-point iteration — Rust source",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/fixed-point/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.3 Higher-order numerical integration",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/simpson-integration/README.md",
+      "source": "examples/ch01/section-03/simpson-integration/main.rs",
+      "bin": "ch01-simpson-integration"
+    },
+    {
+      "kind": "source",
+      "title": "1.3 Higher-order numerical integration — Rust source",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/simpson-integration/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.3 Continued-fraction approximations",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/continued-fraction/README.md",
+      "source": "examples/ch01/section-03/continued-fraction/main.rs",
+      "bin": "ch01-continued-fraction"
+    },
+    {
+      "kind": "source",
+      "title": "1.3 Continued-fraction approximations — Rust source",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/continued-fraction/main.rs"
     },
     {
       "kind": "chapter",
@@ -68,11 +410,191 @@
       "path": "chapters/ch02/section-01/INTRO.md"
     },
     {
+      "kind": "subsection",
+      "title": "2.1.1 Rational Arithmetic",
+      "chapter": "02",
+      "section": "2.1",
+      "number": "2.1.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-01/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.1.2 Abstraction Barriers",
+      "chapter": "02",
+      "section": "2.1",
+      "number": "2.1.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-01/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.1.3 What Is Data?",
+      "chapter": "02",
+      "section": "2.1",
+      "number": "2.1.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-01/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.1.4 Interval Arithmetic",
+      "chapter": "02",
+      "section": "2.1",
+      "number": "2.1.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-01/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "2.1 Rational numbers as an abstract data type",
+      "chapter": "02",
+      "section": "2.1",
+      "edition": "shared",
+      "path": "examples/ch02/section-01/rational-numbers/README.md",
+      "source": "examples/ch02/section-01/rational-numbers/main.rs",
+      "bin": "ch02-rational-numbers"
+    },
+    {
+      "kind": "source",
+      "title": "2.1 Rational numbers as an abstract data type — Rust source",
+      "chapter": "02",
+      "section": "2.1",
+      "edition": "shared",
+      "path": "examples/ch02/section-01/rational-numbers/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.1 Arithmetic on intervals",
+      "chapter": "02",
+      "section": "2.1",
+      "edition": "shared",
+      "path": "examples/ch02/section-01/interval-arithmetic/README.md",
+      "source": "examples/ch02/section-01/interval-arithmetic/main.rs",
+      "bin": "ch02-interval-arithmetic"
+    },
+    {
+      "kind": "source",
+      "title": "2.1 Arithmetic on intervals — Rust source",
+      "chapter": "02",
+      "section": "2.1",
+      "edition": "shared",
+      "path": "examples/ch02/section-01/interval-arithmetic/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.1 Church numerals as higher-order functions",
+      "chapter": "02",
+      "section": "2.1",
+      "edition": "shared",
+      "path": "examples/ch02/section-01/church-numerals/README.md",
+      "source": "examples/ch02/section-01/church-numerals/main.rs",
+      "bin": "ch02-church-numerals"
+    },
+    {
+      "kind": "source",
+      "title": "2.1 Church numerals as higher-order functions — Rust source",
+      "chapter": "02",
+      "section": "2.1",
+      "edition": "shared",
+      "path": "examples/ch02/section-01/church-numerals/main.rs"
+    },
+    {
       "kind": "section",
       "title": "02.02 Hierarchical Data and the Closure Property",
       "chapter": "02",
       "section": "02.02",
       "path": "chapters/ch02/section-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.2.1 Representing Sequences",
+      "chapter": "02",
+      "section": "2.2",
+      "number": "2.2.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-02/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.2.2 Hierarchical Structures",
+      "chapter": "02",
+      "section": "2.2",
+      "number": "2.2.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-02/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.2.3 Sequences as Conventional Interfaces",
+      "chapter": "02",
+      "section": "2.2",
+      "number": "2.2.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-02/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.2.4 The Picture Language",
+      "chapter": "02",
+      "section": "2.2",
+      "number": "2.2.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-02/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "2.2 Recursive tree folds",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/recursive-trees/README.md",
+      "source": "examples/ch02/section-02/recursive-trees/main.rs",
+      "bin": "ch02-recursive-trees"
+    },
+    {
+      "kind": "source",
+      "title": "2.2 Recursive tree folds — Rust source",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/recursive-trees/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.2 Sequence processing and matrix multiplication",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/matrix-operations/README.md",
+      "source": "examples/ch02/section-02/matrix-operations/main.rs",
+      "bin": "ch02-matrix-operations"
+    },
+    {
+      "kind": "source",
+      "title": "2.2 Sequence processing and matrix multiplication — Rust source",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/matrix-operations/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.2 Picture language: compositional images",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "1996-scheme",
+      "path": "examples/ch02/section-02/picture-composition/README.md",
+      "source": "examples/ch02/section-02/picture-composition/main.rs",
+      "bin": "ch02-picture-composition"
+    },
+    {
+      "kind": "source",
+      "title": "2.2 Picture language: compositional images — Rust source",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "1996-scheme",
+      "path": "examples/ch02/section-02/picture-composition/main.rs"
     },
     {
       "kind": "section",
@@ -82,6 +604,96 @@
       "path": "chapters/ch02/section-03/INTRO.md"
     },
     {
+      "kind": "subsection",
+      "title": "2.3.1 Quotation and Strings",
+      "chapter": "02",
+      "section": "2.3",
+      "number": "2.3.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-03/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.3.2 Symbolic Differentiation",
+      "chapter": "02",
+      "section": "2.3",
+      "number": "2.3.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-03/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.3.3 Representing Sets",
+      "chapter": "02",
+      "section": "2.3",
+      "number": "2.3.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-03/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.3.4 Huffman Encoding Trees",
+      "chapter": "02",
+      "section": "2.3",
+      "number": "2.3.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-03/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "2.3 Symbolic differentiation",
+      "chapter": "02",
+      "section": "2.3",
+      "edition": "shared",
+      "path": "examples/ch02/section-03/symbolic-differentiation/README.md",
+      "source": "examples/ch02/section-03/symbolic-differentiation/main.rs",
+      "bin": "ch02-symbolic-differentiation"
+    },
+    {
+      "kind": "source",
+      "title": "2.3 Symbolic differentiation — Rust source",
+      "chapter": "02",
+      "section": "2.3",
+      "edition": "shared",
+      "path": "examples/ch02/section-03/symbolic-differentiation/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.3 Ordered sets as binary search trees",
+      "chapter": "02",
+      "section": "2.3",
+      "edition": "shared",
+      "path": "examples/ch02/section-03/binary-search-tree/README.md",
+      "source": "examples/ch02/section-03/binary-search-tree/main.rs",
+      "bin": "ch02-binary-search-tree"
+    },
+    {
+      "kind": "source",
+      "title": "2.3 Ordered sets as binary search trees — Rust source",
+      "chapter": "02",
+      "section": "2.3",
+      "edition": "shared",
+      "path": "examples/ch02/section-03/binary-search-tree/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.3 Huffman prefix-code construction",
+      "chapter": "02",
+      "section": "2.3",
+      "edition": "shared",
+      "path": "examples/ch02/section-03/huffman-coding/README.md",
+      "source": "examples/ch02/section-03/huffman-coding/main.rs",
+      "bin": "ch02-huffman-coding"
+    },
+    {
+      "kind": "source",
+      "title": "2.3 Huffman prefix-code construction — Rust source",
+      "chapter": "02",
+      "section": "2.3",
+      "edition": "shared",
+      "path": "examples/ch02/section-03/huffman-coding/main.rs"
+    },
+    {
       "kind": "section",
       "title": "02.04 Multiple Representations for Abstract Data",
       "chapter": "02",
@@ -89,11 +701,101 @@
       "path": "chapters/ch02/section-04/INTRO.md"
     },
     {
+      "kind": "subsection",
+      "title": "2.4.1 Representing Complex Numbers",
+      "chapter": "02",
+      "section": "2.4",
+      "number": "2.4.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-04/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.4.2 Tagged Data",
+      "chapter": "02",
+      "section": "2.4",
+      "number": "2.4.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-04/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.4.3 Data-Directed Programming",
+      "chapter": "02",
+      "section": "2.4",
+      "number": "2.4.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-04/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "2.4 Complex numbers with two representations",
+      "chapter": "02",
+      "section": "2.4",
+      "edition": "shared",
+      "path": "examples/ch02/section-04/complex-representations/README.md",
+      "source": "examples/ch02/section-04/complex-representations/main.rs",
+      "bin": "ch02-complex-representations"
+    },
+    {
+      "kind": "source",
+      "title": "2.4 Complex numbers with two representations — Rust source",
+      "chapter": "02",
+      "section": "2.4",
+      "edition": "shared",
+      "path": "examples/ch02/section-04/complex-representations/main.rs"
+    },
+    {
       "kind": "section",
       "title": "02.05 Systems with Generic Operations",
       "chapter": "02",
       "section": "02.05",
       "path": "chapters/ch02/section-05/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.5.1 Generic Arithmetic",
+      "chapter": "02",
+      "section": "2.5",
+      "number": "2.5.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-05/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.5.2 Combining Different Types",
+      "chapter": "02",
+      "section": "2.5",
+      "number": "2.5.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-05/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "2.5.3 Symbolic Algebra",
+      "chapter": "02",
+      "section": "2.5",
+      "number": "2.5.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch02/section-05/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "2.5 Generic arithmetic with a numeric tower",
+      "chapter": "02",
+      "section": "2.5",
+      "edition": "shared",
+      "path": "examples/ch02/section-05/generic-arithmetic/README.md",
+      "source": "examples/ch02/section-05/generic-arithmetic/main.rs",
+      "bin": "ch02-generic-arithmetic"
+    },
+    {
+      "kind": "source",
+      "title": "2.5 Generic arithmetic with a numeric tower — Rust source",
+      "chapter": "02",
+      "section": "2.5",
+      "edition": "shared",
+      "path": "examples/ch02/section-05/generic-arithmetic/main.rs"
     },
     {
       "kind": "chapter",
@@ -109,11 +811,119 @@
       "path": "chapters/ch03/section-01/INTRO.md"
     },
     {
+      "kind": "subsection",
+      "title": "3.1.1 Local State Variables",
+      "chapter": "03",
+      "section": "3.1",
+      "number": "3.1.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-01/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.1.2 Benefits of Assignment",
+      "chapter": "03",
+      "section": "3.1",
+      "number": "3.1.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-01/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.1.3 Costs of Assignment",
+      "chapter": "03",
+      "section": "3.1",
+      "number": "3.1.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-01/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "3.1 Stateful bank account with invariants",
+      "chapter": "03",
+      "section": "3.1",
+      "edition": "shared",
+      "path": "examples/ch03/section-01/bank-account/README.md",
+      "source": "examples/ch03/section-01/bank-account/main.rs",
+      "bin": "ch03-bank-account"
+    },
+    {
+      "kind": "source",
+      "title": "3.1 Stateful bank account with invariants — Rust source",
+      "chapter": "03",
+      "section": "3.1",
+      "edition": "shared",
+      "path": "examples/ch03/section-01/bank-account/main.rs"
+    },
+    {
       "kind": "section",
       "title": "03.02 The Environment Model of Evaluation",
       "chapter": "03",
       "section": "03.02",
       "path": "chapters/ch03/section-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.2.1 Rules for Evaluation",
+      "chapter": "03",
+      "section": "3.2",
+      "number": "3.2.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-02/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.2.2 Applying Functions",
+      "chapter": "03",
+      "section": "3.2",
+      "number": "3.2.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-02/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.2.3 Frames and Local State",
+      "chapter": "03",
+      "section": "3.2",
+      "number": "3.2.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-02/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.2.4 Internal Definitions",
+      "chapter": "03",
+      "section": "3.2",
+      "number": "3.2.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-02/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.2.5 The CSE Machine",
+      "chapter": "03",
+      "section": "3.2",
+      "number": "3.2.5",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-02/subsection-05/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "3.2 Lexical scope and environment frames",
+      "chapter": "03",
+      "section": "3.2",
+      "edition": "shared",
+      "path": "examples/ch03/section-02/lexical-environments/README.md",
+      "source": "examples/ch03/section-02/lexical-environments/main.rs",
+      "bin": "ch03-lexical-environments"
+    },
+    {
+      "kind": "source",
+      "title": "3.2 Lexical scope and environment frames — Rust source",
+      "chapter": "03",
+      "section": "3.2",
+      "edition": "shared",
+      "path": "examples/ch03/section-02/lexical-environments/main.rs"
     },
     {
       "kind": "section",
@@ -123,6 +933,69 @@
       "path": "chapters/ch03/section-03/INTRO.md"
     },
     {
+      "kind": "subsection",
+      "title": "3.3.1 Mutable List Structure",
+      "chapter": "03",
+      "section": "3.3",
+      "number": "3.3.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-03/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.3.2 Representing Queues",
+      "chapter": "03",
+      "section": "3.3",
+      "number": "3.3.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-03/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.3.3 Representing Tables",
+      "chapter": "03",
+      "section": "3.3",
+      "number": "3.3.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-03/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.3.4 Digital Circuit Simulation",
+      "chapter": "03",
+      "section": "3.3",
+      "number": "3.3.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-03/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.3.5 Constraint Propagation",
+      "chapter": "03",
+      "section": "3.3",
+      "number": "3.3.5",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-03/subsection-05/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "3.3 Mutable FIFO queue abstraction",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/mutable-queue/README.md",
+      "source": "examples/ch03/section-03/mutable-queue/main.rs",
+      "bin": "ch03-mutable-queue"
+    },
+    {
+      "kind": "source",
+      "title": "3.3 Mutable FIFO queue abstraction — Rust source",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/mutable-queue/main.rs"
+    },
+    {
       "kind": "section",
       "title": "03.04 Concurrency: Time Is of the Essence",
       "chapter": "03",
@@ -130,11 +1003,110 @@
       "path": "chapters/ch03/section-04/INTRO.md"
     },
     {
+      "kind": "subsection",
+      "title": "3.4.1 Time in Concurrent Systems",
+      "chapter": "03",
+      "section": "3.4",
+      "number": "3.4.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-04/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.4.2 Controlling Concurrency",
+      "chapter": "03",
+      "section": "3.4",
+      "number": "3.4.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-04/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "3.4 Concurrency and serialized transfers",
+      "chapter": "03",
+      "section": "3.4",
+      "edition": "shared",
+      "path": "examples/ch03/section-04/serialized-transfers/README.md",
+      "source": "examples/ch03/section-04/serialized-transfers/main.rs",
+      "bin": "ch03-serialized-transfers"
+    },
+    {
+      "kind": "source",
+      "title": "3.4 Concurrency and serialized transfers — Rust source",
+      "chapter": "03",
+      "section": "3.4",
+      "edition": "shared",
+      "path": "examples/ch03/section-04/serialized-transfers/main.rs"
+    },
+    {
       "kind": "section",
       "title": "03.05 Streams",
       "chapter": "03",
       "section": "03.05",
       "path": "chapters/ch03/section-05/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.5.1 Streams as Delayed Lists",
+      "chapter": "03",
+      "section": "3.5",
+      "number": "3.5.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-05/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.5.2 Infinite Streams",
+      "chapter": "03",
+      "section": "3.5",
+      "number": "3.5.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-05/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.5.3 The Stream Paradigm",
+      "chapter": "03",
+      "section": "3.5",
+      "number": "3.5.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-05/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.5.4 Streams and Delayed Evaluation",
+      "chapter": "03",
+      "section": "3.5",
+      "number": "3.5.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-05/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "3.5.5 Functional Modularity and Objects",
+      "chapter": "03",
+      "section": "3.5",
+      "number": "3.5.5",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch03/section-05/subsection-05/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "3.5 Lazy streams with Rust iterators",
+      "chapter": "03",
+      "section": "3.5",
+      "edition": "shared",
+      "path": "examples/ch03/section-05/lazy-streams/README.md",
+      "source": "examples/ch03/section-05/lazy-streams/main.rs",
+      "bin": "ch03-lazy-streams"
+    },
+    {
+      "kind": "source",
+      "title": "3.5 Lazy streams with Rust iterators — Rust source",
+      "chapter": "03",
+      "section": "3.5",
+      "edition": "shared",
+      "path": "examples/ch03/section-05/lazy-streams/main.rs"
     },
     {
       "kind": "chapter",
@@ -150,11 +1122,155 @@
       "path": "chapters/ch04/section-01/INTRO.md"
     },
     {
+      "kind": "subsection",
+      "title": "4.1.1 Core of the Evaluator",
+      "chapter": "04",
+      "section": "4.1",
+      "number": "4.1.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-01/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.1.2 Representing Expressions",
+      "chapter": "04",
+      "section": "4.1",
+      "number": "4.1.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-01/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.1.3 Evaluator Data Structures",
+      "chapter": "04",
+      "section": "4.1",
+      "number": "4.1.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-01/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.1.4 Running the Evaluator",
+      "chapter": "04",
+      "section": "4.1",
+      "number": "4.1.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-01/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.1.5 Data as Programs",
+      "chapter": "04",
+      "section": "4.1",
+      "number": "4.1.5",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-01/subsection-05/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.1.6 Internal Declarations",
+      "chapter": "04",
+      "section": "4.1",
+      "number": "4.1.6",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-01/subsection-06/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.1.7 Analysis versus Execution",
+      "chapter": "04",
+      "section": "4.1",
+      "number": "4.1.7",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-01/subsection-07/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "4.1 Expression evaluator with lexical bindings",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "shared",
+      "path": "examples/ch04/section-01/tiny-evaluator/README.md",
+      "source": "examples/ch04/section-01/tiny-evaluator/main.rs",
+      "bin": "ch04-tiny-evaluator"
+    },
+    {
+      "kind": "source",
+      "title": "4.1 Expression evaluator with lexical bindings — Rust source",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "shared",
+      "path": "examples/ch04/section-01/tiny-evaluator/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "4.1 Expression parsing with operator precedence",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "2022-javascript",
+      "path": "examples/ch04/section-01/javascript-parser/README.md",
+      "source": "examples/ch04/section-01/javascript-parser/main.rs",
+      "bin": "ch04-javascript-parser"
+    },
+    {
+      "kind": "source",
+      "title": "4.1 Expression parsing with operator precedence — Rust source",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "2022-javascript",
+      "path": "examples/ch04/section-01/javascript-parser/main.rs"
+    },
+    {
       "kind": "section",
       "title": "04.02 Variations on a Scheme: Lazy Evaluation",
       "chapter": "04",
       "section": "04.02",
       "path": "chapters/ch04/section-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.2.1 Normal and Applicative Order",
+      "chapter": "04",
+      "section": "4.2",
+      "number": "4.2.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-02/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.2.2 A Lazy Evaluator",
+      "chapter": "04",
+      "section": "4.2",
+      "number": "4.2.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-02/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.2.3 Streams as Lazy Lists",
+      "chapter": "04",
+      "section": "4.2",
+      "number": "4.2.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-02/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "4.2 Call-by-need with a memoized thunk",
+      "chapter": "04",
+      "section": "4.2",
+      "edition": "shared",
+      "path": "examples/ch04/section-02/memoized-thunk/README.md",
+      "source": "examples/ch04/section-02/memoized-thunk/main.rs",
+      "bin": "ch04-memoized-thunk"
+    },
+    {
+      "kind": "source",
+      "title": "4.2 Call-by-need with a memoized thunk — Rust source",
+      "chapter": "04",
+      "section": "4.2",
+      "edition": "shared",
+      "path": "examples/ch04/section-02/memoized-thunk/main.rs"
     },
     {
       "kind": "section",
@@ -164,11 +1280,110 @@
       "path": "chapters/ch04/section-03/INTRO.md"
     },
     {
+      "kind": "subsection",
+      "title": "4.3.1 Amb and Search",
+      "chapter": "04",
+      "section": "4.3",
+      "number": "4.3.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-03/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.3.2 Nondeterministic Examples",
+      "chapter": "04",
+      "section": "4.3",
+      "number": "4.3.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-03/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.3.3 Implementing Amb",
+      "chapter": "04",
+      "section": "4.3",
+      "number": "4.3.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-03/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "4.3 N-queens nondeterministic search",
+      "chapter": "04",
+      "section": "4.3",
+      "edition": "shared",
+      "path": "examples/ch04/section-03/n-queens-search/README.md",
+      "source": "examples/ch04/section-03/n-queens-search/main.rs",
+      "bin": "ch04-n-queens-search"
+    },
+    {
+      "kind": "source",
+      "title": "4.3 N-queens nondeterministic search — Rust source",
+      "chapter": "04",
+      "section": "4.3",
+      "edition": "shared",
+      "path": "examples/ch04/section-03/n-queens-search/main.rs"
+    },
+    {
       "kind": "section",
       "title": "04.04 Logic Programming",
       "chapter": "04",
       "section": "04.04",
       "path": "chapters/ch04/section-04/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.4.1 Deductive Information Retrieval",
+      "chapter": "04",
+      "section": "4.4",
+      "number": "4.4.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-04/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.4.2 How Queries Work",
+      "chapter": "04",
+      "section": "4.4",
+      "number": "4.4.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-04/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.4.3 Logic and Operational Search",
+      "chapter": "04",
+      "section": "4.4",
+      "number": "4.4.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-04/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "4.4.4 Implementing Queries",
+      "chapter": "04",
+      "section": "4.4",
+      "number": "4.4.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch04/section-04/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "4.4 Relational queries with variable bindings",
+      "chapter": "04",
+      "section": "4.4",
+      "edition": "shared",
+      "path": "examples/ch04/section-04/logic-relations/README.md",
+      "source": "examples/ch04/section-04/logic-relations/main.rs",
+      "bin": "ch04-logic-relations"
+    },
+    {
+      "kind": "source",
+      "title": "4.4 Relational queries with variable bindings — Rust source",
+      "chapter": "04",
+      "section": "4.4",
+      "edition": "shared",
+      "path": "examples/ch04/section-04/logic-relations/main.rs"
     },
     {
       "kind": "chapter",
@@ -184,11 +1399,128 @@
       "path": "chapters/ch05/section-01/INTRO.md"
     },
     {
+      "kind": "subsection",
+      "title": "5.1.1 Register-Machine Description Language",
+      "chapter": "05",
+      "section": "5.1",
+      "number": "5.1.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-01/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.1.2 Abstraction in Machine Design",
+      "chapter": "05",
+      "section": "5.1",
+      "number": "5.1.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-01/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.1.3 Subroutines",
+      "chapter": "05",
+      "section": "5.1",
+      "number": "5.1.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-01/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.1.4 A Stack for Recursion",
+      "chapter": "05",
+      "section": "5.1",
+      "number": "5.1.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-01/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.1.5 Instruction Summary",
+      "chapter": "05",
+      "section": "5.1",
+      "number": "5.1.5",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-01/subsection-05/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "5.1 Design a register-machine controller",
+      "chapter": "05",
+      "section": "5.1",
+      "edition": "shared",
+      "path": "examples/ch05/section-01/register-gcd/README.md",
+      "source": "examples/ch05/section-01/register-gcd/main.rs",
+      "bin": "ch05-register-gcd"
+    },
+    {
+      "kind": "source",
+      "title": "5.1 Design a register-machine controller — Rust source",
+      "chapter": "05",
+      "section": "5.1",
+      "edition": "shared",
+      "path": "examples/ch05/section-01/register-gcd/main.rs"
+    },
+    {
       "kind": "section",
       "title": "05.02 A Register-Machine Simulator",
       "chapter": "05",
       "section": "05.02",
       "path": "chapters/ch05/section-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.2.1 The Machine Model",
+      "chapter": "05",
+      "section": "5.2",
+      "number": "5.2.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-02/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.2.2 The Assembler",
+      "chapter": "05",
+      "section": "5.2",
+      "number": "5.2.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-02/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.2.3 Instruction Execution Functions",
+      "chapter": "05",
+      "section": "5.2",
+      "number": "5.2.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-02/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.2.4 Monitoring Machine Performance",
+      "chapter": "05",
+      "section": "5.2",
+      "number": "5.2.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-02/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "5.2 Small register-machine simulator",
+      "chapter": "05",
+      "section": "5.2",
+      "edition": "shared",
+      "path": "examples/ch05/section-02/register-simulator/README.md",
+      "source": "examples/ch05/section-02/register-simulator/main.rs",
+      "bin": "ch05-register-simulator"
+    },
+    {
+      "kind": "source",
+      "title": "5.2 Small register-machine simulator — Rust source",
+      "chapter": "05",
+      "section": "5.2",
+      "edition": "shared",
+      "path": "examples/ch05/section-02/register-simulator/main.rs"
     },
     {
       "kind": "section",
@@ -198,6 +1530,42 @@
       "path": "chapters/ch05/section-03/INTRO.md"
     },
     {
+      "kind": "subsection",
+      "title": "5.3.1 Memory as Vectors",
+      "chapter": "05",
+      "section": "5.3",
+      "number": "5.3.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-03/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.3.2 Garbage Collection",
+      "chapter": "05",
+      "section": "5.3",
+      "number": "5.3.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-03/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "5.3 Reachability-based mark/sweep garbage collection",
+      "chapter": "05",
+      "section": "5.3",
+      "edition": "shared",
+      "path": "examples/ch05/section-03/mark-sweep-gc/README.md",
+      "source": "examples/ch05/section-03/mark-sweep-gc/main.rs",
+      "bin": "ch05-mark-sweep-gc"
+    },
+    {
+      "kind": "source",
+      "title": "5.3 Reachability-based mark/sweep garbage collection — Rust source",
+      "chapter": "05",
+      "section": "5.3",
+      "edition": "shared",
+      "path": "examples/ch05/section-03/mark-sweep-gc/main.rs"
+    },
+    {
       "kind": "section",
       "title": "05.04 The Explicit-Control Evaluator",
       "chapter": "05",
@@ -205,11 +1573,164 @@
       "path": "chapters/ch05/section-04/INTRO.md"
     },
     {
+      "kind": "subsection",
+      "title": "5.4.1 Explicit-Control Evaluator Core",
+      "chapter": "05",
+      "section": "5.4",
+      "number": "5.4.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-04/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.4.2 Sequence and Tail Recursion",
+      "chapter": "05",
+      "section": "5.4",
+      "number": "5.4.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-04/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.4.3 Conditionals and Declarations",
+      "chapter": "05",
+      "section": "5.4",
+      "number": "5.4.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-04/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.4.4 Running Explicit Control",
+      "chapter": "05",
+      "section": "5.4",
+      "number": "5.4.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-04/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "5.4 Explicit-control expression evaluator",
+      "chapter": "05",
+      "section": "5.4",
+      "edition": "shared",
+      "path": "examples/ch05/section-04/explicit-control/README.md",
+      "source": "examples/ch05/section-04/explicit-control/main.rs",
+      "bin": "ch05-explicit-control"
+    },
+    {
+      "kind": "source",
+      "title": "5.4 Explicit-control expression evaluator — Rust source",
+      "chapter": "05",
+      "section": "5.4",
+      "edition": "shared",
+      "path": "examples/ch05/section-04/explicit-control/main.rs"
+    },
+    {
       "kind": "section",
       "title": "05.05 Compilation",
       "chapter": "05",
       "section": "05.05",
       "path": "chapters/ch05/section-05/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.5.1 Compiler Structure",
+      "chapter": "05",
+      "section": "5.5",
+      "number": "5.5.1",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-05/subsection-01/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.5.2 Compiling Expressions",
+      "chapter": "05",
+      "section": "5.5",
+      "number": "5.5.2",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-05/subsection-02/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.5.3 Applications and Return Statements",
+      "chapter": "05",
+      "section": "5.5",
+      "number": "5.5.3",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-05/subsection-03/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.5.4 Instruction Sequence Composition",
+      "chapter": "05",
+      "section": "5.5",
+      "number": "5.5.4",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-05/subsection-04/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.5.5 Example of Compiled Code",
+      "chapter": "05",
+      "section": "5.5",
+      "number": "5.5.5",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-05/subsection-05/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.5.6 Lexical Addressing",
+      "chapter": "05",
+      "section": "5.5",
+      "number": "5.5.6",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-05/subsection-06/INTRO.md"
+    },
+    {
+      "kind": "subsection",
+      "title": "5.5.7 Compiler-Evaluator Interface",
+      "chapter": "05",
+      "section": "5.5",
+      "number": "5.5.7",
+      "edition": "1996-scheme / 2022-javascript crosswalk",
+      "path": "chapters/ch05/section-05/subsection-07/INTRO.md"
+    },
+    {
+      "kind": "example",
+      "title": "5.5 Compile expressions to stack-machine bytecode",
+      "chapter": "05",
+      "section": "5.5",
+      "edition": "shared",
+      "path": "examples/ch05/section-05/bytecode-compiler/README.md",
+      "source": "examples/ch05/section-05/bytecode-compiler/main.rs",
+      "bin": "ch05-bytecode-compiler"
+    },
+    {
+      "kind": "source",
+      "title": "5.5 Compile expressions to stack-machine bytecode — Rust source",
+      "chapter": "05",
+      "section": "5.5",
+      "edition": "shared",
+      "path": "examples/ch05/section-05/bytecode-compiler/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "5.5 Tail calls through a trampoline",
+      "chapter": "05",
+      "section": "5.5",
+      "edition": "2022-javascript",
+      "path": "examples/ch05/section-05/javascript-tail-calls/README.md",
+      "source": "examples/ch05/section-05/javascript-tail-calls/main.rs",
+      "bin": "ch05-javascript-tail-calls"
+    },
+    {
+      "kind": "source",
+      "title": "5.5 Tail calls through a trampoline — Rust source",
+      "chapter": "05",
+      "section": "5.5",
+      "edition": "2022-javascript",
+      "path": "examples/ch05/section-05/javascript-tail-calls/main.rs"
     }
   ]
 }
