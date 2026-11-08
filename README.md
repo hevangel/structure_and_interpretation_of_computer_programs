@@ -1,6 +1,6 @@
 # Structure and Interpretation of Computer Programs — Rust companion
 
-An original, open-source learning companion to the classic **Wizard Book**, with commented Rust programs, adjacent example explanations, section-level introductions, automated checks, and a zero-build static site.
+An original, open-source learning companion to the classic **Wizard Book**, with 37 independently written and commented Rust programs, adjacent example explanations, introductions to all 22 major sections and 95 numbered subsections, automated checks, and a zero-build static site.
 
 **Status:** scaffold and representative examples; this does **not** yet contain every example from all editions. See [COVERAGE.md](COVERAGE.md).
 
@@ -20,7 +20,7 @@ The textbook is by Harold Abelson and Gerald Jay Sussman, with Julie Sussman; th
 
 ## Learning path
 
-Read chapter introductions, then section `INTRO.md` notes, then code and its sibling `README.md`. Each code example includes executable assertions, comments about invariants, and standard-library-only Rust.
+Read chapter introductions, then numbered subsection `INTRO.md` notes, then code and its sibling `README.md`. Each code example includes executable assertions, comments about invariants, and standard-library-only Rust.
 
 ## Static hosting
 
