@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Implement Church addition and multiplication and compare function application counts.
 
-[Section introduction](../../../..//chapters/ch02/section-01/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch02/section-01/INTRO.md) · [Coverage](../../../../COVERAGE.md)

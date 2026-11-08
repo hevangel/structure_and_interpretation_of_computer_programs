@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Implement checked add and mul that return a Result instead of overflowing.
 
-[Section introduction](../../../..//chapters/ch02/section-01/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch02/section-01/INTRO.md) · [Coverage](../../../../COVERAGE.md)

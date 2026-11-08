@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Insert ascending integers and measure the resulting tree height, then study rebalancing.
 
-[Section introduction](../../../..//chapters/ch02/section-03/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch02/section-03/INTRO.md) · [Coverage](../../../../COVERAGE.md)

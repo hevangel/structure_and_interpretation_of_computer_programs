@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Calculate x/x when x is an interval not containing zero. Explain why the naive result is wider than [1,1].
 
-[Section introduction](../../../..//chapters/ch02/section-01/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch02/section-01/INTRO.md) · [Coverage](../../../../COVERAGE.md)

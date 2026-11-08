@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Add complex numbers as a fourth level and decide whether every coercion should be automatic.
 
-[Section introduction](../../../..//chapters/ch02/section-05/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch02/section-05/INTRO.md) · [Coverage](../../../../COVERAGE.md)

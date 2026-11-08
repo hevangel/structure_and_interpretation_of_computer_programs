@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Add subtraction and division without exposing representation choices to clients.
 
-[Section introduction](../../../..//chapters/ch02/section-04/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch02/section-04/INTRO.md) · [Coverage](../../../../COVERAGE.md)

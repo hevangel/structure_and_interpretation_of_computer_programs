@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Write a transpose function and implement multiplication using rows of the transposed matrix.
 
-[Section introduction](../../../..//chapters/ch02/section-02/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch02/section-02/INTRO.md) · [Coverage](../../../../COVERAGE.md)

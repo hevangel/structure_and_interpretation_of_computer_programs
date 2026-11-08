@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Replace repeated sorting with a binary heap, then test the round-trip on random short strings.
 
-[Section introduction](../../../..//chapters/ch02/section-03/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch02/section-03/INTRO.md) · [Coverage](../../../../COVERAGE.md)
