@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Investigate a continued fraction that converges to the golden ratio.
 
-[Section introduction](../../../..//chapters/ch01/section-03/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch01/section-03/INTRO.md) · [Coverage](../../../../COVERAGE.md)

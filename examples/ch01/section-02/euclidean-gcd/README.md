@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Prove the remainder identity, then compare the iteration count for successive Fibonacci numbers.
 
-[Section introduction](../../../..//chapters/ch01/section-02/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch01/section-02/INTRO.md) · [Coverage](../../../../COVERAGE.md)

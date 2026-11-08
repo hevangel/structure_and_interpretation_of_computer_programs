@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Try a noncontractive function and explain why a maximum iteration count is essential.
 
-[Section introduction](../../../..//chapters/ch01/section-03/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch01/section-03/INTRO.md) · [Coverage](../../../../COVERAGE.md)

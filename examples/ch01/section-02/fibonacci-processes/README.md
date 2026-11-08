@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Memoize the recursive implementation and sketch how the recurrence tree changes.
 
-[Section introduction](../../../..//chapters/ch01/section-02/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch01/section-02/INTRO.md) · [Coverage](../../../../COVERAGE.md)

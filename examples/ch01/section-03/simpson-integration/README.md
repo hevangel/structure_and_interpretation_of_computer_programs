@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Integrate x^4 with successively doubled n and estimate convergence order.
 
-[Section introduction](../../../..//chapters/ch01/section-03/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch01/section-03/INTRO.md) · [Coverage](../../../../COVERAGE.md)

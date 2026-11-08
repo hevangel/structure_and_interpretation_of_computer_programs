@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Extend the function to modular exponentiation without constructing huge intermediate powers.
 
-[Section introduction](../../../..//chapters/ch01/section-02/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch01/section-02/INTRO.md) · [Coverage](../../../../COVERAGE.md)

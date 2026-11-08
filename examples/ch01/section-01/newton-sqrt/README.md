@@ -27,4 +27,4 @@ The implementation has self-contained assertions and uses only the Rust standard
 
 Compare an absolute error threshold with a relative error threshold for x = 1e-12 and x = 1e12.
 
-[Section introduction](../../../..//chapters/ch01/section-01/INTRO.md) · [Coverage](../../../../COVERAGE.md)
+[Section introduction](../../../../chapters/ch01/section-01/INTRO.md) · [Coverage](../../../../COVERAGE.md)
