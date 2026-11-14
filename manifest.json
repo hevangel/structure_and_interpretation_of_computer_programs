@@ -644,6 +644,42 @@
       "path": "examples/ch02/section-01/church-numerals/main.rs"
     },
     {
+      "kind": "example",
+      "title": "2.1 Geometric segments and abstract rectangles",
+      "chapter": "02",
+      "section": "2.1",
+      "edition": "shared",
+      "path": "examples/ch02/section-01/geometric-segments/README.md",
+      "source": "examples/ch02/section-01/geometric-segments/main.rs",
+      "bin": "ch02-geometric-segments"
+    },
+    {
+      "kind": "source",
+      "title": "2.1 Geometric segments and abstract rectangles — Rust source",
+      "chapter": "02",
+      "section": "2.1",
+      "edition": "shared",
+      "path": "examples/ch02/section-01/geometric-segments/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.1 Pairs represented as functions",
+      "chapter": "02",
+      "section": "2.1",
+      "edition": "shared",
+      "path": "examples/ch02/section-01/functional-pairs/README.md",
+      "source": "examples/ch02/section-01/functional-pairs/main.rs",
+      "bin": "ch02-functional-pairs"
+    },
+    {
+      "kind": "source",
+      "title": "2.1 Pairs represented as functions — Rust source",
+      "chapter": "02",
+      "section": "2.1",
+      "edition": "shared",
+      "path": "examples/ch02/section-01/functional-pairs/main.rs"
+    },
+    {
       "kind": "section",
       "title": "02.02 Hierarchical Data and the Closure Property",
       "chapter": "02",
@@ -741,6 +777,96 @@
       "path": "examples/ch02/section-02/picture-composition/main.rs"
     },
     {
+      "kind": "example",
+      "title": "2.2 Power set by recursive decomposition",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/powerset/README.md",
+      "source": "examples/ch02/section-02/powerset/main.rs",
+      "bin": "ch02-powerset"
+    },
+    {
+      "kind": "source",
+      "title": "2.2 Power set by recursive decomposition — Rust source",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/powerset/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.2 Recursive mobiles and torque balance",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/balanced-mobiles/README.md",
+      "source": "examples/ch02/section-02/balanced-mobiles/main.rs",
+      "bin": "ch02-balanced-mobiles"
+    },
+    {
+      "kind": "source",
+      "title": "2.2 Recursive mobiles and torque balance — Rust source",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/balanced-mobiles/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.2 Horner's rule as a fold",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/horner-evaluation/README.md",
+      "source": "examples/ch02/section-02/horner-evaluation/main.rs",
+      "bin": "ch02-horner-evaluation"
+    },
+    {
+      "kind": "source",
+      "title": "2.2 Horner's rule as a fold — Rust source",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/horner-evaluation/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.2 Prime-sum pairs using nested enumeration",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/prime-sum-pairs/README.md",
+      "source": "examples/ch02/section-02/prime-sum-pairs/main.rs",
+      "bin": "ch02-prime-sum-pairs"
+    },
+    {
+      "kind": "source",
+      "title": "2.2 Prime-sum pairs using nested enumeration — Rust source",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/prime-sum-pairs/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.2 Left and right folds are not interchangeable",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/fold-direction/README.md",
+      "source": "examples/ch02/section-02/fold-direction/main.rs",
+      "bin": "ch02-fold-direction"
+    },
+    {
+      "kind": "source",
+      "title": "2.2 Left and right folds are not interchangeable — Rust source",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/fold-direction/main.rs"
+    },
+    {
       "kind": "section",
       "title": "02.03 Symbolic Data",
       "chapter": "02",
@@ -836,6 +962,42 @@
       "section": "2.3",
       "edition": "shared",
       "path": "examples/ch02/section-03/huffman-coding/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.3 Set union and intersection by merging",
+      "chapter": "02",
+      "section": "2.3",
+      "edition": "shared",
+      "path": "examples/ch02/section-03/ordered-set-operations/README.md",
+      "source": "examples/ch02/section-03/ordered-set-operations/main.rs",
+      "bin": "ch02-ordered-set-operations"
+    },
+    {
+      "kind": "source",
+      "title": "2.3 Set union and intersection by merging — Rust source",
+      "chapter": "02",
+      "section": "2.3",
+      "edition": "shared",
+      "path": "examples/ch02/section-03/ordered-set-operations/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.3 Tree traversal as ordered-sequence conversion",
+      "chapter": "02",
+      "section": "2.3",
+      "edition": "shared",
+      "path": "examples/ch02/section-03/tree-to-ordered-list/README.md",
+      "source": "examples/ch02/section-03/tree-to-ordered-list/main.rs",
+      "bin": "ch02-tree-to-ordered-list"
+    },
+    {
+      "kind": "source",
+      "title": "2.3 Tree traversal as ordered-sequence conversion — Rust source",
+      "chapter": "02",
+      "section": "2.3",
+      "edition": "shared",
+      "path": "examples/ch02/section-03/tree-to-ordered-list/main.rs"
     },
     {
       "kind": "section",
@@ -940,6 +1102,24 @@
       "section": "2.5",
       "edition": "shared",
       "path": "examples/ch02/section-05/generic-arithmetic/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.5 Sparse polynomial addition and multiplication",
+      "chapter": "02",
+      "section": "2.5",
+      "edition": "shared",
+      "path": "examples/ch02/section-05/sparse-polynomial-arithmetic/README.md",
+      "source": "examples/ch02/section-05/sparse-polynomial-arithmetic/main.rs",
+      "bin": "ch02-sparse-polynomial-arithmetic"
+    },
+    {
+      "kind": "source",
+      "title": "2.5 Sparse polynomial addition and multiplication — Rust source",
+      "chapter": "02",
+      "section": "2.5",
+      "edition": "shared",
+      "path": "examples/ch02/section-05/sparse-polynomial-arithmetic/main.rs"
     },
     {
       "kind": "chapter",

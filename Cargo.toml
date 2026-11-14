@@ -201,3 +201,43 @@ path = "examples/ch01/section-03/half-interval-method/main.rs"
 [[bin]]
 name = "ch01-function-composition"
 path = "examples/ch01/section-03/function-composition/main.rs"
+
+[[bin]]
+name = "ch02-geometric-segments"
+path = "examples/ch02/section-01/geometric-segments/main.rs"
+
+[[bin]]
+name = "ch02-functional-pairs"
+path = "examples/ch02/section-01/functional-pairs/main.rs"
+
+[[bin]]
+name = "ch02-powerset"
+path = "examples/ch02/section-02/powerset/main.rs"
+
+[[bin]]
+name = "ch02-balanced-mobiles"
+path = "examples/ch02/section-02/balanced-mobiles/main.rs"
+
+[[bin]]
+name = "ch02-horner-evaluation"
+path = "examples/ch02/section-02/horner-evaluation/main.rs"
+
+[[bin]]
+name = "ch02-prime-sum-pairs"
+path = "examples/ch02/section-02/prime-sum-pairs/main.rs"
+
+[[bin]]
+name = "ch02-fold-direction"
+path = "examples/ch02/section-02/fold-direction/main.rs"
+
+[[bin]]
+name = "ch02-ordered-set-operations"
+path = "examples/ch02/section-03/ordered-set-operations/main.rs"
+
+[[bin]]
+name = "ch02-tree-to-ordered-list"
+path = "examples/ch02/section-03/tree-to-ordered-list/main.rs"
+
+[[bin]]
+name = "ch02-sparse-polynomial-arithmetic"
+path = "examples/ch02/section-05/sparse-polynomial-arithmetic/main.rs"

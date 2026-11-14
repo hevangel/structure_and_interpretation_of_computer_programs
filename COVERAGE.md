@@ -1,15 +1,15 @@
 # Coverage ledger
 
-This is an original Rust learning companion, not a reproduction of the book's text or source. **49 independently written example programs and 95 numbered subsection study guides are implemented, but this is not exhaustive coverage of any edition's exact source snippets or exercises.**
+This is an original Rust learning companion, not a reproduction of the book's text or source. **59 independently written example programs and 95 numbered subsection study guides are implemented, but this is not exhaustive coverage of any edition's exact source snippets or exercises.**
 
 | Chapter | Major sections introduced | Rust example programs | Complete example inventory |
 | --- | ---: | ---: | --- |
 | 1. Building abstractions with procedures | 3 | 18 | No |
-| 2. Building abstractions with data | 5 | 11 | No |
+| 2. Building abstractions with data | 5 | 21 | No |
 | 3. Modularity, objects, and state | 5 | 8 | No |
 | 4. Metalinguistic abstraction | 4 | 6 | No |
 | 5. Computing with register machines | 5 | 6 | No |
-| **Total** | **22** | **49** | **Pending** |
+| **Total** | **22** | **59** | **Pending** |
 
 The 1984 original, the 1996 Scheme edition, and the 2022 JavaScript adaptation all have differences in their example sets, including new/revised second-edition systems and the JavaScript edition's parsing and return-stack concepts. Rust analogues are tagged `shared`, `1996-scheme`, or `2022-javascript` in [manifest.json](manifest.json).
 
