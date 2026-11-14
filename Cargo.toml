@@ -169,3 +169,35 @@ path = "examples/ch03/section-05/stream-integration/main.rs"
 [[bin]]
 name = "ch04-lexical-closures"
 path = "examples/ch04/section-01/lexical-closures/main.rs"
+
+[[bin]]
+name = "ch01-cube-root-newton"
+path = "examples/ch01/section-01/cube-root-newton/main.rs"
+
+[[bin]]
+name = "ch01-pascal-triangle"
+path = "examples/ch01/section-02/pascal-triangle/main.rs"
+
+[[bin]]
+name = "ch01-counting-change"
+path = "examples/ch01/section-02/counting-change/main.rs"
+
+[[bin]]
+name = "ch01-fast-multiplication"
+path = "examples/ch01/section-02/fast-multiplication/main.rs"
+
+[[bin]]
+name = "ch01-fermat-test"
+path = "examples/ch01/section-02/fermat-test/main.rs"
+
+[[bin]]
+name = "ch01-sine-triple-angle"
+path = "examples/ch01/section-02/sine-triple-angle/main.rs"
+
+[[bin]]
+name = "ch01-half-interval-method"
+path = "examples/ch01/section-03/half-interval-method/main.rs"
+
+[[bin]]
+name = "ch01-function-composition"
+path = "examples/ch01/section-03/function-composition/main.rs"

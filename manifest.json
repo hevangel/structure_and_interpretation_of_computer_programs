@@ -131,6 +131,24 @@
       "path": "examples/ch01/section-01/newton-sqrt/main.rs"
     },
     {
+      "kind": "example",
+      "title": "1.1 Cube roots by Newton iteration",
+      "chapter": "01",
+      "section": "1.1",
+      "edition": "shared",
+      "path": "examples/ch01/section-01/cube-root-newton/README.md",
+      "source": "examples/ch01/section-01/cube-root-newton/main.rs",
+      "bin": "ch01-cube-root-newton"
+    },
+    {
+      "kind": "source",
+      "title": "1.1 Cube roots by Newton iteration — Rust source",
+      "chapter": "01",
+      "section": "1.1",
+      "edition": "shared",
+      "path": "examples/ch01/section-01/cube-root-newton/main.rs"
+    },
+    {
       "kind": "section",
       "title": "01.02 Procedures and the Processes They Generate",
       "chapter": "01",
@@ -208,6 +226,96 @@
       "section": "1.2",
       "edition": "shared",
       "path": "examples/ch01/section-02/factorial-processes/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.2 Sine by recursive argument reduction",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/sine-triple-angle/README.md",
+      "source": "examples/ch01/section-02/sine-triple-angle/main.rs",
+      "bin": "ch01-sine-triple-angle"
+    },
+    {
+      "kind": "source",
+      "title": "1.2 Sine by recursive argument reduction — Rust source",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/sine-triple-angle/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.2 Fermat primality and Carmichael counterexample",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/fermat-test/README.md",
+      "source": "examples/ch01/section-02/fermat-test/main.rs",
+      "bin": "ch01-fermat-test"
+    },
+    {
+      "kind": "source",
+      "title": "1.2 Fermat primality and Carmichael counterexample — Rust source",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/fermat-test/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.2 Multiplication by doubling and halving",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/fast-multiplication/README.md",
+      "source": "examples/ch01/section-02/fast-multiplication/main.rs",
+      "bin": "ch01-fast-multiplication"
+    },
+    {
+      "kind": "source",
+      "title": "1.2 Multiplication by doubling and halving — Rust source",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/fast-multiplication/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.2 Counting coin-change combinations",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/counting-change/README.md",
+      "source": "examples/ch01/section-02/counting-change/main.rs",
+      "bin": "ch01-counting-change"
+    },
+    {
+      "kind": "source",
+      "title": "1.2 Counting coin-change combinations — Rust source",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/counting-change/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.2 Pascal triangle as a recursive process",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/pascal-triangle/README.md",
+      "source": "examples/ch01/section-02/pascal-triangle/main.rs",
+      "bin": "ch01-pascal-triangle"
+    },
+    {
+      "kind": "source",
+      "title": "1.2 Pascal triangle as a recursive process — Rust source",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/pascal-triangle/main.rs"
     },
     {
       "kind": "example",
@@ -341,6 +449,42 @@
       "section": "1.3",
       "edition": "shared",
       "path": "examples/ch01/section-03/accumulate/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.3 Function composition and repeated application",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/function-composition/README.md",
+      "source": "examples/ch01/section-03/function-composition/main.rs",
+      "bin": "ch01-function-composition"
+    },
+    {
+      "kind": "source",
+      "title": "1.3 Function composition and repeated application — Rust source",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/function-composition/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.3 Bisection and the intermediate value theorem",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/half-interval-method/README.md",
+      "source": "examples/ch01/section-03/half-interval-method/main.rs",
+      "bin": "ch01-half-interval-method"
+    },
+    {
+      "kind": "source",
+      "title": "1.3 Bisection and the intermediate value theorem — Rust source",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/half-interval-method/main.rs"
     },
     {
       "kind": "example",
