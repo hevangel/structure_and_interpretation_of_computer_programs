@@ -1731,6 +1731,24 @@
       "path": "examples/ch04/section-01/javascript-parser/main.rs"
     },
     {
+      "kind": "example",
+      "title": "4.1 Separate syntactic analysis from execution",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "shared",
+      "path": "examples/ch04/section-01/analysis-then-execution/README.md",
+      "source": "examples/ch04/section-01/analysis-then-execution/main.rs",
+      "bin": "ch04-analysis-then-execution"
+    },
+    {
+      "kind": "source",
+      "title": "4.1 Separate syntactic analysis from execution — Rust source",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "shared",
+      "path": "examples/ch04/section-01/analysis-then-execution/main.rs"
+    },
+    {
       "kind": "section",
       "title": "04.02 Variations on a Scheme: Lazy Evaluation",
       "chapter": "04",
@@ -1783,6 +1801,24 @@
       "path": "examples/ch04/section-02/memoized-thunk/main.rs"
     },
     {
+      "kind": "example",
+      "title": "4.2 Conditional evaluation avoids unneeded computation",
+      "chapter": "04",
+      "section": "4.2",
+      "edition": "shared",
+      "path": "examples/ch04/section-02/conditional-laziness/README.md",
+      "source": "examples/ch04/section-02/conditional-laziness/main.rs",
+      "bin": "ch04-conditional-laziness"
+    },
+    {
+      "kind": "source",
+      "title": "4.2 Conditional evaluation avoids unneeded computation — Rust source",
+      "chapter": "04",
+      "section": "4.2",
+      "edition": "shared",
+      "path": "examples/ch04/section-02/conditional-laziness/main.rs"
+    },
+    {
       "kind": "section",
       "title": "04.03 Variations on a Scheme: Nondeterministic Computing",
       "chapter": "04",
@@ -1833,6 +1869,24 @@
       "section": "4.3",
       "edition": "shared",
       "path": "examples/ch04/section-03/n-queens-search/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "4.3 Backtracking constraint search: five dwellings",
+      "chapter": "04",
+      "section": "4.3",
+      "edition": "shared",
+      "path": "examples/ch04/section-03/multiple-dwelling/README.md",
+      "source": "examples/ch04/section-03/multiple-dwelling/main.rs",
+      "bin": "ch04-multiple-dwelling"
+    },
+    {
+      "kind": "source",
+      "title": "4.3 Backtracking constraint search: five dwellings — Rust source",
+      "chapter": "04",
+      "section": "4.3",
+      "edition": "shared",
+      "path": "examples/ch04/section-03/multiple-dwelling/main.rs"
     },
     {
       "kind": "section",
@@ -1894,6 +1948,24 @@
       "section": "4.4",
       "edition": "shared",
       "path": "examples/ch04/section-04/logic-relations/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "4.4 Recursive ancestor relation by graph traversal",
+      "chapter": "04",
+      "section": "4.4",
+      "edition": "shared",
+      "path": "examples/ch04/section-04/ancestor-relation/README.md",
+      "source": "examples/ch04/section-04/ancestor-relation/main.rs",
+      "bin": "ch04-ancestor-relation"
+    },
+    {
+      "kind": "source",
+      "title": "4.4 Recursive ancestor relation by graph traversal — Rust source",
+      "chapter": "04",
+      "section": "4.4",
+      "edition": "shared",
+      "path": "examples/ch04/section-04/ancestor-relation/main.rs"
     },
     {
       "kind": "chapter",
@@ -1972,6 +2044,24 @@
       "path": "examples/ch05/section-01/register-gcd/main.rs"
     },
     {
+      "kind": "example",
+      "title": "5.1 Factorial with an explicit control stack",
+      "chapter": "05",
+      "section": "5.1",
+      "edition": "shared",
+      "path": "examples/ch05/section-01/explicit-stack-factorial/README.md",
+      "source": "examples/ch05/section-01/explicit-stack-factorial/main.rs",
+      "bin": "ch05-explicit-stack-factorial"
+    },
+    {
+      "kind": "source",
+      "title": "5.1 Factorial with an explicit control stack — Rust source",
+      "chapter": "05",
+      "section": "5.1",
+      "edition": "shared",
+      "path": "examples/ch05/section-01/explicit-stack-factorial/main.rs"
+    },
+    {
       "kind": "section",
       "title": "05.02 A Register-Machine Simulator",
       "chapter": "05",
@@ -2031,6 +2121,24 @@
       "section": "5.2",
       "edition": "shared",
       "path": "examples/ch05/section-02/register-simulator/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "5.2 Two-pass assembler with symbolic jump labels",
+      "chapter": "05",
+      "section": "5.2",
+      "edition": "shared",
+      "path": "examples/ch05/section-02/two-pass-assembler/README.md",
+      "source": "examples/ch05/section-02/two-pass-assembler/main.rs",
+      "bin": "ch05-two-pass-assembler"
+    },
+    {
+      "kind": "source",
+      "title": "5.2 Two-pass assembler with symbolic jump labels — Rust source",
+      "chapter": "05",
+      "section": "5.2",
+      "edition": "shared",
+      "path": "examples/ch05/section-02/two-pass-assembler/main.rs"
     },
     {
       "kind": "section",
@@ -2241,6 +2349,42 @@
       "section": "5.5",
       "edition": "2022-javascript",
       "path": "examples/ch05/section-05/javascript-tail-calls/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "5.5 Compile variable names to lexical addresses",
+      "chapter": "05",
+      "section": "5.5",
+      "edition": "shared",
+      "path": "examples/ch05/section-05/lexical-addresses/README.md",
+      "source": "examples/ch05/section-05/lexical-addresses/main.rs",
+      "bin": "ch05-lexical-addresses"
+    },
+    {
+      "kind": "source",
+      "title": "5.5 Compile variable names to lexical addresses — Rust source",
+      "chapter": "05",
+      "section": "5.5",
+      "edition": "shared",
+      "path": "examples/ch05/section-05/lexical-addresses/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "5.5 Constant folding before bytecode generation",
+      "chapter": "05",
+      "section": "5.5",
+      "edition": "shared",
+      "path": "examples/ch05/section-05/constant-folding-compiler/README.md",
+      "source": "examples/ch05/section-05/constant-folding-compiler/main.rs",
+      "bin": "ch05-constant-folding-compiler"
+    },
+    {
+      "kind": "source",
+      "title": "5.5 Constant folding before bytecode generation — Rust source",
+      "chapter": "05",
+      "section": "5.5",
+      "edition": "shared",
+      "path": "examples/ch05/section-05/constant-folding-compiler/main.rs"
     }
   ]
 }

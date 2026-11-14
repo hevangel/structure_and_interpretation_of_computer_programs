@@ -265,3 +265,35 @@ path = "examples/ch03/section-05/lazy-prime-stream/main.rs"
 [[bin]]
 name = "ch03-zero-crossings"
 path = "examples/ch03/section-05/zero-crossings/main.rs"
+
+[[bin]]
+name = "ch04-analysis-then-execution"
+path = "examples/ch04/section-01/analysis-then-execution/main.rs"
+
+[[bin]]
+name = "ch04-conditional-laziness"
+path = "examples/ch04/section-02/conditional-laziness/main.rs"
+
+[[bin]]
+name = "ch04-multiple-dwelling"
+path = "examples/ch04/section-03/multiple-dwelling/main.rs"
+
+[[bin]]
+name = "ch04-ancestor-relation"
+path = "examples/ch04/section-04/ancestor-relation/main.rs"
+
+[[bin]]
+name = "ch05-explicit-stack-factorial"
+path = "examples/ch05/section-01/explicit-stack-factorial/main.rs"
+
+[[bin]]
+name = "ch05-two-pass-assembler"
+path = "examples/ch05/section-02/two-pass-assembler/main.rs"
+
+[[bin]]
+name = "ch05-lexical-addresses"
+path = "examples/ch05/section-05/lexical-addresses/main.rs"
+
+[[bin]]
+name = "ch05-constant-folding-compiler"
+path = "examples/ch05/section-05/constant-folding-compiler/main.rs"
