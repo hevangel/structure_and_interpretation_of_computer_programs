@@ -11,7 +11,7 @@ This is an original Rust learning companion, not a reproduction of the book's te
 | 5. Computing with register machines | 5 | 6 | No |
 | **Total** | **22** | **59** | **Pending** |
 
-The 1984 original, the 1996 Scheme edition, and the 2022 JavaScript adaptation all have differences in their example sets, including new/revised second-edition systems and the JavaScript edition's parsing and return-stack concepts. Rust analogues are tagged `shared`, `1996-scheme`, or `2022-javascript` in [manifest.json](manifest.json).
+The 1984 original, 1996 Scheme second edition, 2022 JavaScript adaptation, and the developing 2026 SICPy/Python adaptation all differ. Their exact example inventories are not interchangeable. See [coverage methodology](docs/coverage-methodology.md). Rust analogues are tagged `shared`, `1996-scheme`, or `2022-javascript` in [manifest.json](manifest.json).
 
 ## Next steps for exhaustive coverage
 

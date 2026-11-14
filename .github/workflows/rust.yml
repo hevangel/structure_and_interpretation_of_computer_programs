@@ -12,6 +12,10 @@ jobs:
           components: clippy, rustfmt
       - name: Compile and test all teaching examples
         run: cargo test --all-targets
+      - name: Verify catalog files, Cargo targets, and Markdown links
+        run: python3 tools/verify_catalog.py
+      - name: Check static viewer JavaScript
+        run: node tools/verify_site.mjs
       - name: Formatting audit (nonblocking until normalized)
         continue-on-error: true
         run: cargo fmt --all -- --check

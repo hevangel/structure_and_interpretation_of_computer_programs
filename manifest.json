@@ -4,7 +4,8 @@
   "editions": [
     "1984-scheme",
     "1996-scheme",
-    "2022-javascript"
+    "2022-javascript",
+    "2026-python"
   ],
   "entries": [
     {
@@ -21,6 +22,11 @@
       "kind": "guide",
       "title": "Editions and differences",
       "path": "docs/editions.md"
+    },
+    {
+      "kind": "guide",
+      "title": "Edition inventory and methodology",
+      "path": "docs/coverage-methodology.md"
     },
     {
       "kind": "guide",

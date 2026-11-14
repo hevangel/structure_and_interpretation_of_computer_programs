@@ -21,10 +21,26 @@ mark{background:#3e4f28;color:#fff}
 <script>
 "use strict";
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+let activeDocumentPath="README.md";
+function markdownLink(label,url){
+ // Relative Markdown URLs are relative to the Markdown file, not index.html.
+ if(/^https?:\/\//i.test(url)){
+   return '<a href="'+esc(url)+'" rel="noopener noreferrer" target="_blank">'+label+'</a>';
+ }
+ const root=new URL(".",location.href);
+ const absolute=new URL(url,new URL(activeDocumentPath,root));
+ if(absolute.origin===root.origin&&absolute.pathname.startsWith(root.pathname)){
+   const local=decodeURIComponent(absolute.pathname.slice(root.pathname.length));
+   if(items.some(item=>item.path===local)){
+     return '<a href="#'+encodeURIComponent(local)+'" data-doc="'+esc(local)+'">'+label+'</a>';
+   }
+ }
+ return '<a href="'+esc(absolute.href)+'" rel="noopener noreferrer">'+label+'</a>';
+}
 function inline(s){
  let t=esc(s);
  t=t.replace(/`([^`]+)`/g,(_,c)=>"<code>"+c+"</code>");
- t=t.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|[\w./#-]+)\)/g,(_,label,url)=>'<a href="'+url+'" rel="noopener noreferrer">'+label+'</a>');
+ t=t.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|[\w./#-]+)\)/g,(_,label,url)=>markdownLink(label,url));
  t=t.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>");
  t=t.replace(/\*([^*]+)\*/g,"<em>$1</em>");
  return t;
@@ -59,12 +75,19 @@ async function show(path){
  locationBar.textContent="Loading "+path;
  try{const response=await fetch(encodeURI(path));if(!response.ok)throw Error("HTTP "+response.status);
  const raw=await response.text(),isCode=path.endsWith(".rs");
+ activeDocumentPath=path;
  article.innerHTML=isCode?'<h1>'+esc(item.title)+'</h1><pre><code>'+esc(raw)+'</code></pre>':markdown(raw);
  locationBar.innerHTML='<span>'+esc(item.kind)+' · '+esc(item.edition||"shared")+'</span><a href="'+encodeURI(path)+'" target="_blank" rel="noopener">Open raw file</a>';
  history.replaceState(null,"","#"+encodeURIComponent(path));
  document.querySelectorAll("#catalog button").forEach(b=>b.setAttribute("aria-current",String(b.dataset.id===path)));
  }catch(e){locationBar.textContent="Unable to load file";article.textContent=e.message+" — Host this repository through a web server or GitHub Pages.";}
 }
+article.addEventListener("click",event=>{
+ const anchor=event.target.closest("a[data-doc]");
+ if(!anchor)return;
+ event.preventDefault();
+ show(anchor.dataset.doc);
+});
 document.getElementById("filter").addEventListener("input",e=>renderList(e.target.value));
 fetch("manifest.json").then(r=>{if(!r.ok)throw Error(r.status);return r.json();}).then(data=>{items=data.entries;renderList();const selected=decodeURIComponent(location.hash.slice(1));show(items.some(x=>x.path===selected)?selected:"README.md");}).catch(e=>{catalog.textContent="Cannot load manifest.json: "+e.message+". Serve through HTTP(S), not file://.";});
 </script></body></html>

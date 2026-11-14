@@ -12,11 +12,11 @@ An original, open-source learning companion to the classic **Wizard Book**, with
 - Run `cargo test --all-targets` to verify all Rust examples.
 - Run one: `cargo run --bin ch01-newton-sqrt`.
 
-## Three primary editions
+## Editions and evolving adaptations
 
-The 1984 original and 1996 second edition use Scheme. The 2022 *JavaScript edition* is a distinct adaptation of the material. This companion tracks shared ideas and explicitly labels language-specific differences; it does not present the JavaScript edition as a numbered third Scheme edition.
+The 1984 first and 1996 second editions use Scheme. The 2022 JavaScript adaptation and the actively developed 2026 Python adaptation (SICPy) use different host languages. This companion tracks their shared ideas while preserving language-specific distinctions. Neither adaptation is a numbered successor to the Scheme editions.
 
-The textbook is by Harold Abelson and Gerald Jay Sussman, with Julie Sussman; the JavaScript adaptation is by Martin Henz and Tobias Wrigstad. Official sources: [MIT Press second edition](https://mitpress.mit.edu/9780262510875/structure-and-interpretation-of-computer-programs/), [MIT Press JavaScript edition](https://mitpress.mit.edu/9780262543231/structure-and-interpretation-of-computer-programs/), and [edition comparison](https://sicp.sourceacademy.org/).
+The textbook is by Harold Abelson and Gerald Jay Sussman, with Julie Sussman; the JavaScript adaptation is by Martin Henz and Tobias Wrigstad. Official sources: [MIT Press second edition](https://mitpress.mit.edu/9780262510875/structure-and-interpretation-of-computer-programs/), [MIT Press JavaScript edition](https://mitpress.mit.edu/9780262543231/structure-and-interpretation-of-computer-programs/), [edition comparison](https://sicp.sourceacademy.org/), and [SICPy project](https://sicp.sourceacademy.org/split_py/chapters/making-of.html).
 
 ## Learning path
 
@@ -28,4 +28,4 @@ The root `index.html` fetches `manifest.json`, Markdown files and Rust source us
 
 ## Authorship and scope
 
-The Rust implementations and explanations are independently authored educational adaptations, **not** verbatim reproductions of the published textbook. Exact examples, exercises, and solution coverage across editions remain a long-term inventory task. Contributions should follow [docs/porting-guide.md](docs/porting-guide.md).
+The Rust implementations and explanations are independently authored educational adaptations, **not** verbatim reproductions of the published textbook. Exact examples, exercises, and solution coverage across editions remain a long-term inventory task. Contributions should follow [docs/porting-guide.md](docs/porting-guide.md) and [coverage methodology](docs/coverage-methodology.md). Use `python3 tools/verify_catalog.py` to validate the file index and internal links.
