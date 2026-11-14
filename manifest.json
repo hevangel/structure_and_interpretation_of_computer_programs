@@ -1186,6 +1186,42 @@
       "path": "examples/ch03/section-01/bank-account/main.rs"
     },
     {
+      "kind": "example",
+      "title": "3.1 Joint account with shared local state",
+      "chapter": "03",
+      "section": "3.1",
+      "edition": "shared",
+      "path": "examples/ch03/section-01/joint-account/README.md",
+      "source": "examples/ch03/section-01/joint-account/main.rs",
+      "bin": "ch03-joint-account"
+    },
+    {
+      "kind": "source",
+      "title": "3.1 Joint account with shared local state — Rust source",
+      "chapter": "03",
+      "section": "3.1",
+      "edition": "shared",
+      "path": "examples/ch03/section-01/joint-account/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.1 Monte Carlo simulation with explicit pseudo-random state",
+      "chapter": "03",
+      "section": "3.1",
+      "edition": "shared",
+      "path": "examples/ch03/section-01/monte-carlo-pi/README.md",
+      "source": "examples/ch03/section-01/monte-carlo-pi/main.rs",
+      "bin": "ch03-monte-carlo-pi"
+    },
+    {
+      "kind": "source",
+      "title": "3.1 Monte Carlo simulation with explicit pseudo-random state — Rust source",
+      "chapter": "03",
+      "section": "3.1",
+      "edition": "shared",
+      "path": "examples/ch03/section-01/monte-carlo-pi/main.rs"
+    },
+    {
       "kind": "section",
       "title": "03.02 The Environment Model of Evaluation",
       "chapter": "03",
@@ -1362,6 +1398,42 @@
       "path": "examples/ch03/section-03/digital-circuit-simulator/main.rs"
     },
     {
+      "kind": "example",
+      "title": "3.3 Aliasing with mutable pairs and weak references",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/shared-pairs/README.md",
+      "source": "examples/ch03/section-03/shared-pairs/main.rs",
+      "bin": "ch03-shared-pairs"
+    },
+    {
+      "kind": "source",
+      "title": "3.3 Aliasing with mutable pairs and weak references — Rust source",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/shared-pairs/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.3 Memoization with a mutable table",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/memoized-fibonacci/README.md",
+      "source": "examples/ch03/section-03/memoized-fibonacci/main.rs",
+      "bin": "ch03-memoized-fibonacci"
+    },
+    {
+      "kind": "source",
+      "title": "3.3 Memoization with a mutable table — Rust source",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/memoized-fibonacci/main.rs"
+    },
+    {
       "kind": "section",
       "title": "03.04 Concurrency: Time Is of the Essence",
       "chapter": "03",
@@ -1491,6 +1563,42 @@
       "section": "3.5",
       "edition": "1996-scheme",
       "path": "examples/ch03/section-05/stream-integration/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.5 A lazy stream of prime numbers",
+      "chapter": "03",
+      "section": "3.5",
+      "edition": "shared",
+      "path": "examples/ch03/section-05/lazy-prime-stream/README.md",
+      "source": "examples/ch03/section-05/lazy-prime-stream/main.rs",
+      "bin": "ch03-lazy-prime-stream"
+    },
+    {
+      "kind": "source",
+      "title": "3.5 A lazy stream of prime numbers — Rust source",
+      "chapter": "03",
+      "section": "3.5",
+      "edition": "shared",
+      "path": "examples/ch03/section-05/lazy-prime-stream/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.5 Signal processing with adjacent stream samples",
+      "chapter": "03",
+      "section": "3.5",
+      "edition": "shared",
+      "path": "examples/ch03/section-05/zero-crossings/README.md",
+      "source": "examples/ch03/section-05/zero-crossings/main.rs",
+      "bin": "ch03-zero-crossings"
+    },
+    {
+      "kind": "source",
+      "title": "3.5 Signal processing with adjacent stream samples — Rust source",
+      "chapter": "03",
+      "section": "3.5",
+      "edition": "shared",
+      "path": "examples/ch03/section-05/zero-crossings/main.rs"
     },
     {
       "kind": "chapter",

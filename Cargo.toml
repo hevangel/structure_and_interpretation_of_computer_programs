@@ -241,3 +241,27 @@ path = "examples/ch02/section-03/tree-to-ordered-list/main.rs"
 [[bin]]
 name = "ch02-sparse-polynomial-arithmetic"
 path = "examples/ch02/section-05/sparse-polynomial-arithmetic/main.rs"
+
+[[bin]]
+name = "ch03-joint-account"
+path = "examples/ch03/section-01/joint-account/main.rs"
+
+[[bin]]
+name = "ch03-monte-carlo-pi"
+path = "examples/ch03/section-01/monte-carlo-pi/main.rs"
+
+[[bin]]
+name = "ch03-shared-pairs"
+path = "examples/ch03/section-03/shared-pairs/main.rs"
+
+[[bin]]
+name = "ch03-memoized-fibonacci"
+path = "examples/ch03/section-03/memoized-fibonacci/main.rs"
+
+[[bin]]
+name = "ch03-lazy-prime-stream"
+path = "examples/ch03/section-05/lazy-prime-stream/main.rs"
+
+[[bin]]
+name = "ch03-zero-crossings"
+path = "examples/ch03/section-05/zero-crossings/main.rs"

@@ -1,6 +1,6 @@
 # Structure and Interpretation of Computer Programs — Rust companion
 
-An original, open-source learning companion to the classic **Wizard Book**, with 59 independently written and commented Rust programs, adjacent example explanations, introductions to all 22 major sections and 95 numbered subsections, automated checks, and a zero-build static site.
+An original, open-source learning companion to the classic **Wizard Book**, with 65 independently written and commented Rust programs, adjacent example explanations, introductions to all 22 major sections and 95 numbered subsections, automated checks, and a zero-build static site.
 
 **Status:** scaffold and representative examples; this does **not** yet contain every example from all editions. See [COVERAGE.md](COVERAGE.md).
 
