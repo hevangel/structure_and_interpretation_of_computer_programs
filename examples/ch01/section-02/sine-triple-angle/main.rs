@@ -1,6 +1,6 @@
 fn sine(angle: f64) -> (f64, usize) {
     fn approximate(x: f64, depth: usize) -> (f64,usize) {
-        if x.abs() < 0.05 { return (x,depth); }
+        if x.abs() < 0.001 { return (x,depth); }
         let (small, levels) = approximate(x/3.0,depth+1);
         (3.0*small-4.0*small*small*small,levels)
     }

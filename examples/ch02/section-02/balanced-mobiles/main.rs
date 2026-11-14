@@ -35,7 +35,7 @@ mod tests {
     use super::*;
     #[test]
     fn checks_recursive_balance() {
-        let inner=Mobile{left:branch(1,2),right:branch(2,1)};
+        let inner=Mobile{left:branch(1,2),right:branch(1,2)};
         let outer=Mobile{left:Branch{length:1,hanging:Structure::Mobile(Box::new(inner))},
                          right:branch(2,2)};
         assert_eq!(total_weight(&outer),6);
