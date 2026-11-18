@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Local declarations introduce scope and initialization rules. Recursion may require a name to exist before its value is complete.
+Inside a procedure body, suppose two internal definitions reference each other (`even?(n)` calls `odd?(n - 1)` and vice versa), or recursion doesn't even use `define` at all (**Y-combinator**: `((lambda (f) (f f)) (lambda (f) ...))`).
 
-## Connecting the concept to Rust
+**`scan_out_defines`** transforms a lambda body so all internal `define` names are pre-bound to `*unassigned*` at frame entry before evaluating initializers sequentially—ensuring simultaneous mutual visibility.
 
-Use an AST enum plus a separate evaluation function; the Rust interpreter is not literally metacircular. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Pre-allocates binding slots as `Value::Unassigned` inside `scan_out_defines` (`metacircular-evaluator`), returning a clear runtime error if read before assignment (the JavaScript Temporal Dead Zone!).
+- **In Python:** Mirrors `scan_out_defines` with an `UNASSIGNED` sentinel object in `Frame.bindings`, rejecting premature reads just like Python's `UnboundLocalError` / JS TDZ.
+- **Why compare both:** Notice how Python's own compiler uses *the exact same idea*: scanning a function body at compile time for assignments to classify local vs free variables before executing a single line!
 
 ## Exercise
 
-Model a let-recursive binding with an explicit environment.
+Trace Y-combinator factorial `Y(fact_gen)(5)` without any `define` using [`metacircular-evaluator`](../../../../examples/ch04/section-01/metacircular-evaluator/README.md).
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 4 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

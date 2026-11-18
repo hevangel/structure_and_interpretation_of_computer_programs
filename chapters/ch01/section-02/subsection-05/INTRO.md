@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Euclid's algorithm replaces a pair of integers with a remainder pair while preserving their gcd. This is a short example of invariant-driven design.
+Euclid's insight is that any divisor common to `a` and `b` is also a divisor of `a % b`, so `gcd(a, b) = gcd(b, a % b)` until `b == 0` yields `a`.
 
-## Connecting the concept to Rust
+By Lamé's theorem, the worst-case number of remainder steps corresponds to consecutive Fibonacci numbers (`gcd(F_{k+1}, F_k)`), proving `O(log min(a, b))` worst-case complexity.
 
-Use unit tests and loops to compare process shapes. Rust does not guarantee optimization of tail-recursive function calls. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** An iterative `while b != 0 { (a, b) = (b, a % b); }` loop executes in `O(1)` stack space with pure unsigned integer arithmetic.
+- **In Python:** Python's tuple unpacking makes the step a single atomic swap `a, b = b, a % b` with identical `O(1)` space and `O(log n)` steps (and works cleanly on arbitrarily big integers).
+- **Why compare both:** Because tuple assignment evaluates the right-hand side completely before rebinding in both languages, `(a, b) <- (b, a % b)` requires no error-prone temporary ordering.
 
 ## Exercise
 
-List all pairs from gcd(206,40).
+Trace every `(a, b)` pair produced by `gcd(206, 40)` and check [`euclidean-gcd`](../../../../examples/ch01/section-02/euclidean-gcd/README.md).
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 1 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

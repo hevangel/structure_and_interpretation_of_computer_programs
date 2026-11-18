@@ -2,18 +2,16 @@
 
 ## What this subsection teaches
 
-Nondeterministic choice describes alternatives; backtracking is one strategy for exploring them. Failure restores a previous choice point.
+`(amb e1 e2 ... ek)` conceptually returns *one* of `e1..ek`—whichever succeeds without tripping any later `(require cond)` failure! Calling `(amb)` with zero choices **fails immediately**, triggering chronological backtracking to the most recent unresolved choice point.
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use an explicit Vec of choices and recursive backtracking to model nondeterministic search. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** Backtracking search passes explicit choice slices cleanly or delegates to continuation closures (`amb-evaluator`) without blowing host stack frames indiscriminately.
+- **In Python:** Python can model simple `amb` searches via generator loops or explicit `(succeed, fail)` continuations (`amb-evaluator`) that expose exact backtrack order.
+- **Why compare both:** Contrast imperative loops (`n-queens-search`) against [`amb-evaluator`](../../../../examples/ch04/section-03/amb-evaluator/README.md), where search logic vanishes from user code.
 
 ## Exercise
 
-Solve two-digit constraints with explicit backtracking.
+Trace `(let ((a (amb 1 2 3)) (b (amb 4 5))) (require (= (+ a b) 7)) (list a b))` chronologically.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 4 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

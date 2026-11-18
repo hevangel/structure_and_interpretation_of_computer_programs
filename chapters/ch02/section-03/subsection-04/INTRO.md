@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-A weighted binary tree assigns short prefix-free codes to common symbols. Decoding succeeds because no code is a prefix of another.
+Fixed-width codes (like 3 bits per symbol for 8 letters) waste space when `E` appears 40% of the time and `Z` appears 1%. **Huffman coding** merges the two lowest-weight subtrees greedily into a binary tree: frequent letters stay near the root (short bitstrings) while rare letters sink deeper.
 
-## Connecting the concept to Rust
+Because every symbol sits strictly at a **leaf**, no codeword is ever a prefix of another—allowing instant bit-by-bit streaming decoding with zero separator bits!
 
-Use enum syntax trees and exhaustive match arms to manipulate symbols and trees. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** An ordered priority queue (`BinaryHeap` or sorted `Vec`) repeatedly pops the two smallest `Weight` nodes to construct `enum HuffmanTree { Leaf, Branch }`; bitstreams use `Vec<bool>` or `u8` slices.
+- **In Python:** Python uses `heapq` (or sorting) over `(weight, node)` tuples with `@dataclass` `Leaf`/`Branch` nodes and clean string/list bit encoding.
+- **Why compare both:** Both implementations in [`huffman-coding`](../../../../examples/ch02/section-03/huffman-coding/README.md) preserve the exact same greedy merge invariant and prefix-free round-trip guarantee.
 
 ## Exercise
 
-Encode and decode a repeated-character message.
+Build a Huffman tree for symbol weights `{A:8, B:3, C:1, D:1}` and decode `0101110` back to symbols.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 2 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

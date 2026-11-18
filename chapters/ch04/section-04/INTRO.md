@@ -1,23 +1,39 @@
-# 4.4 Logic Programming
+# 4.4 Logic Programming · [Chapter 4](../README.md)
 
 ## The big idea
 
-Resolve variables against facts and explore what declarative queries mean operationally.
+A **logic query language** pushes declarative programming even further: relations like `(append_to_form ?x ?y (a b c))` work **bidirectionally**—finding the concatenated list, solving for missing prefixes/suffixes, or enumerating every `(x, y)` split!
 
-## What you should already know
+Its engine builds streams of variable-binding **frames** via two-sided **unification** (pairing pattern variables on both sides plus an **occurs check** rejecting cyclic self-bindings like `?x = (f ?x)`), **alpha-renaming** rule variables per invocation (`rule_counter`) so recursive rules never collide, and `and`/`or`/`not`/`unique` combinators.
 
-You should be comfortable with basic functions, conditionals, and data structures. For this section, focus on **facts, relations, variables, unification, query execution**. The important move is to separate the *interface* of a computational idea from the particular mechanism that realizes it.
+## What you should focus on
 
-## Translating the idea into Rust
+Focus on ****pattern matching vs two-sided unification, occurs check, rule variable renaming, `and`/`or`/`not` frame streams, and closed-world negation pitfalls****. Every variation keeps the same guest syntax while systematically shifting *when* and *how* expressions reduce.
 
-Data structures and a unifier replace the implicit search machinery of a logic engine.
+## Connecting the concept to Rust and Python
 
-Study the nearby examples, identify their data representation, and write down one invariant. Compare your prediction with the test assertions. Some original Scheme ideas are dynamically typed or depend on tail-call behavior; the Rust port deliberately highlights those differences rather than hiding them.
+- **In Rust:** Pattern terms (`enum Term`), binding frames (`BTreeMap<Var, Term>`), unification with `depends_on` cycle checks, and stream combinators combine with `RuleCounter` renaming (`query-unification-engine`).
+- **In Python:** Immutable `@dataclass` terms (`Atom`, `Var`, `Pair`), persistent dict frame copies `{**frame, var: val}`, and generator/list frame pipelines express unification and rule chaining cleanly.
+- **Key contrast:** Both implementations in `query-unification-engine` show why logical `(and A B)` behaves differently under `(not A)` (closed-world filter!) or infinite rule recursion (`right-to-left` vs `left-to-right` conjunct ordering).
+
+## Subsections
+
+- [4.4.1 Deductive Information Retrieval](subsection-01/INTRO.md)
+- [4.4.2 How Queries Work](subsection-02/INTRO.md)
+- [4.4.3 Logic and Operational Search](subsection-03/INTRO.md)
+- [4.4.4 Implementing Queries](subsection-04/INTRO.md)
+
+## Runnable examples in this section
+
+- [4.4 Relational queries with variable bindings](../../../examples/ch04/section-04/logic-relations/README.md)
+- [4.4 Recursive ancestor relation by graph traversal](../../../examples/ch04/section-04/ancestor-relation/README.md)
+- [4.4 Logic query engine with rules, variable-renaming unification, and frame streams](../../../examples/ch04/section-04/query-unification-engine/README.md)
 
 ## Check your understanding
 
-What is the difference between stating a relation and choosing a search strategy?
+1. Why can unification succeed when matching `(?x 2)` against `(1 ?y)`, and why must `?x = (cons 1 ?x)` fail the occurs check?
+2. Why is `(and (job ?p (computer programmer)) (not (supervisor ?p ?s)))` safe, whereas putting `(not ...)` *before* binding `?p` gives an empty stream?
 
-**Experiment:** change the data representation or evaluation strategy without changing the observable API. Which tests survive?
+**Experiment:** Trace bidirectional `(append_to_form ?x ?y (1 2 3))` in `query-unification-engine` to inspect all four returned substitutions.
 
-[Back to book and edition notes](../../../docs/editions.md)
+[Chapter 4 overview](../README.md) · [Edition notes](../../../docs/editions.md)

@@ -2,18 +2,21 @@
 
 ## What this subsection teaches
 
-Returning a function produces a new computational tool. The returned behavior may capture parameters from its construction.
+Just as functions can take procedures as arguments, they can **build and return brand-new functions**. For example:
+- `deriv(g)(x)` returns `(g(x + dx) - g(x)) / dx`
+- `newton_transform(g)` returns `x -> x - g(x) / Dg(x)`
+- `compose(f, g)` and `repeated(f, n)` manufacture new transformations algebraically.
 
-## Connecting the concept to Rust
+Notice how Newton's method becomes a two-line composition of `fixed_point` + `newton_transform(g)`!
 
-Use closures and the Fn traits to pass or return computations as values. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Because returning a closure that captures another closure involves nested/unsized types, Rust either uses `impl Fn(f64) -> f64 + 'static` (for single-shape returns) or `Rc<dyn Fn(f64) -> f64>` when recursive combinators like `repeated` chain arbitrary steps.
+- **In Python:** In Python every nested `def` or `lambda` returns a uniform callable referencing its captured arguments in closure cells—`def newton_transform(g): return lambda x: x - g(x) / deriv(g)(x)` needs zero boxing annotations.
+- **Why compare both:** This contrast in [`newton-transform-smoothed`](../../../../examples/ch01/section-03/newton-transform-smoothed/README.md) highlights one of the cleanest differences between Rust (`Rc<dyn Fn>`) and Python (automatic closure heap objects).
 
 ## Exercise
 
-Write a function factory returning two different multipliers.
+Verify why finding `x^(1/8)` converges with 3 average damps (`floor(log2(8)) = 3`) in [`newton-transform-smoothed`](../../../../examples/ch01/section-03/newton-transform-smoothed/README.md).
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 1 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

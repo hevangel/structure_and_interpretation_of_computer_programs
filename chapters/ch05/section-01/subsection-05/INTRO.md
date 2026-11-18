@@ -2,18 +2,20 @@
 
 ## What this subsection teaches
 
-Instruction sets must specify preconditions and how every opcode changes machine state. This operational model enables simulation.
+Every machine instruction (`assign`, `test`, `branch`, `goto`, `save`, `restore`, `perform`) defines an exact deterministic **state transition** over `(registers, stack, flag, pc)`:
+- `assign`/`perform` advance `pc += 1`
+- `test` sets boolean `flag` and advances `pc += 1`
+- `branch` jumps only when `flag` is true, else advances `pc += 1`
+- `goto` unconditionally sets `pc` from a label or register.
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use an instruction enum and named registers to design a small control machine. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** Enumerating all 7 variants inside one exhaustive `match` ensures every instruction updates `pc`, `flag`, or `stack` deterministically (`register-simulator`).
+- **In Python:** An explicit `if/elif` or `match` dispatch loop over instruction dataclasses checks preconditions (`invalid register`, `stack underflow`) cleanly.
+- **Why compare both:** Because instruction semantics are tiny total state transitions, building a reliable simulator only takes ~50 lines in either Rust or Python.
 
 ## Exercise
 
-Write a transition rule for Load, Jump, and Halt.
+Write the exact `(regs, stack, flag, pc)` transition rule for `branch` when `flag == false` vs `flag == true`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

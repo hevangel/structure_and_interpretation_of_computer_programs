@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Program syntax can be stored, inspected, transformed, or executed like any other data structure.
+Wait—is there a magic boundary between *data* and *programs*? Evaluating a quoted AST (`(eval '(+ 1 2) env)`) treats **code as ordinary data**! Any system that inspects, transforms, or optimizes an AST (like constant folding or a symbolic evaluator) relies on this equivalence.
 
-## Connecting the concept to Rust
+Notice also the **Turing / Halting** implication: a universal evaluator (`eval`) can interpret arbitrary programs—and because programs can loop forever, no general checker can decide termination for every AST.
 
-Use an AST enum plus a separate evaluation function; the Rust interpreter is not literally metacircular. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Rust represents guest code strictly as `enum Expr` values (`Value::Pair`/`Expr`) so guest programs can construct, inspect, and pass AST data directly without unsafe JIT tricks.
+- **In Python:** Python treats AST dataclasses as first-class objects too—keeping user-constructed guest expressions separate from host Python bytecode (`ast` vs `eval`).
+- **Why compare both:** Contrast guest `Expr` data trees in [`metacircular-evaluator`](../../../../examples/ch04/section-01/metacircular-evaluator/README.md) against Chapter 2's symbolic differentiation ASTs: differentiation rewrites expressions, while `eval` executes them.
 
 ## Exercise
 
-Count arithmetic operators in a syntax tree without evaluating it.
+Write a pure walker over `Expr` that counts all procedure calls inside a nested AST before evaluating it.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 4 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

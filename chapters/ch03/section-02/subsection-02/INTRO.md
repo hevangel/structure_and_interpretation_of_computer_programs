@@ -2,18 +2,21 @@
 
 ## What this subsection teaches
 
-A call introduces parameter bindings in a new environment and evaluates its body there. Closures must retain the right surrounding frame.
+When you apply a closure `(params, body, def_env)` to argument values `[v1, ..., vk]`, the evaluator:
+1. Allocates a **new frame** binding `params -> values`.
+2. Points that new frame's **parent link to `def_env`** (where the function was *created*, NOT where it is *called*!).
+3. Evaluates `body` inside that new extended environment.
 
-## Connecting the concept to Rust
+That single rule is what gives every language **lexical scope**.
 
-Use a runtime HashMap and parent frames to model a language environment distinct from Rust lexical scope. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Closure structs store `{ param, body, env: usize }` so `apply` always links the newly created call frame back to `closure.env`, ignoring caller locals.
+- **In Python:** Python functions store `__closure__` cells pointing back to their creation scope (`def_env`), so calling a returned closure from anywhere still sees its original defining variables.
+- **Why compare both:** Both Rust and Python follow static **lexical** scope rather than dynamic call-stack lookup—making `make_withdraw` factories work identically.
 
 ## Exercise
 
-Trace a call that refers to an outer variable.
+Trace calling `f = make_adder(10)` from inside another function that happens to bind its own local `x = 99`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 3 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

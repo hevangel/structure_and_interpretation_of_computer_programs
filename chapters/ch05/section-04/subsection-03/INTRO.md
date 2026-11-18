@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-A statement-capable evaluator needs explicit rules for branches, assignments, and declaration scope.
+In `ev_if`: save `exp`, `env`, and `continue` first, evaluate the predicate in `exp` with `continue = ev_if_decide`, inspect `val`, restore `exp`/`env`/`continue`, then jump cleanly to `eval_dispatch` on the chosen branch **in tail position**!
 
-## Connecting the concept to Rust
+Notice the same principle applies to `ev_assignment` (`set!`) and `ev_definition` (`define`): evaluate the value expression while preserving variable name & environment, then mutate the frame in place.
 
-Use control-state and continuation enums instead of nested host recursion. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Handles `If`, `Lambda`, `Begin`, `Define`, `Set`, and multi-arg `Call` with explicit `save`/`restore` guards matching standard controller contracts (`explicit-control`).
+- **In Python:** Mirrors every controller transition identically (`ev_if`, `ev_if_decide`, `ev_assignment`, `ev_definition`), reporting errors cleanly if assigning an unbound variable.
+- **Why compare both:** Notice how evaluating `if`'s chosen branch *without* keeping `continue` saved preserves tail recursion across conditional base cases (`if n == 0 { acc } else { tail_sum(n - 1, acc + n) }`) in both Rust and Python.
 
 ## Exercise
 
-Trace a conditional that changes one binding.
+Trace which registers `ev_if` saves before evaluating `(if (= x 0) 1 (* x (fact (- x 1))))` and why.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

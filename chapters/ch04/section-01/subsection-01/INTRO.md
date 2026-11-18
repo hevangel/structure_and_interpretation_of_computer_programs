@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-An interpreter dispatches on syntax, environment, and primitive operations. Distinguish user-language values from host-language code.
+At the heart of an interpreter are two mutually recursive functions: **`eval(exp, env)`** (classifies syntax: self-evaluating literals, variables, special forms like `quote`/`if`/`lambda`, or combinations) and **`apply(proc, args)`** (calls primitives directly or evaluates closure bodies inside a newly extended frame).
 
-## Connecting the concept to Rust
+Notice how little code is actually language semantics once syntax inspection is separated cleanly.
 
-Use an AST enum plus a separate evaluation function; the Rust interpreter is not literally metacircular. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Separates `Expr` syntax nodes from runtime `Value` objects inside `eval(&Expr, &Env) -> Result<Value, String>` and `apply(&Value, Vec<Value>)`.
+- **In Python:** Python uses the exact same `eval_expr(exp, env)` and `apply_proc(proc, args)` recursion over guest `@dataclass` expressions—strictly separate from Python's built-in `eval()`.
+- **Why compare both:** See [`tiny-evaluator`](../../../../examples/ch04/section-01/tiny-evaluator/README.md) and [`metacircular-evaluator`](../../../../examples/ch04/section-01/metacircular-evaluator/README.md): static `match` vs Python `isinstance` both isolate interpreter errors safely.
 
 ## Exercise
 
-Add subtraction to an expression evaluator.
+Extend `eval` and primitives with subtraction (`-`) and division-by-zero error reporting.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 4 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Instruction counts and maximum stack depth expose operational cost beyond the mathematical result.
+Instrumenting the simulator's `Stack` and fetch loop to count **`total_pushes`**, **`max_depth`**, and **executed instruction count**—plus optional per-step trace hooks—turns theoretical Big-O into exact empirical formulas (`total_pushes(fact n) = 2n - 2`, `max_depth = 2n - 2`!).
 
-## Connecting the concept to Rust
+Comparing those counts lets us verify compiler optimizations (`preserving`, tail calls) quantitatively.
 
-Use a program counter and a bounded execution loop to interpret machine instructions. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** `Stack` tracks `total_pushes`, `current_depth`, and `max_depth` automatically on every `save`/`restore` (`register-simulator`, `explicit-control`, `register-compiler`).
+- **In Python:** Python `Stack` tracks the exact same counters (`total_pushes`, `max_depth`, `instruction_count`), matching Rust's counts down to the integer.
+- **Why compare both:** Identical push/depth metrics across both implementations prove that instruction-level resource formulas depend purely on the controller architecture, never on host runtime speed.
 
 ## Exercise
 
-Instrument Euclid's algorithm with a step counter.
+Run recursive `fib(5)` and `fact(6)` in [`register-simulator`](../../../../examples/ch05/section-02/register-simulator/README.md) and confirm stack depth matches analytical formulas.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

@@ -2,18 +2,19 @@
 
 ## What this subsection teaches
 
-A set's meaning is defined by membership and uniqueness, but lists and binary search trees have different performance tradeoffs.
+Mathematically, a set `{1, 2, 3}` supports `contains`, `union`, and `intersection`—but performance depends drastically on representation:
+- **Unordered list:** `O(n)` lookup, `O(n^2)` union
+- **Sorted list:** `O(n)` two-pointer merge for union/intersection
+- **Balanced binary search tree (BST):** `O(log n)` lookup, and converting `tree -> sorted_list -> partial_tree` performs **union/intersection of two BSTs in `O(n)` time** while keeping height logarithmic!
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use enum syntax trees and exhaustive match arms to manipulate symbols and trees. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** BST nodes (`enum Tree { Empty, Node { val, left, right } }`) store ordered subtrees cleanly, and recursive slice halving `partial_tree(sorted_slice)` builds balanced trees in place without extra allocations.
+- **In Python:** Python uses recursive `@dataclass` BST nodes paired with generator/in-order flattening (`tree_to_list`) and `list_to_tree` index slicing.
+- **Why compare both:** Explore [`binary-search-tree`](../../../../examples/ch02/section-03/binary-search-tree/README.md), [`ordered-set-operations`](../../../../examples/ch02/section-03/ordered-set-operations/README.md), [`tree-to-ordered-list`](../../../../examples/ch02/section-03/tree-to-ordered-list/README.md), and [`ordered-sets-infix-deriv`](../../../../examples/ch02/section-03/ordered-sets-infix-deriv/README.md).
 
 ## Exercise
 
-Insert sorted keys and measure search depth.
+Verify why building a balanced BST from `[0..1023]` guarantees tree height `<= 10`, whereas naive sequential insertion gives height `1023`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 2 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

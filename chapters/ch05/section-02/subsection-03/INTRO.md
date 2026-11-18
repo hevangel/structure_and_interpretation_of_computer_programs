@@ -2,18 +2,16 @@
 
 ## What this subsection teaches
 
-A simulator's dispatcher implements each opcode and reports invalid operands or jumps rather than silently corrupting state.
+Wait—if Pass 2 compiles each instruction into a direct execution closure (just like Chapter 4's `analyze`!) instead of matching strings/enums at every step, instruction dispatch runs faster **while reporting malformed register/operation names during assembly** rather than mid-execution!
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use a program counter and a bounded execution loop to interpret machine instructions. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** Either pre-validates register/label indices into typed `Instr` structs or wraps closure executors (`register-simulator`), always guarding against stack underflow or invalid `pc`.
+- **In Python:** Python resolves register names, operations, and jump PCs cleanly and raises `ValueError` immediately when assembling unknown operators or restoring an empty stack.
+- **Why compare both:** Pre-resolving labels and operation tables during assembly eliminates per-step hash-map lookups in both Rust and Python.
 
 ## Exercise
 
-Test an out-of-range register operand.
+Trigger missing-label, duplicate-label, and stack-underflow errors in [`two-pass-assembler`](../../../../examples/ch05/section-02/two-pass-assembler/README.md) and confirm none panic or silently corrupt state.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

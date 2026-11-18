@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-A machine may treat primitive operations abstractly while its controller remains explicit. Different implementations can preserve the same machine interface.
+Just as procedures hide helper details behind interfaces, a machine's controller treats `op(rem)` or `op(*)` as black-box primitive hardware buttons.
 
-## Connecting the concept to Rust
+If a simpler machine only has subtraction (`-`) and comparison (`<`), swapping out primitive `rem` for an inner subtraction loop (`t <- t - b while t >= b`) keeps the outer GCD controller intact—showing **refinement** of hardware primitives.
 
-Use an instruction enum and named registers to design a small control machine. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Primitives live inside a pluggable operation map (`&str -> Box<dyn Fn(&[Val]) -> Val>`), letting you swap primitive implementations without altering controller instructions.
+- **In Python:** Primitives live in a dict mapping operator names (`"rem"`, `"-"`) to Python callables cleanly passed to `Machine`.
+- **Why compare both:** Swapping one entry in the primitive operation map changes machine abstraction level cleanly without rewriting controller flow in either language.
 
 ## Exercise
 
-Replace remainder with repeated subtraction.
+Rewrite the `rem` operation in `gcd` using only `-` and `<` instructions and compare total executed steps.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

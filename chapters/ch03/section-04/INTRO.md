@@ -1,23 +1,35 @@
-# 3.4 Concurrency: Time Is of the Essence
+# 3.4 Concurrency: Time Is of the Essence · [Chapter 3](../README.md)
 
 ## The big idea
 
-Make many threads update shared state and test that synchronization preserves a global invariant.
+When multiple independent threads read and write shared state concurrently, operations **interleave** unpredictably: even simple `x = x + 1` splits into *read → add → write*, letting two concurrent increments lose an update.
 
-## What you should already know
+**Serializers (mutexes)** enforce mutual exclusion around critical sections so invariants like total bank balance (`a + b == constant`) survive arbitrary scheduling—until two threads try to lock `(A then B)` while the other locks `(B then A)`, causing **deadlock**, solved by global resource ordering (`min(id1, id2)` first).
 
-You should be comfortable with basic functions, conditionals, and data structures. For this section, focus on **interleavings, race conditions, serialization, mutexes, deadlock**. The important move is to separate the *interface* of a computational idea from the particular mechanism that realizes it.
+## What you should focus on
 
-## Translating the idea into Rust
+Focus on ****race interleavings, critical-section atomicity, serializer/mutex abstractions, and deadlock prevention via total lock ordering****. Always ask which parts of a system depend on *when* operations run versus *what* values they compute.
 
-Arc<Mutex<T>> is a safe starting point; lock-order design remains a semantic responsibility.
+## Connecting the concept to Rust and Python
 
-Study the nearby examples, identify their data representation, and write down one invariant. Compare your prediction with the test assertions. Some original Scheme ideas are dynamically typed or depend on tail-call behavior; the Rust port deliberately highlights those differences rather than hiding them.
+- **In Rust:** Rust's `Send`/`Sync` traits prevent data races **at compile time**: cross-thread shared mutation requires `Arc<Mutex<T>>` (or `RwLock<T>`). However, *deadlocks* are still logic bugs—lock ordering (`id_a < id_b`) remains the programmer's responsibility.
+- **In Python:** Python threads share objects freely (`threading.Lock`) under the GIL (which serializes individual bytecode ops, **not** multi-step read-modify-write transactions like transfers!), so explicit `with lock:` blocks and ordered locking remain mandatory.
+- **Key contrast:** Compare `serialized-transfers`: Rust stops unsynchronized cross-thread sharing at compile time; Python relies on programmer-inserted `threading.Lock` guards—and in *both* languages, acquiring locks in ascending account ID order eliminates swap deadlocks.
+
+## Subsections
+
+- [3.4.1 Time in Concurrent Systems](subsection-01/INTRO.md)
+- [3.4.2 Controlling Concurrency](subsection-02/INTRO.md)
+
+## Runnable examples in this section
+
+- [3.4 Concurrency and serialized transfers](../../../examples/ch03/section-04/serialized-transfers/README.md)
 
 ## Check your understanding
 
-Which operations must behave atomically to preserve consistency?
+1. What distinct balance outcomes are possible when `balance = balance + 10`, `balance = balance - 20`, and `balance = balance * 2` interleave without serialization?
+2. Why does Python's GIL **not** make a two-step bank transfer thread-safe without a `Lock`?
 
-**Experiment:** change the data representation or evaluation strategy without changing the observable API. Which tests survive?
+**Experiment:** Enumerate all unserialized interleavings in `serialized-transfers` and run concurrent opposing swaps `(A->B)` + `(B->A)` to verify ordered locking never deadlocks.
 
-[Back to book and edition notes](../../../docs/editions.md)
+[Chapter 3 overview](../README.md) · [Edition notes](../../../docs/editions.md)

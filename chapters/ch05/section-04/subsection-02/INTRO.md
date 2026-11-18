@@ -2,18 +2,20 @@
 
 ## What this subsection teaches
 
-Tail position can return without preserving redundant continuation frames, allowing bounded stack usage when implemented carefully.
+Look at evaluating a procedure body `e1; e2; ...; en` (`ev_sequence`):
+- If `en` is **not** the last expression (`e1`), save `unev` and `env`, evaluate `e1`, restore `unev` and `env`, and advance.
+- When evaluating the **last** expression `en` (`ev_sequence_last_exp`), **jump directly to `eval_dispatch` WITHOUT saving `continue` or `env`** (since `continue` already holds the caller's return address!).
 
-## Connecting the concept to Rust
+That single optimization makes `eceval` **tail-recursive**: tail loops use **constant `O(1)` stack space** even when executing recursive syntax!
 
-Use control-state and continuation enums instead of nested host recursion. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Demonstrated cleanly in [`explicit-control`](../../../../examples/ch05/section-04/explicit-control/README.md) (`tail_sum(10)` and `tail_sum(500)` both have identical `max_depth == 8`) vs non-tail `fact(n)` (`depth = 5n + 3`).
+- **In Python:** Reproduces the exact same constant `max_depth` on `tail_sum(500)` in Python—proving tail-call optimization is a property of the **controller's `save` discipline**, not the host language.
+- **Why compare both:** This bridges Chapter 1 (`1.2.1` process shape) and Chapter 5: you finally *see* in registers and stack frames why tail position needs zero stack growth.
 
 ## Exercise
 
-Compare a trampoline with ordinary recursive calls.
+Compare `max_depth` and `total_pushes` between recursive `factorial(n)` and tail-recursive `sum_iter(n, 0)` in [`explicit-control`](../../../../examples/ch05/section-04/explicit-control/README.md).
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-A program can specify an unbounded sequence using finite generator state. The consumer requests only a finite prefix.
+An infinite sequence—integers from `1`, Fibonacci numbers, prime numbers by Eratosthenes' **sieve**, or formal **power series** coefficients `c0 + c1 x + c2 x^2 + ...`—fits in finite memory because only a finite prefix is ever forced.
 
-## Connecting the concept to Rust
+Implicit definitions like `integers = cons(1, add_streams(ones, integers))` or `exp_series = cons(1, integrate_series(exp_series))` work as directly as finite recurrences!
 
-Use Iterator for pull-based laziness; add memoization explicitly when it is part of the semantics. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Self-referential streams require heap-shared memoized cells (`Rc<RefCell<StreamNode<T>>>`) because a Rust `Iterator` consumes `self` in one direction (`memoized-streams-series`, `lazy-prime-stream`).
+- **In Python:** Self-referential generators require an explicit `MemoStream` thunk node (wrapping `head` + cached `tail()` callable) since a bare Python generator raises or exhausts if iterated twice from the same point.
+- **Why compare both:** Compare [`lazy-prime-stream`](../../../../examples/ch03/section-05/lazy-prime-stream/README.md) and [`memoized-streams-series`](../../../../examples/ch03/section-05/memoized-streams-series/README.md): power-series multiplication and inversion look nearly identical in Rust and Python once `MemoStream` caches tails.
 
 ## Exercise
 
-Generate the first ten square numbers.
+Verify the power-series identity `sin(x)^2 + cos(x)^2 == 1` up to degree 12 using `integrate_series` without calling `math.sin`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 3 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

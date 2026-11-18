@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-A lazy list has an available head and a delayed tail, enabling finite access to unbounded structures.
+Once user-defined functions become non-strict automatically, you no longer need special `delay`/`cons-stream` syntax for infinite streams!
 
-## Connecting the concept to Rust
+Even **pure procedural `cons`** (`(define (cons x y) (lambda (m) (m x y)))`) automatically delays both `x` and `y` in a lazy evaluator—letting guest code define infinite `ones`, `integers`, and `map` streams with ordinary procedures.
 
-Use boxed closures and Option caches to make delayed computation and memoization observable. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Inside `lazy-evaluator`, defining guest `cons`/`car`/`cdr` as plain interpreted lambdas yields lazy infinite lists tested directly through `actual_value`.
+- **In Python:** The exact same guest Scheme/AST `cons`/`car`/`cdr` definitions inside `lazy-evaluator/main.py` construct lazy infinite streams (`integers`, `add_lists`) with zero Python `yield` syntax needed inside the guest program!
+- **Why compare both:** Evaluating the *same* procedural `cons` infinite stream inside both Rust and Python lazy evaluators proves laziness belongs to the **evaluator's parameter-passing rule**, not host syntax.
 
 ## Exercise
 
-Request only ten elements of an infinite sequence.
+Evaluate `(list-ref integers 10)` inside [`lazy-evaluator`](../../../../examples/ch04/section-02/lazy-evaluator/README.md) and confirm earlier elements are cached cleanly.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 4 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

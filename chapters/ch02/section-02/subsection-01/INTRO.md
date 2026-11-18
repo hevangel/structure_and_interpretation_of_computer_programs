@@ -2,18 +2,16 @@
 
 ## What this subsection teaches
 
-A sequence can be viewed through a common interface for mapping, filtering, and reduction. The abstraction should not depend on its physical layout.
+Chaining pairs `(1, (2, (3, Nil)))` builds an ordered **sequence** accessed element by element. Decoupling sequence traversal from underlying storage lets `map`, `length`, and `append` work uniformly across arrays, linked chains, or lazy generators.
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use Vec, recursive enums, iterators, and pattern matching for structure-preserving transformations. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** `Vec<T>`, slices `&[T]`, and iterators (`xs.iter().map(...)`) replace pointer chains with cache-friendly contiguous memory and bounds-checked indexing.
+- **In Python:** Built-in `list` (dynamic array) and generator expressions `(f(x) for x in xs)` provide O(1) indexing and uniform iteration over any sequence (`list`, `tuple`, `range`, generator).
+- **Why compare both:** Both Rust slices and Python lists favor contiguous arrays in practice, while iterator/generator pipelines preserve the single-pass compositional clarity of linked lists.
 
 ## Exercise
 
-Sum squared even numbers with an iterator pipeline.
+Trace `xs` reversed via `fold` and compute the sum of squared even numbers in a single sequence pipeline.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 2 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

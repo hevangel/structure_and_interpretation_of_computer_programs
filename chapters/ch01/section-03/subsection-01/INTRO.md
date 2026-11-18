@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Passing a function lets an algorithm express a general pattern such as summation, accumulation, or filtering. Data and behavior meet at the interface.
+Summing integers `sum_integers(a, b)` and summing cubes `sum_cubes(a, b)` repeat the exact same range traversal and accumulator—only the `term(k)` and step `next(k)` vary.
 
-## Connecting the concept to Rust
+Factoring out the template into a higher-order function (`accumulate(combiner, null_value, term, a, next, b)`) captures summation, products, and filtered series in a single reusable engine.
 
-Use closures and the Fn traits to pass or return computations as values. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Generic type bounds (`fn accumulate<F, N, C>(...) where F: Fn(f64) -> f64, ...`) let Rust inline the passed functions statically with zero virtual-call cost.
+- **In Python:** Python accepts any callable directly (`def accumulate(combiner, null_value, term, a, next_fn, b):`) with no signature boilerplate, relying on call-site protocol agreement.
+- **Why compare both:** Whether statically monomorphized (Rust) or dynamically dispatched (Python), the interface separates *iteration structure* from *term semantics* identically—see [`accumulate`](../../../../examples/ch01/section-03/accumulate/README.md) and [`simpson-integration`](../../../../examples/ch01/section-03/simpson-integration/README.md).
 
 ## Exercise
 
-Turn summation into a product by changing a combiner and identity.
+Express both `factorial(n)` and `pi_sum(a, b)` as single calls to `accumulate`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 1 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

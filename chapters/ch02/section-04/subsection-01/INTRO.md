@@ -2,18 +2,20 @@
 
 ## What this subsection teaches
 
-Cartesian and polar coordinates optimize different operations. A shared interface lets clients add or multiply without depending on storage.
+A complex number has two natural coordinate systems:
+- **Rectangular `(x, y)`:** `x1 + x2` and `y1 + y2` make addition trivial (`O(1)` trig-free).
+- **Polar `(r, theta)`:** `r1 * r2` and `theta1 + theta2` make multiplication trivial.
 
-## Connecting the concept to Rust
+By exporting four generic selectors—`real_part`, `imag_part`, `magnitude`, `angle`—arithmetic operations work seamlessly whichever coordinate system stores the number.
 
-Use enum variants or traits to keep representation choices separate from abstract operations. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** `struct Rect` and `struct Polar` or two enum variants expose the four selectors cleanly (`atan2`, `hypot`, `cos`, `sin` on `f64`).
+- **In Python:** Python either mirrors those two dataclasses (converting with `math.hypot`, `math.atan2`, `math.cos`, `math.sin`) or contrasts directly with Python's built-in `complex` type.
+- **Why compare both:** See [`complex-representations`](../../../../examples/ch02/section-04/complex-representations/README.md): both Rust and Python prove `(1 + i) * (1 - i) = 2` consistently across both coordinate systems.
 
 ## Exercise
 
-Multiply (1+i)(1-i) using both representations.
+Multiply `(1 + i)(1 - i)` manually in rectangular coordinates and in polar coordinates, checking that magnitude and angle match.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 2 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

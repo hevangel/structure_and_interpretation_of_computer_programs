@@ -2,18 +2,19 @@
 
 ## What this subsection teaches
 
-A control register and continuation frames replace implicit recursive host calls. Each step makes a small transition.
+`eceval` turns Chapter 4's recursive `eval`/`apply` into a flat controller operating solely through **7 explicit registers**:
+`exp` (AST to evaluate), `env` (current environment), `val` (computed return value), `continue` (next controller label), `proc` (evaluated operator), `argl` (accumulated arg values), and `unev` (remaining unevaluated operand ASTs).
 
-## Connecting the concept to Rust
+Every sub-evaluation sets `continue` to a return label, jumps to `eval_dispatch`, and receives the result in `val`.
 
-Use control-state and continuation enums instead of nested host recursion. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Runs inside an explicit `loop` over `Label` states mutating the 7 named registers and explicit `Stack` (`explicit-control`)—zero Rust stack frames per guest call!
+- **In Python:** Runs the exact same explicit controller label loop in Python, tracking `val`, `continue`, `proc`, `argl`, `unev` without nested Python function calls.
+- **Why compare both:** Writing `eceval` in Python shows dramatically why explicit-control machines ignore Python's ~1,000 recursion-frame cap cleanly!
 
 ## Exercise
 
-Trace evaluating a literal and returning the result.
+List the exact role of all 7 registers right before calling a 2-argument primitive `(+ 3 4)`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

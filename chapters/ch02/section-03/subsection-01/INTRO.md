@@ -2,18 +2,16 @@
 
 ## What this subsection teaches
 
-Treating text and symbols as data prevents evaluation and enables programs to inspect program syntax. A variable reference differs from its printed name.
+Normally a name `x` evaluates to whatever value it holds. **Quotation** steps back one meta-level: `'x` (or string `"x"`) refers to the *symbol/name itself* so programs can compare variable names (`variable == var`), rewrite formulas, or parse source code.
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use enum syntax trees and exhaustive match arms to manipulate symbols and trees. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** Rust distinguishes identifiers bound in code from runtime symbol strings (`&str` / `String` / interned IDs)—`expr == Var("x")` checks symbolic identity explicitly via `PartialEq`.
+- **In Python:** Python distinguishes bound variables from `"x"` string tokens or `Sym("x")` dataclass wrappers; unlike Scheme, Python has no built-in `'quote` syntax so symbolic ASTs represent names explicitly.
+- **Why compare both:** Seeing how both Rust (`Expr::Var(&str)`) and Python (`Var(name)`) avoid accidental variable evaluation clarifies why metacircular evaluators distinguish symbols from variables.
 
 ## Exercise
 
-Distinguish a quoted name, a bound name, and a string.
+Explain the difference between `x`, `"x"`, and `Var("x")` in an expression AST.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 2 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Delayed computation decides when work occurs; memoization determines whether repeated demand reruns work.
+What if a stream depends on *itself* through an integral—such as solving the differential equation `dy/dt = f(y)` via `y = integral(dy, y0, dt)` where `dy = stream_map(f, y)`?
 
-## Connecting the concept to Rust
+If `integral` evaluates its `integrand` argument eagerly on construction, constructing `y` tries to inspect `dy` before `y` even exists! Passing `delayed_integrand` as a **lazy thunk** breaks the circular initialization cleanly.
 
-Use Iterator for pull-based laziness; add memoization explicitly when it is part of the semantics. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Passing `Rc<dyn Fn() -> MemoStream<f64>>` (or lazy thunk field) inside `integral_delayed` breaks the self-reference cycle in [`stream-integration`](../../../../examples/ch03/section-05/stream-integration/README.md) and [`stream-acceleration-pairs`](../../../../examples/ch03/section-05/stream-acceleration-pairs/README.md).
+- **In Python:** Passing `integrand_thunk: Callable[[], MemoStream[float]]` defers computing `dy` until `y`'s first `dt` step is forced—breaking the initialization cycle identically.
+- **Why compare both:** In both Rust and Python, `dy/dt = y` (`solve(lambda y: y, 1.0, 0.001)`) converges toward `e ≈ 2.71828` at `t = 1` once the feedback integrand is wrapped in a delay thunk.
 
 ## Exercise
 
-Force a memoizing thunk twice and count calls.
+Trace step 0 (`y0 = 1.0`) and step 1 (`y1 = 1.0 + dy0 * dt`) of delayed ODE `solve(y -> y, 1.0, 0.1)`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 3 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-With mutation, timing and identity affect outcomes. Referential transparency no longer holds simply because two expressions once had equal values.
+The moment two functions share a mutable binding or two handles point to the **same** account, **aliasing** and **call order** change the answer (`f(x) + f(x) != 2 * f(x)` if `f` mutates state!).
 
-## Connecting the concept to Rust
+Without assignment, two `make_account(100)` objects look interchangeable (`same == same`); *with* assignment, **identity** (`pointer equality`) matters: withdrawing from one handle updates every alias of that joint account.
 
-Use mutable structs or closures and observe how state affects later calls. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Rust prevents accidental shared aliasing at compile time: either only one `&mut` owner exists, or sharing is explicitly opt-in via `Rc<RefCell<Account>>` (`joint-account`).
+- **In Python:** Python aliases mutable objects freely—`a = b = Account(100)` makes `a is b` (`True`), and `a.withdraw(30)` surprises anyone who forgot `a` and `b` share identity.
+- **Why compare both:** See [`joint-account`](../../../../examples/ch03/section-01/joint-account/README.md): Rust makes shared mutability loud in the type signature (`Rc<RefCell<_>>`), while Python requires discipline to avoid unintended aliasing.
 
 ## Exercise
 
-Find two operation orders that produce different results.
+Construct a program where `eval_arg(1) + eval_arg(2)` gives a different sum than `eval_arg(2) + eval_arg(1)` because of shared state.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 3 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

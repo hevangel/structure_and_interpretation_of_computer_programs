@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-A network of arithmetic constraints propagates partial knowledge in more than one direction. Dependencies determine when updates fire.
+Ordinary functions flow one way (`input -> output`). A **constraint network** connects `Connector` nodes via **multi-directional constraints** (`adder(a, b, sum)`, `multiplier(p1, p2, prod)`, `constant(c, x)`, `squarer(a, b)`): setting *any two* computes the third—whether forward (`C -> F`) or backward (`F -> C`)!
 
-## Connecting the concept to Rust
+Critically, each connector tracks its **informant** (user vs specific constraint ID) so **`forget_value`** only retracts values downstream of the forgotten constraint without erasing independent user constraints.
 
-Use VecDeque, HashMap, and optional Rc<RefCell<T>> sharing to model mutable structures. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Implemented with shared `Rc<RefCell<ConnectorState>>` connectors storing `value`, `informant: Option<usize>`, and `Weak` or ID-indexed constraint listeners (`constraint-propagation`).
+- **In Python:** `Connector` classes hold `.value`, `.informant`, and `.constraints` lists notifying `process_new_value()` and `process_forget_value()` across arbitrary graph edges.
+- **Why compare both:** See [`constraint-propagation`](../../../../examples/ch03/section-03/constraint-propagation/README.md): notice how tracking `informant` provenance prevents contradicting constraints and enables clean retraction in both Rust and Python.
 
 ## Exercise
 
-Infer the unknown variable in a+b=c for each possible missing input.
+Build `averager(a, b, avg)` from `adder` + `multiplier` + `constant(2)`, set `a = 10, avg = 15`, verify `b = 20`, then retract `a` and set `b = 30`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 3 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

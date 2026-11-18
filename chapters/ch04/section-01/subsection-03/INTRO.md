@@ -2,18 +2,16 @@
 
 ## What this subsection teaches
 
-Values, environments, closures, and special forms need clear representations. This is the runtime model of the language being interpreted.
+What runtime objects actually live inside an interpreter? **Predicates** (`is_true`), **procedures/closures** (`params, body, env`), **environment frames** (lookup, `set!`, `define`, frame extension), and—in statement languages—**`ReturnValue` control wrappers** that unwind inner blocks back to the enclosing function call!
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use an AST enum plus a separate evaluation function; the Rust interpreter is not literally metacircular. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** Environments use `Rc<RefCell<Frame>>` chains while JavaScript-style returns propagate cleanly via an explicit `EvalControl::Return(Value)` / `Value` enum.
+- **In Python:** Python `Frame` objects link `.parent` references while statement unwinding either returns a `ReturnSignal(value)` sentinel or raises a lightweight internal signal caught cleanly at call boundaries.
+- **Why compare both:** Compare how `metacircular-evaluator` models Scheme closures vs how [`javascript-parser`](../../../../examples/ch04/section-01/javascript-parser/README.md) models block-scoped `ReturnValue` unwinding in both languages.
 
 ## Exercise
 
-Define an enum for numbers, Booleans, and functions.
+Trace what happens when `return 10;` executes inside a nested `if` inside `{ let y = 20; return 10; }`—why does outer state remain unaffected?
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 4 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Tables associate keys with values and can represent nested indexing. Missing and default values must be distinguished.
+A **table** maps keys (1D, 2D `(row, col)`, or arbitrary-depth key paths `&[K]`) to stored values and allows incremental `insert`/`lookup`.
 
-## Connecting the concept to Rust
+Tables turn exponential recursive algorithms (like naive `fib(40)` or longest common subsequence) into linear/polynomial **dynamic programming** via **`memoize`**: wrap the function with a private local lookup table that caches computed `(args -> result)` pairs automatically.
 
-Use VecDeque, HashMap, and optional Rc<RefCell<T>> sharing to model mutable structures. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Nested `BTreeMap`s or an explicit generic trie (`Table<K, V>`) store hierarchical keys with deterministic iteration order, while `memoize` wraps closures over `Rc<RefCell<HashMap<...>>>` or explicit caches.
+- **In Python:** Nested Python `dict`s (`table.setdefault(k1, {})[k2] = val`), tuple keys (`(k1, k2)`), and `functools.lru_cache` express multi-key tables and memoization in a few lines.
+- **Why compare both:** Explore [`memoized-fibonacci`](../../../../examples/ch03/section-03/memoized-fibonacci/README.md) and [`local-tables-memoize`](../../../../examples/ch03/section-03/local-tables-memoize/README.md) side by side—same `O(n)` call reduction invariant in both languages.
 
 ## Exercise
 
-Implement a table indexed by a pair of keys.
+Build a 2D table with custom approximate key equality (for `float` tolerance) and wrap recursive `fib` to prove call count drops from exponential to linear.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 3 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

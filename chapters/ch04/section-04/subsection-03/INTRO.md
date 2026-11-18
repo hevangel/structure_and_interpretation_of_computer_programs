@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Logical truth and an engine's search behavior are distinct. Rule ordering can cause failure to terminate despite valid answers.
+Is logic programming purely mathematical logic? **Not quite!** Operational details leak through in two classic ways:
+1. **Infinite loops:** Left-recursive rules like `(rule (married ?x ?y) (married ?y ?x))` or poorly ordered `and` clauses can diverge forever even when valid answers exist elsewhere.
+2. **`not` is negation-as-failure:** `(not (supervisor ?p ?s))` *filters an incoming frame stream*—it works only after earlier clauses bind `?p`, not as an existential generator!
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use a map of variable bindings and explicit fact-search strategies to represent relations. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** Stream combinators (`and` flatmap, `or` interleave, `not` stream-filter, `unique` deduplication) make the exact evaluation order and filtering behavior transparent.
+- **In Python:** List/generator frame pipelines show directly why filtering an empty/unbound frame under `not` drops everything instead of searching the universe.
+- **Why compare both:** Testing closed-world `not` and `unique` in [`query-unification-engine`](../../../../examples/ch04/section-04/query-unification-engine/README.md) reveals where declarative rules meet operational search.
 
 ## Exercise
 
-Design a rule that loops under naive depth-first search.
+Explain why `(and (not (job ?x (programmer))) (address ?x ?a))` produces zero answers while swapping the two clauses succeeds.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 4 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

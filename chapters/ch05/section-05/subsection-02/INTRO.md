@@ -2,18 +2,19 @@
 
 ## What this subsection teaches
 
-Code generation emits instructions for operands and operators in an order that preserves source semantics.
+Compiling simple expressions shows target/linkage composition in action:
+- **Constants / Variables:** emit `assign(target, const/lookup(exp, env))` plus `end_with_linkage(linkage)` (`needs: {env}`, `modifies: {target}`).
+- **Conditionals `(if p c a)`:** evaluate `p -> val` (linkage `Next`), allocate `true_branch`, `false_branch`, `after_if`; compile `c` with `after_if` linkage (or `Return` if the whole `if` has `Return`!) and `a` with `after_if`, wrapping `p` + branches with `preserving([env, continue], ...)`!
+- **Lambdas:** emit body instructions out-of-line under a unique entry label (`entry_k`), and inline emit `make_compiled_procedure(entry_k, env) -> target`!
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use an expression enum, instruction vector, and virtual-machine stack to separate compilation from execution. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** Emits typed `Instr` items into a persistent VM code buffer with unique generated labels (`t_branch_0`, `after_if_1`) (`register-compiler`).
+- **In Python:** Generates the exact same branch/lambda label structure and appends compiled procedure blocks into the shared persistent VM instruction list.
+- **Why compare both:** Because `define (factorial n) ...` compiles into persistent `code` memory, calling `eval_compiled("(factorial 6)")` jumps straight into `entry_k` cleanly across separate compilations in both Rust and Python.
 
 ## Exercise
 
-Compile 2+3*4 into stack bytecode.
+Trace the compiled instructions for `(if (= n 0) 1 (* n 2))` with `target = Val`, `linkage = Return`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

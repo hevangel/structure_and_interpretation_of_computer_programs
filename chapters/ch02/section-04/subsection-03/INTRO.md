@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-A table keyed by type and operation can make a system extensible without rewriting one central conditional for every addition.
+Centralized `if`/`match` dispatch breaks down as modules grow: adding every new representation forces modifying core dispatch functions. **Data-directed programming** inverts this using a 2D table keyed by `(operation_name, type_tags)`.
 
-## Connecting the concept to Rust
+Each module registers its own handlers (`put("add", ["rect", "rect"], ...)`), and `apply_generic(op, args)` simply looks up the combined tag signature—or delegates to **message-passing** closures where values carry their own methods.
 
-Use enum variants or traits to keep representation choices separate from abstract operations. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Implemented with a `BTreeMap<(String, Vec<String>), Rc<dyn Fn(&[Datum]) -> Result<Datum, ...>>>` registry (as in [`data-directed-dispatch`](../../../../examples/ch02/section-04/data-directed-dispatch/README.md)), contrasted cleanly against static Rust traits.
+- **In Python:** Implemented naturally with a nested dictionary `table[(op, type_tags)] = fn` alongside duck-typed classes or message-passing closures `def make_rect(x, y): return lambda op: ...`.
+- **Why compare both:** Data-directed tables make adding *new types* zero-edit in both languages—and show why **expression-problem** tradeoffs exist between OOP (easy new types) and FP `match` (easy new operations).
 
 ## Exercise
 
-Design a method table for two complex representations.
+Add a `"div"` rule or exponent differentiation package to [`data-directed-dispatch`](../../../../examples/ch02/section-04/data-directed-dispatch/README.md) without modifying `apply_generic`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 2 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

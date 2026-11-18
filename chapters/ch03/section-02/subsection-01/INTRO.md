@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-The environment model evaluates expressions with respect to a chain of bindings rather than only through textual substitution.
+The **environment model** replaces textual substitution with two explicit mechanical rules:
+1. **Evaluate a name** by walking outward from the innermost environment frame along parent links until the first frame containing that name is found.
+2. **Evaluate a function definition** by packing *(parameter list, body, current environment pointer)* into a closure.
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use a runtime HashMap and parent frames to model a language environment distinct from Rust lexical scope. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** Modeled cleanly as an explicit `Vec<Frame>` arena (`Frame { bindings: BTreeMap<String, Val>, parent: Option<usize> }`) where `lookup(env_id, name)` walks `parent` links.
+- **In Python:** A dictionary-backed `Frame(bindings, parent)` class—and Python's own execution model literally follows this rule via frame dicts and `LEGB` lookup.
+- **Why compare both:** See [`lexical-environments`](../../../../examples/ch03/section-02/lexical-environments/README.md): representing frames explicitly shows how lookup terminates on the nearest enclosing binding.
 
 ## Exercise
 
-Evaluate a let-bound addition using explicit frames.
+Trace looking up `(x, y)` through three nested frames where `y` is bound in frame 0 and shadowed in frame 2.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 3 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

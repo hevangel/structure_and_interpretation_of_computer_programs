@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Concurrent actions can interleave in many orders, so a result must not rely on one favorable schedule.
+When two processes share a variable (`balance = 100`), a compound statement like `balance = balance + 10` is not atomic—it compiles into *(read balance → add 10 → write balance)*. If another thread interleaves a withdrawal between that read and write, one update vanishes (**lost update**).
 
-## Connecting the concept to Rust
+Therefore, correctness means proving invariants hold across **all valid interleavings**, not merely the lucky schedule tested once.
 
-Use Arc<Mutex<T>> when synchronization is needed, while reasoning separately about schedule and atomicity. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Rust forbids unsynchronized shared mutation across threads (`!Send`/`!Sync` on `Rc`/`RefCell`), catching accidental data races at compile time rather than waiting for rare test flakes.
+- **In Python:** Python allows multiple `threading.Thread` workers to share objects implicitly; although the GIL serializes individual VM instructions, multi-step Python reads/writes still race and lose updates cleanly across yields/switches.
+- **Why compare both:** Both implementations in [`serialized-transfers`](../../../../examples/ch03/section-04/serialized-transfers/README.md) start by enumerating every distinct balance achievable under unserialized interleavings so the hazard is mathematically concrete.
 
 ## Exercise
 
-Show a lost-update interleaving for two increments.
+List all possible final values of `balance = 100` if Thread 1 sets `balance = balance + 10` and Thread 2 sets `balance = balance * 2` without locking.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 3 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

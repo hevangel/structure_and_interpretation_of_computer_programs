@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Recursive data such as trees consist of smaller values of the same kind. Define operations by one case per constructor.
+When sequence elements themselves can be sequences—like mobile branches (`Left`/`Right` sub-mobiles), expression ASTs, or nested lists—you get a **tree**.
 
-## Connecting the concept to Rust
+Recursive algorithms mirror the tree shape directly: handle the leaf base case, recurse on each child subtree, and combine child results (e.g. checking torque `left_len * weight(left) == right_len * weight(right)` on every node).
 
-Use Vec, recursive enums, iterators, and pattern matching for structure-preserving transformations. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Algebraic `enum Tree { Leaf(i64), Branch(Vec<Tree>) }` makes nested structures strongly typed—the compiler verifies you handle both leaves and internal nodes.
+- **In Python:** Trees can be modeled flexibly either as nested Python lists (`[1, [2, 3]]` checked via `isinstance(x, list)`) or structured `@dataclass` union nodes (`Leaf | Node`).
+- **Why compare both:** Compare [`recursive-trees`](../../../../examples/ch02/section-02/recursive-trees/README.md) and [`balanced-mobiles`](../../../../examples/ch02/section-02/balanced-mobiles/README.md): Rust catches invalid tree shapes statically, while Python lets you inspect nested lists interactively.
 
 ## Exercise
 
-Count leaves in a nested tree.
+Write `fringe(tree)` collecting all leaf values from left to right and check balanced mobile torques recursively.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 2 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

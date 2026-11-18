@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-A tag identifies the representation carried by a value so operations dispatch correctly. Enumerated types provide exhaustive checked alternatives.
+If two helpers both represent numbers—a rectangular pair `(3.0, 4.0)` vs a polar pair `(5.0, 0.927)`—how do selectors tell them apart? Attach an explicit **type tag** (`"rectangular"` or `"polar"`) so generic selectors inspect the tag and strip it before computing.
 
-## Connecting the concept to Rust
+Explicit tags turn raw data into **self-describing** values.
 
-Use enum variants or traits to keep representation choices separate from abstract operations. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Rust's tagged union (`enum Complex { Rectangular(f64, f64), Polar(f64, f64) }`) bakes the tag cleanly into memory layout and guarantees every selector checks all variants at compile time.
+- **In Python:** Python represents tagged data either as explicit `(tag, contents)` tuples/dataclasses (`Tagged(tag="polar", data=...)`) or class instances inspected via `type`/`isinstance`.
+- **Why compare both:** Tagged enums give compile-time exhaustiveness in Rust, whereas explicit `(tag, payload)` records in Python mirror Scheme's dynamic tagging.
 
 ## Exercise
 
-Add a third variant and update each affected match.
+Trace what code has to change when adding a third coordinate variant under centralized tagged `match` dispatch.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 2 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

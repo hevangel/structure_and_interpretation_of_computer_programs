@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-A composite number has a factor no larger than its square root. Trial division exploits this fact; faster probabilistic techniques need explicit error guarantees.
+Two contrasting ways to test primality:
+- **Deterministic (`O(sqrt(n))`):** Any composite `n` has a factor `<= sqrt(n)`, so scanning divisors up to `sqrt(n)` proves primality with 100% certainty.
+- **Probabilistic (`O(k log n)`):** Fermat's Little Theorem (`a^(n-1) ≡ 1 mod n`) runs dramatically faster via `expmod`, *except* rare **Carmichael numbers** (like `561` or `1729`) fool it for every coprime base. **Miller–Rabin** closes this loophole by spotting nontrivial square roots of `1 mod n` during squaring.
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use unit tests and loops to compare process shapes. Rust does not guarantee optimization of tail-recursive function calls. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** Rust uses `u128` widening inside `expmod` (`(acc as u128 * base as u128) % m as u128`) so squaring 64-bit residues never overflows, and deterministic LCG PRNG seeds keep tests reproducible.
+- **In Python:** Python handles modular products without overflow (`(a * b) % m` or `pow(a, exp, m)`), making the Fermat vs Miller–Rabin witness logic almost purely mathematical.
+- **Why compare both:** Both implementations in [`prime-testing`](../../../../examples/ch01/section-02/prime-testing/README.md) and [`fermat-miller-rabin`](../../../../examples/ch01/section-02/fermat-miller-rabin/README.md) let you directly test Carmichael numbers against both algorithms.
 
 ## Exercise
 
-Test 1, 2, 97, and 221 and explain each result.
+Verify why `561` passes every Fermat base `a < 561` with `gcd(a, 561) == 1`, yet triggers a nontrivial square root in Miller–Rabin.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 1 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

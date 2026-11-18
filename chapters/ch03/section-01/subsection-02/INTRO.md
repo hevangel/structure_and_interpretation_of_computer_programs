@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Mutable state encapsulates changing situations and can reduce the need to pass every intermediate value through a computation.
+Why accept mutable state at all? Local state encapsulates changing details inside a module—such as a pseudorandom generator `rand()` that returns the next sample without forcing every Monte Carlo caller (`cesaro_test`, `estimate_integral`) to thread and return `seed` explicitly across every helper.
 
-## Connecting the concept to Rust
+Notice the trade-off: `reset(seed)` gives convenience and modularity when testing, while pure seed-threading makes concurrency trivial.
 
-Use mutable structs or closures and observe how state affects later calls. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Wraps state inside a `Rand { state: u64 }` struct with `next(&mut self)` and `reset(&mut self, seed)` methods (deterministic LCG).
+- **In Python:** Wraps the LCG state inside a closure with `nonlocal seed` or a small `@dataclass` PRNG object (`generate()` / `reset(seed)`).
+- **Why compare both:** Both implementations in [`monte-carlo-pi`](../../../../examples/ch03/section-01/monte-carlo-pi/README.md) show how encapsulating PRNG state simplifies high-level statistical experiments (`sqrt(6 / gcd_coprime_prob) ≈ pi`)—and why deterministic seeding makes tests repeatable.
 
 ## Exercise
 
-Compare pure balance updates with a mutable account.
+Run [`monte-carlo-pi`](../../../../examples/ch03/section-01/monte-carlo-pi/README.md) twice from the same `reset(seed)` and confirm identical `pi` estimates.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 3 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

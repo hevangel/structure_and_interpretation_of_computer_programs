@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Combinatorial puzzles can be specified by constraints rather than a fixed sequence of moves. Pruning partial failures is essential.
+Puzzles like the **five-baker/cooper/fletcher/miller/smith multiple dwelling problem**, **N-Queens**, and **natural-language sentence parsing (`parse-sentence`)** read like pure logical constraints when written with `amb`.
 
-## Connecting the concept to Rust
+Notice performance still cares about constraint placement: pruning invalid combinations immediately (`require` right after each choice) eliminates massive dead subtrees compared to generating all `5!` tuples before checking!
 
-Use an explicit Vec of choices and recursive backtracking to model nondeterministic search. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Demonstrated both directly (`multiple-dwelling`, `n-queens-search`) and inside the interpreted language (`amb-evaluator` solving puzzles & ambiguous DCG sentences).
+- **In Python:** Side-by-side Python implementations prune partial constraint violations early and invoke `try-again` continuations to enumerate every valid solution.
+- **Why compare both:** Compare [`multiple-dwelling`](../../../../examples/ch04/section-03/multiple-dwelling/README.md), [`n-queens-search`](../../../../examples/ch04/section-03/n-queens-search/README.md), and [`amb-evaluator`](../../../../examples/ch04/section-03/amb-evaluator/README.md) to measure how eager `require` ordering shrinks search steps.
 
 ## Exercise
 
-Count four-queen solutions and inspect rejected branches.
+Count how many choice combinations `(require ...)` prunes early in 4-Queens and Multiple Dwelling.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 4 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

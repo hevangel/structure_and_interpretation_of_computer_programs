@@ -2,18 +2,22 @@
 
 ## What this subsection teaches
 
-An instruction interpreter advances a program counter and mutates registers and stacks according to a defined transition system.
+A simulator packages four cooperating structures:
+- **Registers:** named state slots holding machine values
+- **Stack:** LIFO frame history (with optional instrumentation)
+- **Flag:** boolean result of the latest `test` instruction
+- **Instruction sequence + `pc`:** linear assembled vector of executable steps.
 
-## Connecting the concept to Rust
+Decoupling assembly (`build`) from execution (`start`) lets one assembled machine run repeatedly on fresh register inputs.
 
-Use a program counter and a bounded execution loop to interpret machine instructions. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Encapsulated cleanly as `struct Machine { regs, stack, flag, ops, labels, code, ... }` returning `Result` cleanly on bad registers or infinite-loop bounds (`register-simulator`).
+- **In Python:** Encapsulated cleanly as `@dataclass class Machine` with dictionary-backed registers, list stack, and explicit exception reporting on invalid targets.
+- **Why compare both:** Keeping machine state separated from instruction list (`code`) allows resetting registers and re-running assembled `fact`/`fib` machines seamlessly in both languages.
 
 ## Exercise
 
-List all machine state fields after one addition.
+List every mutable field inside `Machine` that changes during a single `factorial` run vs stays read-only.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

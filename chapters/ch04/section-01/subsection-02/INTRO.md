@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-A parser converts text to syntax trees. The 2022 JavaScript edition adds statement-oriented forms needing careful analysis.
+An evaluator should not care whether syntax came from S-expressions `(+ 2 (* 3 4))` or JavaScript infix statements `return 2 + 3 * 4;`! Wrapping syntax checks and accessors (`is_if`, `if_predicate`, `lambda_body`, derived `cond -> if`) isolates parsing from evaluation.
 
-## Connecting the concept to Rust
+In the 2022 JavaScript edition, a dedicated **`parse()`** front-end turns precedence operators, `const`/`let`/`function` declarations, and `{ ... }` statement blocks into explicit tagged AST nodes.
 
-Use an AST enum plus a separate evaluation function; the Rust interpreter is not literally metacircular. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Tokenizes input into an explicit `Expr` / `Stmt` AST enum with Pratt/recursive-descent precedence parsing (`javascript-parser`) and explicit S-expression parsing (`metacircular-evaluator`).
+- **In Python:** Mirrors the same recursive-descent tokenizer/parser with `@dataclass` AST nodes (`BinOp`, `ConstDecl`, `Block`, `Return`) and raises syntax errors on mismatched tokens.
+- **Why compare both:** Both languages enforce explicit AST schemas so later evaluator stages never re-parse raw source strings (`javascript-parser`, `metacircular-evaluator`).
 
 ## Exercise
 
-Draw an AST for 2+(3*4).
+Trace the AST built for `const x = 2 + 3 * 4; return x;` and compare it against `(let ((x (+ 2 (* 3 4)))) x)`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 4 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

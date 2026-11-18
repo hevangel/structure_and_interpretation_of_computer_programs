@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Eager application evaluates arguments first, while normal order delays them. Divergence and side effects can reveal the difference.
+In **applicative order**, `(try 0 (/ 1 0))` crashes immediately computing arguments *before* entering `try`—even though the body `if (= a 0) 1 b` never inspects `b`.
 
-## Connecting the concept to Rust
+In **normal order**, arguments travel unevaluated into compound procedures and are forced **only** when demanded by primitives (`+`, `/`), conditionals (`if`), or the top-level driver.
 
-Use boxed closures and Option caches to make delayed computation and memoization observable. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** A dedicated evaluator rule wraps compound-procedure arguments instead of calling `eval` eagerly (`conditional-laziness`, `lazy-evaluator`).
+- **In Python:** Mirrors normal-order delay cleanly using thunk objects whenever invoking user-defined guest procedures while keeping host Python primitives eager.
+- **Why compare both:** Run [`conditional-laziness`](../../../../examples/ch04/section-02/conditional-laziness/README.md) and [`lazy-evaluator`](../../../../examples/ch04/section-02/lazy-evaluator/README.md) to watch `(unless false 1 (/ 1 0))` succeed safely in both Rust and Python.
 
 ## Exercise
 
-Give a function call whose unused argument diverges.
+Construct a two-argument function whose second argument divides by zero or loops forever, and verify which inputs return cleanly under normal order.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 4 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

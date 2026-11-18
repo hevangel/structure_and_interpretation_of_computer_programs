@@ -2,18 +2,16 @@
 
 ## What this subsection teaches
 
-Differentiation can transform an expression tree without evaluating it. Rewrite rules operate on sums, products, and variables.
+Symbolic differentiation applies exact algebraic rewrite rules directly to an AST: `d(u + v)/dx = du/dx + dv/dx`, `d(u * v)/dx = u * dv/dx + v * du/dx`, and `d(u^n)/dx = n * u^(n - 1) * du/dx`—plus algebraic simplification (`x * 0 -> 0`, `x + 0 -> x`, `x^1 -> x`) to prevent trees from exploding exponentially.
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use enum syntax trees and exhaustive match arms to manipulate symbols and trees. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** Exhaustive `match` on `enum Expr` makes rule completeness checkable at compile time, while `Box<Expr>` keeps recursive trees compact.
+- **In Python:** Python uses immutable `@dataclass(frozen=True)` AST nodes (`Add`, `Mul`, `Pow`, `Var`, `Const`) with `isinstance` or `match/case` simplification rules.
+- **Why compare both:** Compare [`symbolic-differentiation`](../../../../examples/ch02/section-03/symbolic-differentiation/README.md) with [`ordered-sets-infix-deriv`](../../../../examples/ch02/section-03/ordered-sets-infix-deriv/README.md) (which parses infix expressions and handles exponent rules cleanly).
 
 ## Exercise
 
-Differentiate x*x and evaluate its derivative at x=7.
+Differentiate `(x + 1)^3` symbolically and verify simplification reduces trivial `+ 0` and `* 1` terms.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 2 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Newton iteration converts a root-finding equation into repeated improvement. A stopping criterion must balance numerical precision and termination.
+Mathematical definitions say *what* `sqrt(x)` is (`y >= 0` with `y^2 = x`), whereas an algorithm tells *how* to compute it. Newton's update `guess -> (guess + x / guess) / 2` halves relative error quadratically near a positive root.
 
-## Connecting the concept to Rust
+The subtle engineering point is the **stopping criterion**: comparing `|guess^2 - x| < 1e-9` fails both on tiny numbers like `1e-12` (stops immediately with wrong root) and huge numbers like `1e20` (mantissa precision cannot shrink absolute residual below `1e-9`), so scaling tolerance relatively—and bounding iterations—is essential.
 
-Use Rust let bindings, fn declarations, if expressions, and pure arithmetic functions to contrast naming with evaluation. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Floating-point (`f64`) has 53 bits of significand precision; combining relative error check `(guess * guess - x).abs() <= eps * x.abs().max(1e-12)` with an explicit step cap guarantees termination.
+- **In Python:** Python `float` is the exact same IEEE-754 double (`f64`), so the same relative-tolerance & iteration-bound rule prevents infinite loops at extreme magnitudes.
+- **Why compare both:** Since both Rust `f64` and Python `float` share IEEE-754 hardware representation, numerical stability hazards are identical—see [`newton-sqrt`](../../../../examples/ch01/section-01/newton-sqrt/README.md) and [`cube-root-newton`](../../../../examples/ch01/section-01/cube-root-newton/README.md).
 
 ## Exercise
 
-Compare residual errors for small and large inputs.
+Test `sqrt(1e-12)` and `sqrt(1e12)` comparing an absolute residual threshold against a relative change threshold.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 1 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

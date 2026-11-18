@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Reachability from roots determines which heap nodes must be preserved. A collector marks reachable objects and reclaims the rest.
+Once `free` hits the end of vector memory, **garbage collection** identifies what is still reachable from machine roots (`root`, registers, stack):
+- **Mark–Sweep (`mark-sweep-gc`):** marks live graph nodes via DFS/pointer reversal, then sweeps unmarked slots.
+- **Cheney Stop-and-Copy (`stop-and-copy-gc`):** uses two pointers (`free` and `scan`) in working half-space `new_cars`/`new_cdrs`! Relocate roots to `new[0..]`, advance `scan` up toward `free` relocating `new_cars[scan]` and `new_cdrs[scan]`, and write **`BrokenHeart(new_idx)`** into copied old cells so shared pointers and **cycles** (`set_cdr(a, a)`) redirect cleanly in `O(live_memory)` time without recursion!
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use a Vec<Option<Node>> heap and root-based graph traversal for a small collector. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** Implemented cleanly in both [`mark-sweep-gc`](../../../../examples/ch05/section-03/mark-sweep-gc/README.md) and [`stop-and-copy-gc`](../../../../examples/ch05/section-03/stop-and-copy-gc/README.md) with multi-cycle GC flip tests verifying shared DAGs and cycles.
+- **In Python:** Uses the exact same iterative `scan < free` Cheney queue loop over Python lists—showing how non-recursive copying collectors operate with `O(1)` auxiliary space.
+- **Why compare both:** Watching Cheney's `scan` pointer chase `free` across consecutive `gc_flip` cycles in both Rust and Python demystifies how production copying GCs eliminate fragmentation and survive cyclic graphs.
 
 ## Exercise
 
-Create an unreachable cycle and test collection.
+Trace `scan` and `free` step by step while copying a 2-node cyclic pair `[a -> b -> a]` plus one unreachable cell `dead`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

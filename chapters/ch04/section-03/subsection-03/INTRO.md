@@ -2,18 +2,20 @@
 
 ## What this subsection teaches
 
-A choice evaluator must remember success and failure continuations or an equivalent stack of suspended alternatives.
+How do you implement `(amb ...)` and `try-again` cleanly? Compile each expression via `analyze_amb` into a **continuation-passing executor**:
+`exec(env, succeed, fail)`
+where **`succeed(val, next_fail)`** receives the chosen value *plus a fresh failure continuation `next_fail`* holding remaining alternatives!
 
-## Connecting the concept to Rust
+On assignment (`set!`), save the old value first, mutate it, and pass a custom `fail2` that restores the old value before invoking `fail`—making backtracking **automatically undo mutation**!
 
-Use an explicit Vec of choices and recursive backtracking to model nondeterministic search. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** `ExecAmbFn = Rc<dyn Fn(&Env, SucceedFn, FailFn)>` uses `Rc` closure chains so arbitrary backtrack trees compose cleanly without mutable global stacks (`amb-evaluator`).
+- **In Python:** Nested Python closures `def try_next(idx): ... succeed(choice, lambda: try_next(idx + 1))` implement continuation-passing backtracking and `permanent-set!` / `if-fail` transparently.
+- **Why compare both:** Both `main.rs` and `main.py` in [`amb-evaluator`](../../../../examples/ch04/section-03/amb-evaluator/README.md) implement reversible `set!`, `permanent-set!`, `if-fail`, and `try-again` identically via two closures.
 
 ## Exercise
 
-Sketch a frame for resuming the next choice.
+Trace `set!` undo vs `permanent-set!` during a failing branch inside [`amb-evaluator`](../../../../examples/ch04/section-03/amb-evaluator/README.md).
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 4 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

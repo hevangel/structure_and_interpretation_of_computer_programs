@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Data can be specified by the operations it supports and their laws. A pair can be modeled by behavior, not only as two adjacent memory cells.
+What actually makes `(cons a b)`, `car`, and `cdr` a pair? **Not** two adjacent words of RAM—any representation satisfying `car(cons(a, b)) == a` and `cdr(cons(a, b)) == b` *is* a valid pair!
 
-## Connecting the concept to Rust
+Even pure functions can represent pairs (`pair(x, y) = m -> m(x, y)`, `first(p) = p((x, y) -> x)`) and natural numbers (`Church numerals`: `zero = f -> x -> x`, `two = f -> x -> f(f(x))`).
 
-Use private struct fields, constructors, and invariants to enforce abstract data contracts. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Encoding procedural pairs and Church numerals in Rust uses higher-ranked/generic closures (`Rc<dyn Fn(...)>` or generic traits) because functions capturing arbitrary types need uniform signatures.
+- **In Python:** In Python `pair = lambda x, y: (lambda m: m(x, y))` and `zero = lambda f: (lambda x: x)` are direct two-line closures with zero type annotation needed.
+- **Why compare both:** See [`functional-pairs`](../../../../examples/ch02/section-01/functional-pairs/README.md) and [`church-numerals`](../../../../examples/ch02/section-01/church-numerals/README.md): Python reads almost identically to lambda calculus, while Rust reveals every capture type.
 
 ## Exercise
 
-Specify first(pair(a,b)) and second(pair(a,b)).
+Express `add(m, n)` and `mul(m, n)` directly on Church numerals without converting back to integers until printing.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 2 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

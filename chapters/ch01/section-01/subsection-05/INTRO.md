@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Substitution explains pure function application by replacing parameters with argument values. It models program meaning rather than literal machine execution.
+The **substitution model** explains pure function calls by conceptually substituting each formal parameter with its argument across the body (`square(5) -> 5 * 5 -> 25`).
 
-## Connecting the concept to Rust
+Two strategies differ sharply when an argument is unused or expensive: **applicative order** evaluates arguments *before* substituting (`test(0, loop())` diverges immediately), whereas **normal order** substitutes unevaluated expressions and reduces only when needed (`if 0 == 0 then 0 else loop()` returns `0`).
 
-Use Rust let bindings, fn declarations, if expressions, and pure arithmetic functions to contrast naming with evaluation. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Rust uses strict **applicative order**. Modeling normal order requires wrapping delayed arguments as closures (`|| expr`) or explicit `Thunk` values inside an evaluator AST.
+- **In Python:** Python also uses strict **applicative order**. Delayed arguments can be modeled with zero-argument `lambda: expr` thunks or custom AST thunks, as shown in [`evaluation-orders`](../../../../examples/ch01/section-01/evaluation-orders/README.md).
+- **Why compare both:** Substitution is an idealized equational tool—it works identically in both languages **only as long as there is no mutation**; once mutable state enters, Chapter 3 replaces it with the environment model.
 
 ## Exercise
 
-Expand factorial(4) and label pending work.
+Expand `eval_applicative` vs `eval_normal` on `if_zero(0, loop())` and run [`evaluation-orders`](../../../../examples/ch01/section-01/evaluation-orders/README.md).
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 1 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

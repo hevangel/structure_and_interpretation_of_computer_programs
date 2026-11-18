@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-An environment frame stores local bindings and points to an enclosing frame. Shadowing introduces a new binding rather than overwriting every ancestor.
+Why does `w1 = make_account(100)` keep private state safe across calls? Because creating `make_account` extends the global frame with `balance = 100` in frame `E1`, then builds closure `withdraw` whose environment pointer is **`E1`**.
 
-## Connecting the concept to Rust
+Each call to `w1(25)` creates a temporary call frame `E2` whose parent is **`E1`**, mutates `balance` *inside `E1`* (`100 -> 75`), and discards `E2` when returning.
 
-Use a runtime HashMap and parent frames to model a language environment distinct from Rust lexical scope. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Arena frames (`Vec<Frame>`) paired with mutable `set!(env_id, name, val)` walk parent pointers to mutate the exact ancestor frame (`E1`) holding `balance`, rather than shadowing it in `E2`.
+- **In Python:** Python closures distinguish *rebinding locally* (`x = ...`) from *mutating the ancestor frame cell* (`nonlocal balance; balance -= amount`) precisely for this reason!
+- **Why compare both:** Look at [`cse-environment-machine`](../../../../examples/ch03/section-02/cse-environment-machine/README.md): both Rust and Python trace the shared parent frame `E1` surviving while per-call parameter frames come and go.
 
 ## Exercise
 
-Draw two frames that both bind x.
+Draw the complete frame diagram for `w1 = make_account(100)`, `w2 = make_account(50)`, and calling `w1(30)`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 3 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

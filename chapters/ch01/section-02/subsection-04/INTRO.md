@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Repeated squaring reduces multiplications by halving the exponent. The accumulator and remaining exponent preserve an algebraic invariant.
+Computing `b^n` by multiplying `b` one step at a time takes `O(n)` steps. Noticing that `b^(2k) = (b^k)^2` (or squaring the base while halving the exponent) cuts work to `O(log n)` multiplications.
 
-## Connecting the concept to Rust
+An iterative version maintains the single invariant `a * b^n == constant`: when `n` is odd, multiply `a` by `b` and decrement `n`; when `n` is even, square `b` and halve `n`.
 
-Use unit tests and loops to compare process shapes. Rust does not guarantee optimization of tail-recursive function calls. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Rust's explicit integer types (`u64`/`u128`) require care—`b * b` can overflow if not using wider intermediates (`u128`) or modular reduction (`% m`) at every squaring step.
+- **In Python:** Python integers have arbitrary precision by default, so repeated squaring handles huge bases seamlessly, though `pow(b, n, m)` or explicit `while n > 0:` with `% m` still keeps numbers small and fast.
+- **Why compare both:** Both implementations in [`fast-exponentiation`](../../../../examples/ch01/section-02/fast-exponentiation/README.md) and [`fast-multiplication`](../../../../examples/ch01/section-02/fast-multiplication/README.md) share the exact same doubling/halving loop invariant.
 
 ## Exercise
 
-Prove the fast exponentiation invariant.
+Verify the invariant `a * b^n == 3^13` at every step of repeated squaring.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 1 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

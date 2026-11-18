@@ -1,23 +1,36 @@
-# 5.2 A Register-Machine Simulator
+# 5.2 A Register-Machine Simulator · [Chapter 5](../README.md)
 
 ## The big idea
 
-Write a tiny interpreter for machine instructions and trace its register evolution.
+Designing controller diagrams on paper is great—running them is better! A **register-machine simulator** parses controller text (`assign`, `test`, `branch`, `goto`, `save`, `restore`, `perform`), resolves symbolic branch labels into instruction indices via a **two-pass assembler**, wires primitive operations (`op`), and instruments every execution with **instruction counts**, **stack `total_pushes` / `max_depth`**, and tracing hooks.
 
-## What you should already know
+## What you should focus on
 
-You should be comfortable with basic functions, conditionals, and data structures. For this section, focus on **instruction encoding, labels, execution loop, trace**. The important move is to separate the *interface* of a computational idea from the particular mechanism that realizes it.
+Focus on ****named `RegisterTable`, two-pass label assembly, `pc` dispatch & `goto(reg)`, stack statistics (`total_pushes`, `max_depth`), and execution tracing****. Every machine model and compiler pass makes hidden runtime cost directly measurable.
 
-## Translating the idea into Rust
+## Connecting the concept to Rust and Python
 
-Use bounded execution and explicit errors rather than trusting arbitrary bytecode.
+- **In Rust:** Uses strongly typed `Instr` / `Source` enums, `BTreeMap<String, usize>` label tables, `Vec<Val>` stacks with push/depth counters, and bounded step execution (`register-simulator`, `two-pass-assembler`).
+- **In Python:** Mirrors the exact same machine model (`Register`, `Stack` statistics, two-pass label table, `BTreeMap`-ordered primitives) in readable dataclasses.
+- **Key contrast:** Both Rust and Python simulators compute identical push/depth counts for recursive `fact(n)` (`2n - 2` pushes and `max_depth` linear in `n`) and tree-recursive `fib(n)`.
 
-Study the nearby examples, identify their data representation, and write down one invariant. Compare your prediction with the test assertions. Some original Scheme ideas are dynamically typed or depend on tail-call behavior; the Rust port deliberately highlights those differences rather than hiding them.
+## Subsections
+
+- [5.2.1 The Machine Model](subsection-01/INTRO.md)
+- [5.2.2 The Assembler](subsection-02/INTRO.md)
+- [5.2.3 Instruction Execution Functions](subsection-03/INTRO.md)
+- [5.2.4 Monitoring Machine Performance](subsection-04/INTRO.md)
+
+## Runnable examples in this section
+
+- [5.2 Small register-machine simulator](../../../examples/ch05/section-02/register-simulator/README.md)
+- [5.2 Two-pass assembler with symbolic jump labels](../../../examples/ch05/section-02/two-pass-assembler/README.md)
 
 ## Check your understanding
 
-What separates the machine specification from the program running on it?
+1. Why does assembling jumps (`goto label`) require two passes (or backpatching) over the controller list?
+2. How do `total_pushes` and `max_depth` expose algorithmic differences between two controllers computing the same output?
 
-**Experiment:** change the data representation or evaluation strategy without changing the observable API. Which tests survive?
+**Experiment:** Verify the analytical `fact` and `fib` push counts printed by `register-simulator` and trigger the unknown-label/step-limit guards in `two-pass-assembler`.
 
-[Back to book and edition notes](../../../docs/editions.md)
+[Chapter 5 overview](../README.md) · [Edition notes](../../../docs/editions.md)

@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Coercion allows operations on mixed types, but promotion may lose information. A useful numeric tower must specify conversion policy.
+Real programs mix types constantly (`Int(3) + Rat(1, 2)` or `Rat(3, 2) + Complex(1, 0)`). Writing explicit converters between every `(A, B)` pair would take `O(N^2)` rules for `N` types.
 
-## Connecting the concept to Rust
+Instead, arrange types in a linear **tower** (`Int -> Rat -> Real -> Complex`): define one upward step **`raise`** (`O(N)` converters) to align mixed arguments to the higher type, plus downward **`project`** and **`drop`** so exact results like `Complex(5.0, 0.0)` simplify cleanly back down to `Int(5)` whenever `raise(project(x)) == x`!
 
-Use traits, enums, and explicit conversions to expose dispatch and promotion decisions. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** An explicit `Level` rank (`Int < Rat < Real < Complex`) makes `raise_to(val, target_level)` loop safely until levels match, while `drop(val)` tests lossless projection step by step.
+- **In Python:** Python mirrors the `raise`/`project`/`drop` loop with clean dataclasses (`Int`, `Rat`, `Real`, `Complex`)—and illustrates how Python's own `bool -> int -> float -> complex` numeric tower works underneath.
+- **Why compare both:** Both implementations in [`numeric-tower-coercion`](../../../../examples/ch02/section-05/numeric-tower-coercion/README.md) prove `drop(Complex(Real(6.0), Real(0.0))) == Int(6)` while preserving genuine complex parts.
 
 ## Exercise
 
-Write a conversion table and mark lossy conversions.
+Trace raising `Int(2)` + `Complex(Rat(3, 2), Int(4))`, then dropping `Complex(Real(5.0), Real(0.0))`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 2 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

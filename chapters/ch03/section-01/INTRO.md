@@ -1,23 +1,38 @@
-# 3.1 Assignment and Local State
+# 3.1 Assignment and Local State · [Chapter 3](../README.md)
 
 ## The big idea
 
-Track a balance across commands and observe how equal-looking functions can have different histories.
+Introducing assignment (`set!`, field mutation) breaks the substitution model forever: `withdraw(25)` followed by `withdraw(25)` returns `75`, then `50`—two identical calls produce different answers because **time and internal state** entered the picture.
 
-## What you should already know
+With state comes the subtle distinction between **value equality** (two objects happen to hold `100` right now) and **object identity** (both references point to the *exact same* stateful bank account, so mutating one changes the other).
 
-You should be comfortable with basic functions, conditionals, and data structures. For this section, focus on **mutable accounts, local history, identity, random generators**. The important move is to separate the *interface* of a computational idea from the particular mechanism that realizes it.
+## What you should focus on
 
-## Translating the idea into Rust
+Focus on ****encapsulated local state, referential transparency loss, value equality vs object identity (`eq?`/`is`), and stateful vs pure Monte Carlo sampling****. Always ask which parts of a system depend on *when* operations run versus *what* values they compute.
 
-Use &mut self or interior mutability deliberately; an object has an identity as well as a value.
+## Connecting the concept to Rust and Python
 
-Study the nearby examples, identify their data representation, and write down one invariant. Compare your prediction with the test assertions. Some original Scheme ideas are dynamically typed or depend on tail-call behavior; the Rust port deliberately highlights those differences rather than hiding them.
+- **In Rust:** Mutation is always explicit: `&mut self` grants exclusive temporary write access (checked at compile time), while shared handles to one joint account require interior mutability (`Rc<RefCell<Account>>` single-threaded or `Arc<Mutex<Account>>` across threads).
+- **In Python:** Variables inside closures capture mutable state via `nonlocal`, objects share identity via references (`a is b` vs `a == b`), and multiple callers alias the same instance by default.
+- **Key contrast:** Rust makes **shared mutation** visible in the type (`Rc<RefCell<_>>`) while Python lets two variables alias the same mutable instance silently—contrast both in `bank-account`, `joint-account`, and `monte-carlo-pi`.
+
+## Subsections
+
+- [3.1.1 Local State Variables](subsection-01/INTRO.md)
+- [3.1.2 Benefits of Assignment](subsection-02/INTRO.md)
+- [3.1.3 Costs of Assignment](subsection-03/INTRO.md)
+
+## Runnable examples in this section
+
+- [3.1 Stateful bank account with invariants](../../../examples/ch03/section-01/bank-account/README.md)
+- [3.1 Joint account with shared local state](../../../examples/ch03/section-01/joint-account/README.md)
+- [3.1 Monte Carlo simulation with explicit pseudo-random state](../../../examples/ch03/section-01/monte-carlo-pi/README.md)
 
 ## Check your understanding
 
-When does hidden state make a function harder to test?
+1. Why does substitution fail once a closure mutates a private `balance` variable?
+2. How does a stateful `make_rand` generator differ from passing an explicit `seed` cleanly through every Monte Carlo step?
 
-**Experiment:** change the data representation or evaluation strategy without changing the observable API. Which tests survive?
+**Experiment:** Construct two independent counters and one aliased pair of handles sharing the same underlying state; test which pairs stay synchronized after a mutation.
 
-[Back to book and edition notes](../../../docs/editions.md)
+[Chapter 3 overview](../README.md) · [Edition notes](../../../docs/editions.md)

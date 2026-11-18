@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Shared machine instructions need calling conventions and return addresses to resume callers correctly.
+If two places in a large controller both need `gcd`, duplicating the instructions wastes space—sharing *one* `gcd` block introduces a classic dilemma: after `gcd` finishes, **where does `goto` jump back to?**
 
-## Connecting the concept to Rust
+Storing the return label inside a dedicated **`continue` register** before jumping (`assign continue (label after-gcd-1); goto gcd-loop`), then ending the subroutine with **`goto (reg continue)`**, lets callers share one subroutine safely—as long as nested calls save `continue` on a stack!
 
-Use an instruction enum and named registers to design a small control machine. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** `Target::Reg("continue")` allows indirect dynamic jumps cleanly alongside static `Target::Label("...")` branches (`register-simulator`).
+- **In Python:** Indirect register jumps look up the label PC stored as `ValLabel(pc)` inside `regs["continue"]` cleanly.
+- **Why compare both:** Explicitly assigning and jumping through `continue` shows what CPU `CALL`/`RET` instructions automate behind the scenes.
 
 ## Exercise
 
-Trace nested subroutine calls.
+Trace two sequential calls to a shared `gcd` subroutine using `continue` (`after_1`, `after_2`) and verify neither overwrites the other.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

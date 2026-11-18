@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Pattern matching and unification accumulate consistent bindings while search explores facts and derived relations.
+Simple queries rely on **pattern matching**: walking a query pattern and a database assertion simultaneously while recording consistent `?var -> value` bindings inside a `Frame` (rejecting conflicting bindings).
 
-## Connecting the concept to Rust
+Rules generalize pattern matching to **two-sided unification**: *both* the query pattern and the rule conclusion may contain variables (`?x`, `?y`)! Unifying `(?a . ?a)` against `(?b . 5)` chains `?a -> ?b` and `?b -> 5` cleanly.
 
-Use a map of variable bindings and explicit fact-search strategies to represent relations. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Implements recursive `pattern_match`, `unify_match`, `extend_if_possible`, and `depends_on` cyclic occurs-check on `enum Term` values (`query-unification-engine`).
+- **In Python:** Implements identical structural matching and two-sided unification over `Atom | Var | Pair` dataclasses returning updated frame dicts (`None` on conflict or cycle).
+- **Why compare both:** Checking the `depends_on` cyclic occurs check (`?x` cannot unify with `(cons 1 ?x)`) prevents infinite substitution loops in both Rust and Python.
 
 ## Exercise
 
-Reject conflicting uses of the same variable.
+Unify `((?x ?y) ?y)` against `((?z 3) ?z)` step by step and check whether the final frame stays consistent.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 4 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

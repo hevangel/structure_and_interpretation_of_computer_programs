@@ -2,18 +2,19 @@
 
 ## What this subsection teaches
 
-A standard sequence interface makes transformations composable and enables pipelines rather than bespoke traversals.
+Instead of writing custom nested loops for matrices, permutations, prime-sum pairs, and Horner polynomial evaluation, decompose problems into four standard signal-processing blocks:
+**enumerate → filter → map → accumulate (`fold`)**.
 
-## Connecting the concept to Rust
+Notice also that `fold_left` and `fold_right` produce the *same* answer only when the combining operation is commutative/associative; for `-` or `/`, fold direction changes the result completely!
 
-Use Vec, recursive enums, iterators, and pattern matching for structure-preserving transformations. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Rust iterator combinators (`.flat_map()`, `.filter()`, `.map()`, `.fold()`, `.rfold()`) fuse into tight loops at compile time without allocating intermediate vectors.
+- **In Python:** Python uses list/generator comprehensions (`[f(x) for x in xs if p(x)]`), `itertools.chain`, and `functools.reduce` (while `reversed(xs)` expresses right folds cleanly).
+- **Why compare both:** Run [`matrix-operations`](../../../../examples/ch02/section-02/matrix-operations/README.md), [`powerset`](../../../../examples/ch02/section-02/powerset/README.md), [`fold-direction`](../../../../examples/ch02/section-02/fold-direction/README.md), and [`nested-mappings-mobiles`](../../../../examples/ch02/section-02/nested-mappings-mobiles/README.md) to see identical pipeline stages in both languages.
 
 ## Exercise
 
-Refactor a nested loop into map, filter, and fold.
+Refactor `prime_sum_pairs(n)` into `flatmap` over `(i, j)` pairs followed by `filter(is_prime(i + j))`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 2 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

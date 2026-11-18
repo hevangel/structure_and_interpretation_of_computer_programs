@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Parsing and syntactic analysis can happen once before many executions. Separating stages makes a language processor clearer and often faster.
+In a naive `eval`, every iteration of a loop `fact(1000)` re-walks the syntax tree, re-checks special forms (`if`, `cond`), and re-expands derived forms (`let -> lambda`) a thousand times.
 
-## Connecting the concept to Rust
+Separating **`analyze(exp)`** (run *once*, returns a compiled execution function `ExecFn`) from **`execute(env)`** (run *many* times) eliminates syntax-dispatch overhead permanently—a direct bridge from interpretation to compilation!
 
-Use an AST enum plus a separate evaluation function; the Rust interpreter is not literally metacircular. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** `analyze(&Expr) -> Result<ExecFn, String>` compiles the tree once into nested `Rc<dyn Fn(&Env) -> Result<Value, String>>` closures (`analysis-then-execution`, `analyzing-evaluator`).
+- **In Python:** `analyze(exp) -> Callable[[Frame], Value]` captures already-analyzed child executors directly inside Python closures—zero AST pattern checks occur at runtime.
+- **Why compare both:** Run [`analysis-then-execution`](../../../../examples/ch04/section-01/analysis-then-execution/README.md) and [`analyzing-evaluator`](../../../../examples/ch04/section-01/analyzing-evaluator/README.md): instrumentation counters in both Rust and Python confirm syntax analysis runs once while execution runs on every iteration.
 
 ## Exercise
 
-Explain the difference between token, AST, and runtime value.
+Verify why `analyze` count stays constant even as `fact(n)` increases from `n = 1` to `n = 20`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 4 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

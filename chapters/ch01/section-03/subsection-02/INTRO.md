@@ -2,18 +2,16 @@
 
 ## What this subsection teaches
 
-Anonymous functions can be constructed where they are needed and can close over values from their definition environment.
+Giving a one-off helper a global name (`fn add_four(x)`) clutters scope when it is only passed once to `map`, `accumulate`, or `fixed_point`. **Lambda expressions** create anonymous functions right at the point of use—and **let** bindings (`(let ((x a)) body)`) are conceptually just immediate applications of a lambda (`((lambda (x) body) a)`).
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use closures and the Fn traits to pass or return computations as values. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** Closures (`|x| x + offset`) infer parameter/return types from context and capture `offset` by shared reference or `move` value depending on lifetime needs.
+- **In Python:** `lambda x: x + offset` defines an inline single-expression function object; beware that inside a Python loop, lambdas capture variables by **name lookup**, so loop-index lambdas need a default-arg bind (`lambda x, k=k: ...`) to snapshot the current value.
+- **Why compare both:** Contrast Rust's explicit capture semantics (`move` vs borrow) against Python's late-binding cell lookup whenever building closures inside loops.
 
 ## Exercise
 
-Create a closure with a captured offset and compare it to a named function.
+Create an inline closure capturing a constant offset and pass it to [`function-composition`](../../../../examples/ch01/section-03/function-composition/README.md).
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 1 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

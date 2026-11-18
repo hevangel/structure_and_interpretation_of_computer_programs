@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-A machine stack records suspended computations, parameters, temporary data, and return positions.
+When `factorial` calls `factorial(n - 1)`, a single fixed register `n` cannot simultaneously hold `5`, `4`, `3`, and `2`!
 
-## Connecting the concept to Rust
+Adding a **LIFO stack** (`save reg` before recursing, `restore reg` upon returning—always restoring in **reverse order** of saving!) lets a single finite machine run arbitrary-depth recursion cleanly (`explicit-stack-factorial`, `register-simulator`).
 
-Use an instruction enum and named registers to design a small control machine. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** An explicit `Vec<Val>` stack paired with `push`/`pop` depth tracking proves `factorial(n)` builds exact `n - 1` saved frames before multiplying back up.
+- **In Python:** A Python `list` stack with `append`/`pop` tracks identical pending values and return labels cleanly—independent of Python's call stack.
+- **Why compare both:** Notice how `explicit-stack-factorial` in both Rust and Python replaces nested call frames directly with one loop pushing onto an explicit array and one loop popping back out.
 
 ## Exercise
 
-Trace factorial stack frames for n=4.
+Trace all `(n, continue)` pairs pushed and popped onto the machine stack for `factorial(4)` and `fib(4)`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Big-O classifies scaling rather than exact runtime. Analyze time and space separately, and identify the dominant resource as input grows.
+**Order of growth** (`Theta(f(n))`) measures how required steps and memory scale as input size `n` grows—ignoring machine clock speed and constant factors so we focus on algorithmic structure.
 
-## Connecting the concept to Rust
+Crucially, **time growth** and **space growth** can differ dramatically: linear recursive `factorial` uses `Theta(n)` time and `Theta(n)` space; iterative `factorial` uses `Theta(n)` time and `Theta(1)` space; naive `fib` uses `Theta(phi^n)` time yet only `Theta(n)` stack space.
 
-Use unit tests and loops to compare process shapes. Rust does not guarantee optimization of tail-recursive function calls. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Rust zero-cost abstractions keep constant factors tiny, yet cannot rescue an `O(phi^n)` or `O(2^n)` algorithm at `n = 50`; step-counting instrumented tests make asymptotic separation directly measurable.
+- **In Python:** Python has larger per-step interpreter overhead than Rust, making algorithmic order of growth even more visible as `n` grows—`O(log n)` Python easily beats `O(n^2)` compiled loops on large inputs.
+- **Why compare both:** Comparing actual step counts (and wall times) between Rust and Python proves why asymptotic complexity dominates hardware speed.
 
 ## Exercise
 
-Predict work at n and 2n for linear, quadratic, logarithmic, and exponential algorithms.
+Predict how step count changes when doubling `n` for `O(1)`, `O(log n)`, `O(n)`, `O(n^2)`, and `O(2^n)` algorithms.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 1 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Pointers and mutation turn a list into a changing graph. Aliasing and cycles affect traversal and equality.
+Reassigning `car` or `cdr` pointers transforms linked chains into arbitrary **graphs** (`x -> y`, shared diamonds where two branches point to the same cell, or closed cycles!).
 
-## Connecting the concept to Rust
+Sharing breaks naive tree assumptions: a 3-cell structure can look like length `3`, `4`, or `7` to `count_pairs`, or send traversal into an infinite loop unless detected using a **visited set** or **Floyd's `O(1)`-space tortoise-and-hare pointer race**.
 
-Use VecDeque, HashMap, and optional Rc<RefCell<T>> sharing to model mutable structures. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Because safe Rust forbids multiple mutable borrows simultaneously, arena indices (`Vec<ConsCell>`) or `Rc<RefCell<Cell>>` model shared mutable pairs cleanly (`shared-pairs`, `cycle-detection-deque`).
+- **In Python:** Python objects and lists allow aliasing and self-referential cycles directly (`a[1] = a`), making Floyd's slow/fast two-pointer check directly testable.
+- **Why compare both:** Compare [`shared-pairs`](../../../../examples/ch03/section-03/shared-pairs/README.md) and [`cycle-detection-deque`](../../../../examples/ch03/section-03/cycle-detection-deque/README.md): Rust's `Weak` references prevent leak cycles in reference counting, while Python relies on a cycle collector.
 
 ## Exercise
 
-Draw a two-node cycle and explain nontermination of a naive walk.
+Build 3-cell graphs that cause naive `count_pairs` to return `3`, `4`, `7`, and loop, then detect the cycle with Floyd's `O(1)`-space algorithm.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 3 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

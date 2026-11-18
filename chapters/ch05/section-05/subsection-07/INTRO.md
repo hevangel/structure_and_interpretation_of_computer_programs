@@ -2,18 +2,21 @@
 
 ## What this subsection teaches
 
-Interpreted and compiled functions can interoperate only if they agree on value representation, environments, and calling convention.
+How do **compiled procedures** (machine-code `entry` labels) and **interpreted procedures** (AST lambdas in `eceval`) call **each other** inside one running system?
 
-## Connecting the concept to Rust
+They agree on a **shared runtime value and calling contract**:
+1. Both represent environments as the same frame structure (`ctenv`-compatible indexed frames + global frame).
+2. When a compiled call hits an interpreted `Closure`, it passes `argl` and jumps into `eceval`'s **`apply_dispatch`** with `continue` pointing to `after_call`.
+3. When `eceval` applies a `CompiledProc(entry, env)`, it extends `env` with `argl` and jumps directly to `entry` with `continue = return_addr`!
 
-Use an expression enum, instruction vector, and virtual-machine stack to separate compilation from execution. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Represented cleanly in `Value::Compiled(entry, env)` alongside `Value::Primitive(...)` and `eval_compiled` running persistent multi-definition code on `CompiledVM` (`register-compiler`).
+- **In Python:** Mirrors the same unified `CompiledProc` / `Primitive` representation so top-level calls invoke compiled helper definitions across repeated `eval_compiled` calls cleanly.
+- **Why compare both:** Sharing one value & frame ABI bridges Chapter 4 (interpretation) and Chapter 5 (compilation)—the exact pattern used by real hybrid VMs (JIT + interpreter).
 
 ## Exercise
 
-Specify a shared function-call protocol.
+Design the shared calling convention allowing compiled `map(f, xs)` to invoke an interpreted user lambda `f` passed at runtime.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

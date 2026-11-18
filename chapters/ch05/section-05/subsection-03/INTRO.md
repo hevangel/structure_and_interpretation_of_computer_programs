@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Function calls and returns require explicit return-address and stack conventions. The JavaScript adaptation emphasizes return statements without losing tail recursion.
+To compile `(f a1 a2)`: evaluate `f -> proc` (`Next`, preserving `env` and `continue` only if needed), evaluate arguments backward (`a2`, `a1`) building `argl`, then branch on primitive vs compiled procedure!
 
-## Connecting the concept to Rust
+Look at **`compile_proc_call` tail calls (`linkage == Return`)**: restore `continue` *before* jumping to `compiled_entry`—so compiled recursive tail calls transfer directly (`goto (reg val)`) with **zero stack growth**! In the 2022 JS adaptation, explicit `return` linkages (or host trampolines like `javascript-tail-calls`) manage the same constant-stack discipline.
 
-Use an expression enum, instruction vector, and virtual-machine stack to separate compilation from execution. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Handles primitive calls (`apply_primitive_procedure`) and compiled procedure linkage (`Return` direct jump vs `Next`/`Label` saving `continue`) cleanly (`register-compiler`, `javascript-tail-calls`).
+- **In Python:** Implements identical primitive vs compiled call dispatch (`compile_procedure_call`), plus a `Bounce`/`trampoline` demo in [`javascript-tail-calls`](../../../../examples/ch05/section-05/javascript-tail-calls/README.md) showing `O(1)` stack tail sums (`1..100_000`) cleanly overcoming Python's `RecursionError`!
+- **Why compare both:** Compare `javascript-tail-calls` (`trampoline`) with `register-compiler`: trampolines achieve bounded stack on a standard host call stack, while compiled machine code achieves it natively via `Return` linkage.
 
 ## Exercise
 
-Explain how tail calls affect the return stack.
+Why does compiling `(f x)` with `linkage = Return` need **no** `assign continue (label after_call)` before jumping into `f`?
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

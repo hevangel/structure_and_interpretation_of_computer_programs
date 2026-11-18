@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Relational queries ask for substitutions satisfying facts and rules. One query may have several correct solutions.
+Logic programming queries a database of **assertions** (`(supervisor (Bitdiddle Ben) (Warbucks Oliver))`) and **rules** (`(rule (outranked-by ?x ?y) ...)`).
 
-## Connecting the concept to Rust
+Unlike SQL joins written imperatively or single-output functions, a logic query returns a **stream of all variable substitutions (frames)** consistent with the database—including recursive multi-hop inferences like `outranked-by` or `ancestor`!
 
-Use a map of variable bindings and explicit fact-search strategies to represent relations. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Stores rules and facts in explicit slices/vectors and streams matching `Frame` substitutions deterministically (`logic-relations`, `ancestor-relation`, `query-unification-engine`).
+- **In Python:** Stores facts and rules as immutable `@dataclass` tuples and yields matching `dict[Var, Term]` substitutions cleanly.
+- **Why compare both:** Compare [`logic-relations`](../../../../examples/ch04/section-04/logic-relations/README.md), [`ancestor-relation`](../../../../examples/ch04/section-04/ancestor-relation/README.md), and [`query-unification-engine`](../../../../examples/ch04/section-04/query-unification-engine/README.md) across both languages.
 
 ## Exercise
 
-Find all children of a named parent.
+Write a query finding every supervisor chain (`middle -> top`) two hops above a given employee.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 4 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

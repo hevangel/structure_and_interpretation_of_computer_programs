@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-An abstract rational type should preserve a nonzero denominator and canonical sign. Client code should use arithmetic operations instead of touching fields.
+Representing a rational number `n / d` means enforcing two representation invariants: `d != 0` and canonical lowest terms (`gcd(|n|, |d|) == 1` with sign stored consistently on the numerator, so `2 / -4` normalizes to `-1 / 2`).
 
-## Connecting the concept to Rust
+Once constructors (`make_rat`) and selectors (`numer`, `denom`) obey these laws, fraction arithmetic (`+`, `-`, `*`, `/`) never touches raw tuple fields directly.
 
-Use private struct fields, constructors, and invariants to enforce abstract data contracts. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** A `struct Rat { numer: i64, denom: i64 }` with private fields guarantees outside code can only build normalized rationals through `Rat::new(n, d) -> Result<Rat, ...>`.
+- **In Python:** A `@dataclass(frozen=True)` with normalization inside a constructor helper or `__post_init__` (using `math.gcd`) stores reduced numerator/denominator cleanly with `ValueError` on `denom == 0`.
+- **Why compare both:** Python gives arbitrary-precision numerators/denominators automatically, whereas Rust's fixed-width `i64` makes reducing by `gcd` at every step crucial to avoid premature overflow.
 
 ## Exercise
 
-Normalize 2/-4 and compare it with -1/2.
+Normalize `2 / -4`, `-6 / -9`, and zero `0 / 5`, then add them using [`rational-numbers`](../../../../examples/ch02/section-01/rational-numbers/README.md).
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 2 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

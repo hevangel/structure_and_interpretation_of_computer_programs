@@ -1,23 +1,37 @@
-# 2.4 Multiple Representations for Abstract Data
+# 2.4 Multiple Representations for Abstract Data · [Chapter 2](../README.md)
 
 ## The big idea
 
-Implement alternative internal representations behind the same operations.
+Sometimes *two* valid internal representations coexist in the same program—like Cartesian `(real, imag)` complex numbers (fast addition) alongside Polar `(magnitude, angle)` (fast multiplication).
 
-## What you should already know
+Three architectures manage multiple representations differently: (1) **explicit tagged `enum` dispatch**, (2) **data-directed dispatch** storing `(operation, type_tag) -> function` in an extensible registry (`put`/`get`/`apply_generic`), and (3) **message passing**, where each data value itself is an object/function answering operation names.
 
-You should be comfortable with basic functions, conditionals, and data structures. For this section, focus on **complex numbers, tags, message passing, dispatch**. The important move is to separate the *interface* of a computational idea from the particular mechanism that realizes it.
+## What you should focus on
 
-## Translating the idea into Rust
+Focus on ****tagged data, open vs closed extensibility (the expression problem), data-directed `(op, tag)` registries, and message passing****. Across every example, test which callers remain completely untouched when you swap the internal representation.
 
-An enum is one dispatch choice; traits let third parties implement a common interface.
+## Connecting the concept to Rust and Python
 
-Study the nearby examples, identify their data representation, and write down one invariant. Compare your prediction with the test assertions. Some original Scheme ideas are dynamically typed or depend on tail-call behavior; the Rust port deliberately highlights those differences rather than hiding them.
+- **In Rust:** `enum`s give closed exhaustive dispatch (easy to add new operations, hard to add new external types), whereas **traits** (`trait Complex`) and trait-object `BTreeMap<(Op, Tag), Rc<dyn Fn...>>` tables support open extension of new representations.
+- **In Python:** Dictionaries keyed by `(op, type_tag)` implement `put`/`get`/`apply_generic` directly, while classes (`def magnitude(self)`) and closures natively express message passing via duck typing.
+- **Key contrast:** Look at `data-directed-dispatch`: Rust traits check new implementations statically at compile time, while Python's dispatch dictionaries allow hot-plugging new types and operations dynamically at runtime.
+
+## Subsections
+
+- [2.4.1 Representing Complex Numbers](subsection-01/INTRO.md)
+- [2.4.2 Tagged Data](subsection-02/INTRO.md)
+- [2.4.3 Data-Directed Programming](subsection-03/INTRO.md)
+
+## Runnable examples in this section
+
+- [2.4 Complex numbers with two representations](../../../examples/ch02/section-04/complex-representations/README.md)
+- [2.4 Data-directed dispatch table (put, get, apply_generic)](../../../examples/ch02/section-04/data-directed-dispatch/README.md)
 
 ## Check your understanding
 
-Which operations belong in the public abstraction rather than in a representation?
+1. Which axis is easy vs hard to extend under (a) tagged `match`, (b) data-directed table, and (c) message passing?
+2. Why does `apply_generic` need a list of type tags `(tag1, tag2)` when dispatching binary operations?
 
-**Experiment:** change the data representation or evaluation strategy without changing the observable API. Which tests survive?
+**Experiment:** Register a new differentiation operator (e.g., division or exponentiation) into `data-directed-dispatch` without editing the core evaluator loop.
 
-[Back to book and edition notes](../../../docs/editions.md)
+[Chapter 2 overview](../README.md) · [Edition notes](../../../docs/editions.md)

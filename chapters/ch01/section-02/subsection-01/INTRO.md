@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-A recursive process stores deferred computation while an iterative process evolves bounded state. Recursive syntax does not guarantee constant-stack execution.
+Compare two implementations of `n!`:
+- **Linear recursive process:** `n * fact(n - 1)` defers `n - 1` pending multiplications until hitting the base case (`4 * (3 * (2 * 1))`), needing `O(n)` stack memory.
+- **Linear iterative process:** tracks `(product, counter)` directly (`(1,1) -> (1,2) -> (2,3) -> (6,4) -> (24,5)`), needing only `O(1)` memory—even if stopped mid-flight, all state is sitting in those two variables.
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use unit tests and loops to compare process shapes. Rust does not guarantee optimization of tail-recursive function calls. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** Rust does **not** guarantee tail-call optimization, so writing an iterative process as a recursive tail call still grows the stack on unoptimized builds. Idiomatic Rust expresses iterative processes with `loop`/`while` for guaranteed `O(1)` stack depth.
+- **In Python:** Python also lacks tail-call optimization and raises `RecursionError` around 1,000 nested calls, so true `O(1)`-space iterative processes must be written with `while` or `for` loops.
+- **Why compare both:** The crucial idea is **process shape**, not source recursion: both languages let you compare deferred stack growth vs explicit state loops cleanly in [`factorial-processes`](../../../../examples/ch01/section-02/factorial-processes/README.md).
 
 ## Exercise
 
-Trace recursive and loop factorial on input four.
+Trace all deferred multiplications of `fact_rec(4)` versus the `(product, counter)` pairs of `fact_iter(4)`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 1 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

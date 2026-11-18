@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-Generic systems can manipulate symbolic polynomial values in addition to ordinary numbers. Representation and simplification rules matter greatly.
+Extending generic operations to **polynomials** (`3*x^4 + 2*x + 5`) shows the real payoff of symbolic data + generic `+`/`*`: coefficients themselves can be integers, rationals, or nested polynomials in another variable!
 
-## Connecting the concept to Rust
+Dense arrays (`[5, 2, 0, 0, 3]`) waste memory on `x^1000 + 1`, so **sparse term lists** store only nonzero `(degree, coeff)` pairs in descending order. Computing exact polynomial **GCD** uses **pseudo-remainders**—multiplying by `lead(divisor)^(deg_diff + 1)` before subtracting so integer coefficients never introduce fractions—and produces simplified **rational functions**.
 
-Use traits, enums, and explicit conversions to expose dispatch and promotion decisions. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Rust represents sparse polynomials cleanly via `BTreeMap<usize, Coeff>` or sorted `Vec<(usize, i64)>`, keeping terms canonical (nonzero coefficients, sorted degrees) and returning `Result` on zero divisors.
+- **In Python:** Python uses `dict[int, int]` or sorted term tuples cleanly with arbitrary-precision integer coefficients (crucial when pseudo-remainder GCD exponents grow large!).
+- **Why compare both:** Compare [`sparse-polynomial-arithmetic`](../../../../examples/ch02/section-05/sparse-polynomial-arithmetic/README.md) and [`symbolic-polynomials`](../../../../examples/ch02/section-05/symbolic-polynomials/README.md) to see why arbitrary-precision Python integers shine on high-degree pseudo-remainders.
 
 ## Exercise
 
-Add two sparse polynomials with symbolic coefficients.
+Divide `x^5 - 1` by `x^2 - 1` using sparse polynomial long division and verify `(q, r)` satisfies `q * d + r == dividend`.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 2 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

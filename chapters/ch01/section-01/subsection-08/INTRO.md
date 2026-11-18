@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-A black-box function promises behavior without exposing its method. Clients should rely on contracts rather than internal variables or algorithms.
+A user of `sqrt(x)` should only depend on its input/output contract, not on `improve`, `good_enough`, or `guess_loop`. Hiding internal helper procedures inside a **lexical block** prevents name collisions and lets internals change freely without breaking callers.
 
-## Connecting the concept to Rust
+Because internal helpers lie inside the outer scope of `sqrt(x)`, they can even read `x` directly as a **free variable** instead of threading it through every helper call.
 
-Use Rust let bindings, fn declarations, if expressions, and pure arithmetic functions to contrast naming with evaluation. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+## Connecting the concept to Rust and Python
+
+- **In Rust:** Helpers can be nested as `fn` items inside `sqrt` (which cannot directly capture local `let` variables—closures `|g| ...` capture locals) or kept private inside a `mod` while exposing only `pub fn sqrt`.
+- **In Python:** Nested `def improve(guess):` inside `def sqrt(x):` naturally captures `x` as a free closure variable and remains completely invisible outside `sqrt`.
+- **Why compare both:** Python nested `def`s automatically close over enclosing parameters; Rust distinguishes non-capturing nested `fn`s from environment-capturing closures (`|g| ...`) explicitly.
 
 ## Exercise
 
-Rewrite a numeric helper without changing callers.
+Refactor [`cube-root-newton`](../../../../examples/ch01/section-01/cube-root-newton/README.md) so helper names remain internal while preserving identical public test behavior.
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 1 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)

@@ -2,18 +2,18 @@
 
 ## What this subsection teaches
 
-An assembler resolves symbolic labels into executable instruction addresses, usually in multiple passes.
+Controllers are written with symbolic labels (`fact-loop:`, `goto base-case`), yet execution advances an integer index `pc = 0, 1, 2, ...`. Because `goto` often references labels declared *further down* the file (**forward references**), an assembler works in **two passes**:
+1. Pass 1 strips labels while mapping each `label_name -> current instruction index` (catching duplicate labels).
+2. Pass 2 translates instructions, replacing every symbolic label with its resolved `usize`/`int` address (catching undefined labels).
 
-## Connecting the concept to Rust
+## Connecting the concept to Rust and Python
 
-Use a program counter and a bounded execution loop to interpret machine instructions. The translation is intended to explain computational ideas, not imitate the exact source language syntax. Think about the input, output, representation invariant, and what changes when evaluation order or mutable state enters the picture.
+- **In Rust:** Implemented cleanly in [`two-pass-assembler`](../../../../examples/ch05/section-02/two-pass-assembler/README.md) and [`register-simulator`](../../../../examples/ch05/section-02/register-simulator/README.md) using `BTreeMap`/`HashMap` label lookup.
+- **In Python:** Python passes over the source instruction list identically: first building `labels: dict[str, int]`, then resolving jumps cleanly in pass 2.
+- **Why compare both:** Both Rust and Python two-pass assemblers turn symbolic branches (`branch(label)`) into `O(1)` array jumps at runtime.
 
 ## Exercise
 
-Assemble a loop with two branches.
+Trace Pass 1 (label table) and Pass 2 (`Op` vector) on the loop controller in [`two-pass-assembler`](../../../../examples/ch05/section-02/two-pass-assembler/README.md).
 
-**Study method:** trace a small input on paper, run the closest example from this repository, then explain the result and resource usage. Which aspects are mathematical and which depend on the implementation?
-
-This original study note follows the 1996/2022 [SICP comparison table of contents](https://sicp.sourceacademy.org/). The 1984 original may organize the subject differently.
-
-[Parent section](../INTRO.md) · [Edition notes](../../../../docs/editions.md)
+[Parent section](../INTRO.md) · [Chapter 5 overview](../../README.md) · [Edition notes](../../../../docs/editions.md)
