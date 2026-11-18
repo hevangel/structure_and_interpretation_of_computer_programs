@@ -19,6 +19,8 @@ O(n) time and O(n) output memory; recursion uses O(height) stack.
 ```sh
 cargo run --bin ch02-tree-to-ordered-list
 cargo test --bin ch02-tree-to-ordered-list
+python3 examples/ch02/section-03/tree-to-ordered-list/main.py
+python3 -m unittest examples/ch02/section-03/tree-to-ordered-list/main.py
 ```
 
 ## Exercise

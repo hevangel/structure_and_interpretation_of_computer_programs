@@ -19,6 +19,8 @@ Analysis is O(n) in tree size, and each run evaluates the resulting closures. Ea
 ```sh
 cargo run --bin ch04-analysis-then-execution
 cargo test --bin ch04-analysis-then-execution
+python3 examples/ch04/section-01/analysis-then-execution/main.py
+python3 -m unittest examples/ch04/section-01/analysis-then-execution/main.py
 ```
 
 ## Extend the example

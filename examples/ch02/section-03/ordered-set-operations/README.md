@@ -19,6 +19,8 @@ O(m+n) time, O(m+n) output space for sets of sizes m and n.
 ```sh
 cargo run --bin ch02-ordered-set-operations
 cargo test --bin ch02-ordered-set-operations
+python3 examples/ch02/section-03/ordered-set-operations/main.py
+python3 -m unittest examples/ch02/section-03/ordered-set-operations/main.py
 ```
 
 ## Exercise

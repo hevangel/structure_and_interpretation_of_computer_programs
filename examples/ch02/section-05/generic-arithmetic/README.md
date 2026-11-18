@@ -19,9 +19,11 @@ O(log n) for gcd during rational simplification, O(1) otherwise; i64 multiplicat
 ```sh
 cargo run --bin ch02-generic-arithmetic
 cargo test --bin ch02-generic-arithmetic
+python3 examples/ch02/section-05/generic-arithmetic/main.py
+python3 -m unittest examples/ch02/section-05/generic-arithmetic/main.py
 ```
 
-The implementation has self-contained assertions and uses only the Rust standard library. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
 ## Try this
 

@@ -1,6 +1,6 @@
 # Editions and interpretation
 
-This repository is an **independently written Rust companion**, not a translation or redistribution of the textbook's copyrighted prose or source listings. Section labels are navigational aids. Individual Rust programs reimplement familiar ideas with different syntax, tests, and engineering explanations.
+This repository is an **independently written Rust and Python companion**, not a translation or redistribution of the textbook's copyrighted prose or source listings. Section labels are navigational aids. Individual Rust and Python programs reimplement familiar ideas with idiomatic syntax, deterministic unit tests, and engineering explanations.
 
 | Edition | Source language | Relevant emphasis | Source |
 | --- | --- | --- | --- |
@@ -9,11 +9,11 @@ This repository is an **independently written Rust companion**, not a translatio
 | 2022 JavaScript adaptation | JavaScript | Functions, statements, parsing and explicit return-stack behavior | [MIT Press](https://mitpress.mit.edu/9780262543231/structure-and-interpretation-of-computer-programs/) |
 | 2026 SICPy adaptation (in active development) | Python | Reframes language constructs in Python and Python § sublanguages, with Scheme/Python comparison | [Source Academy SICPy project](https://sicp.sourceacademy.org/split_py/chapters/making-of.html) |
 
-The JavaScript and Python adaptations are **not** numbered third/fourth Scheme editions. Martin Henz started SICPy in 2026; its online text is evolving. The chapter structure is related, but parser, evaluator, and compiler examples need language-specific treatment. Existing example tags use `shared`, `1996-scheme`, and `2022-javascript`; new Python-specific work should use `2026-python`. A `shared` tag means an educational concept occurs in multiple versions, **not** that the exact snippet has been ported independently for every edition.
+The JavaScript and Python adaptations are **not** numbered third/fourth Scheme editions. Martin Henz started SICPy in 2026; its online text is evolving. The chapter structure is related, but parser, evaluator, and compiler examples need language-specific treatment. Existing example tags use `shared`, `1996-scheme`, and `2022-javascript` (for example `ch03-cse-environment-machine`, `ch04-javascript-parser`, and `ch05-javascript-tail-calls`, while `ch05-bytecode-compiler` and `ch05-register-compiler` focus on shared compilation models); new Python-only work should use `2026-python`. A `shared` tag means an educational concept occurs in multiple versions, **not** that the exact snippet has been copied verbatim.
 
 ## Coverage policy
 
-- An example is listed as **implemented** only if its Rust source and adjacent README are checked in.
+- An example is listed as **implemented** only if its Rust source (`main.rs`), Python source (`main.py`), and adjacent `README.md` are checked in and pass CI tests.
 - Coverage of a *section* does not imply coverage of all its exercises, diagrams, snippets, alternative solutions, or edition-specific changes.
 - New examples should record an edition or `shared` applicability and any semantic difference from Scheme/JavaScript/Python.
 - There is currently no claim that all published examples from all four editions/adaptations have been ported. See [coverage tracker](../COVERAGE.md).

@@ -19,6 +19,8 @@ O(V+E) on the explored portion of the relation graph, using O(V) extra space.
 ```sh
 cargo run --bin ch04-ancestor-relation
 cargo test --bin ch04-ancestor-relation
+python3 examples/ch04/section-04/ancestor-relation/main.py
+python3 -m unittest examples/ch04/section-04/ancestor-relation/main.py
 ```
 
 ## Extend the example

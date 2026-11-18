@@ -19,6 +19,8 @@ All operations use constant work and memory. Floating-point comparisons need a t
 ```sh
 cargo run --bin ch02-geometric-segments
 cargo test --bin ch02-geometric-segments
+python3 examples/ch02/section-01/geometric-segments/main.py
+python3 -m unittest examples/ch02/section-01/geometric-segments/main.py
 ```
 
 ## Exercise

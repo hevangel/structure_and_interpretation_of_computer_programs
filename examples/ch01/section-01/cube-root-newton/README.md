@@ -19,6 +19,8 @@ Constant work and memory per iteration; convergence is quadratic near a nonzero 
 ```sh
 cargo run --bin ch01-cube-root-newton
 cargo test --bin ch01-cube-root-newton
+python3 examples/ch01/section-01/cube-root-newton/main.py
+python3 -m unittest examples/ch01/section-01/cube-root-newton/main.py
 ```
 
 ## Extension challenge

@@ -1,6 +1,6 @@
 # SICP Edition Coverage Review & Agent Implementation Guide
 
-This review audits the [SICP Rust Companion](../README.md) (`41` runnable `[[bin]]` examples, `22` section introductions, `95` subsection notes, and [`manifest.json`](../manifest.json)) against the local textbook transcriptions in [`learning/textbooks/WizardBook`](../../textbooks/WizardBook) and specifies concrete, agent-ready work items for every missing or stubbed system.
+This review audits the [SICP Rust Companion](../README.md) (`41` runnable `[[bin]]` examples, `22` section introductions, `95` subsection notes, and [`manifest.json`](../manifest.json)) against the local textbook transcriptions in `learning/textbooks/WizardBook` and specifies concrete, agent-ready work items for every missing or stubbed system.
 
 ---
 
@@ -39,7 +39,7 @@ When adding a new example `examples/chXX/section-YY/<slug>/` (with binary name `
      - `## Complexity and correctness`
      - `## Run it` (`cargo run --bin chXX-<slug>` and `cargo test --bin chXX-<slug>`)
      - `## Try this`
-     - Footer links: `[Section introduction](../../../../chapters/chXX/section-YY/INTRO.md) · [Coverage](../../../../COVERAGE.md)`
+     - Footer links: ``chapters/chXX/section-YY/INTRO.md` · `COVERAGE.md``
 3. **Register the `[[bin]]` target in [`Cargo.toml`](../Cargo.toml):**
    ```toml
    [[bin]]
@@ -67,13 +67,13 @@ cargo clippy --all-targets -- -D warnings
 
 ## 3. Local Textbook Markdown Corpus Audit & Exact Line-Number Index
 
-Two complete SICP transcriptions reside under [`learning/textbooks/WizardBook`](../../textbooks/WizardBook) (plus both earlier Prefaces embedded in both volumes):
+Two complete SICP transcriptions reside under `learning/textbooks/WizardBook` (plus both earlier Prefaces embedded in both volumes):
 
 | Volume | Local File | Lines | Structure & Verified Observations |
 | --- | --- | ---: | --- |
-| **1984 1st Edition** *(Scheme)* | *None locally* | — | Audited via the 1984 Preface ([`2022 L341–L360`](../../textbooks/WizardBook/SICP_JavaScript_Ed_2022.md#L341-L360), [`1996 L273`](../../textbooks/WizardBook/SICP_2nd_Ed_1996.md#L273)) and the 1996 edition revision notes (`1996 L247–L272`). |
-| **1996 2nd Edition** *(Scheme)* | [`SICP_2nd_Ed_1996.md`](../../textbooks/WizardBook/SICP_2nd_Ed_1996.md) | 22,936 | Plain-text headings (`1.1.1 Expressions`, etc.); includes all 5 chapters, 22 sections, 94 subsections (`1.1.1`–`5.5.7`), References (`L20603`), and Index (`L20885`). |
-| **2022 JavaScript Edition** | [`SICP_JavaScript_Ed_2022.md`](../../textbooks/WizardBook/SICP_JavaScript_Ed_2022.md) | 23,221 | Clean `#` / `##` / `###` / `####` / `#####` Markdown headings; embeds 2022 Preface (`L296`), 1996 Preface (`L324`), 1984 Preface (`L341`), Ch 1–5 (`L422–L19865`), References (`L19866`), Index (`L19975`), and List of Exercises (`L23218`). |
+| **1984 1st Edition** *(Scheme)* | *None locally* | — | Audited via the 1984 Preface (`2022 L341–L360`, `1996 L273`) and the 1996 edition revision notes (`1996 L247–L272`). |
+| **1996 2nd Edition** *(Scheme)* | `SICP_2nd_Ed_1996.md` | 22,936 | Plain-text headings (`1.1.1 Expressions`, etc.); includes all 5 chapters, 22 sections, 94 subsections (`1.1.1`–`5.5.7`), References (`L20603`), and Index (`L20885`). |
+| **2022 JavaScript Edition** | `SICP_JavaScript_Ed_2022.md` | 23,221 | Clean `#` / `##` / `###` / `####` / `#####` Markdown headings; embeds 2022 Preface (`L296`), 1996 Preface (`L324`), 1984 Preface (`L341`), Ch 1–5 (`L422–L19865`), References (`L19866`), Index (`L19975`), and List of Exercises (`L23218`). |
 
 ### Complete 22-Section & 95-Subsection Line-Number Crosswalk
 
@@ -113,7 +113,7 @@ Two complete SICP transcriptions reside under [`learning/textbooks/WizardBook`](
 
 ## 4. Edition Crosswalk (`1984 1e` vs `1996 2e Scheme` vs `2022 JS Adaptation`)
 
-Per the **1996 Preface** ([`2022 L324–L340`](../../textbooks/WizardBook/SICP_JavaScript_Ed_2022.md#L324-L340)) and **2022 Preface** ([`2022 L296–L319`](../../textbooks/WizardBook/SICP_JavaScript_Ed_2022.md#L296-L319)):
+Per the **1996 Preface** (`2022 L324–L340`) and **2022 Preface** (`2022 L296–L319`):
 
 | Dimension | 1984 1st Edition *(Scheme)* | 1996 2nd Edition *(Scheme)* | 2022 JavaScript Adaptation |
 | --- | --- | --- | --- |
@@ -348,16 +348,16 @@ Apply these small housekeeping fixes before or alongside feature work:
 2. **Fix inconsistent JS edition tag key in [`docs/editions.md`](../docs/editions.md#L11):**
    - Change ``marked `javascript-2022` in the example metadata`` on `L11` to ``marked `2022-javascript` in the example metadata`` matching [`manifest.json`](../manifest.json#L4-L8) and [`COVERAGE.md#L14`](../COVERAGE.md#L14), and note accurately that `ch04-javascript-parser` and `ch05-javascript-tail-calls` carry `2022-javascript` while `ch05-bytecode-compiler` is currently `shared`.
 3. **Widen two under-tagged `1996-scheme` entries to `shared`:**
-   - `ch02-picture-composition`: `SICP_JavaScript_Ed_2022.md` explicitly covers `§2.2.4 Example: A Picture Language` ([`L4336–L4694`](../../textbooks/WizardBook/SICP_JavaScript_Ed_2022.md#L4336-L4694)); update `"1996-scheme"` → `"shared"` in [`manifest.json#L586,L596`](../manifest.json#L586-L596) and [`examples/ch02/section-02/picture-composition/README.md#L3`](../examples/ch02/section-02/picture-composition/README.md#L3).
-   - `ch03-stream-integration`: `SICP_JavaScript_Ed_2022.md` explicitly covers `§3.5.4 Streams and Delayed Evaluation` (`integral`, `solve` ODEs at [`L10658–L10788`](../../textbooks/WizardBook/SICP_JavaScript_Ed_2022.md#L10658-L10788)); update `"1996-scheme"` → `"shared"` in [`manifest.json#L1152,L1162`](../manifest.json#L1152-L1162) and [`examples/ch03/section-05/stream-integration/README.md#L3`](../examples/ch03/section-05/stream-integration/README.md#L3).
+   - `ch02-picture-composition`: `SICP_JavaScript_Ed_2022.md` explicitly covers `§2.2.4 Example: A Picture Language` (`L4336–L4694`); update `"1996-scheme"` → `"shared"` in [`manifest.json#L586,L596`](../manifest.json#L586-L596) and [`examples/ch02/section-02/picture-composition/README.md#L3`](../examples/ch02/section-02/picture-composition/README.md#L3).
+   - `ch03-stream-integration`: `SICP_JavaScript_Ed_2022.md` explicitly covers `§3.5.4 Streams and Delayed Evaluation` (`integral`, `solve` ODEs at `L10658–L10788`); update `"1996-scheme"` → `"shared"` in [`manifest.json#L1152,L1162`](../manifest.json#L1152-L1162) and [`examples/ch03/section-05/stream-integration/README.md#L3`](../examples/ch03/section-05/stream-integration/README.md#L3).
 4. **Standardize 4 outlier example `README.md` files:**
-   - Normalize [`ch03-digital-circuit-simulator/README.md`](../examples/ch03/section-03/digital-circuit-simulator/README.md), [`ch03-constraint-propagation/README.md`](../examples/ch03/section-03/constraint-propagation/README.md), [`ch03-stream-integration/README.md`](../examples/ch03/section-05/stream-integration/README.md), and [`ch04-lexical-closures/README.md`](../examples/ch04/section-01/lexical-closures/README.md) from `**Book section:** / ## Concept / ## Rust implementation / ## Complexity and invariants / ## Run and test / ## Extension exercise` to the house template used by the other 37 examples (`**Book concepts:** / **Edition applicability:** / ## What this demonstrates / ## Implementation walkthrough / ## Complexity and correctness / ## Run it / ## Try this` + `[Coverage](../../../../COVERAGE.md)` footer).
+   - Normalize [`ch03-digital-circuit-simulator/README.md`](../examples/ch03/section-03/digital-circuit-simulator/README.md), [`ch03-constraint-propagation/README.md`](../examples/ch03/section-03/constraint-propagation/README.md), [`ch03-stream-integration/README.md`](../examples/ch03/section-05/stream-integration/README.md), and [`ch04-lexical-closures/README.md`](../examples/ch04/section-01/lexical-closures/README.md) from `**Book section:** / ## Concept / ## Rust implementation / ## Complexity and invariants / ## Run and test / ## Extension exercise` to the house template used by the other 37 examples (`**Book concepts:** / **Edition applicability:** / ## What this demonstrates / ## Implementation walkthrough / ## Complexity and correctness / ## Run it / ## Try this` + ``COVERAGE.md`` footer).
 5. **Document the Source Academy origin of subsection `3.2.5 The CSE Machine`:**
-   - Note in [`chapters/ch03/section-02/subsection-05/INTRO.md`](../chapters/ch03/section-02/subsection-05/INTRO.md) and [`README.md#L3`](../README.md#L3) that `3.2.5` is a Source Academy web-comparison supplement rather than a numbered subsection in either [`SICP_2nd_Ed_1996.md`](../../textbooks/WizardBook/SICP_2nd_Ed_1996.md) or [`SICP_JavaScript_Ed_2022.md`](../../textbooks/WizardBook/SICP_JavaScript_Ed_2022.md) (which both contain `94` numbered subsections `1.1.1`–`5.5.7`).
+   - Note in [`chapters/ch03/section-02/subsection-05/INTRO.md`](../chapters/ch03/section-02/subsection-05/INTRO.md) and [`README.md#L3`](../README.md#L3) that `3.2.5` is a Source Academy web-comparison supplement rather than a numbered subsection in either `SICP_2nd_Ed_1996.md` or `SICP_JavaScript_Ed_2022.md` (which both contain `94` numbered subsections `1.1.1`–`5.5.7`).
 
 ---
 
 ## 8. Review Caveats
 
-- **1984 First Edition:** No local `1984` Markdown transcription exists under `learning/textbooks/WizardBook`; differences between the 1984 original and 1996 second edition rely on the embedded Prefaces ([`2022 L324–L360`](../../textbooks/WizardBook/SICP_JavaScript_Ed_2022.md#L324-L360)) and the companion's [`docs/editions.md`](../docs/editions.md).
+- **1984 First Edition:** No local `1984` Markdown transcription exists under `learning/textbooks/WizardBook`; differences between the 1984 original and 1996 second edition rely on the embedded Prefaces (`2022 L324–L360`) and the companion's [`docs/editions.md`](../docs/editions.md).
 - **Execution status:** No `cargo fmt`, `cargo clippy`, or `cargo test` commands were run during this documentation-only review; all source/manifest/line counts (`41` binaries, `208` manifest entries, `17–79` line bounds across all 41 `main.rs` files) come from direct file inspection.

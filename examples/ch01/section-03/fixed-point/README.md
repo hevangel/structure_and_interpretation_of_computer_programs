@@ -19,9 +19,11 @@ Each iteration evaluates f once, so complexity depends on the contraction rate. 
 ```sh
 cargo run --bin ch01-fixed-point
 cargo test --bin ch01-fixed-point
+python3 examples/ch01/section-03/fixed-point/main.py
+python3 -m unittest examples/ch01/section-03/fixed-point/main.py
 ```
 
-The implementation has self-contained assertions and uses only the Rust standard library. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
 ## Try this
 

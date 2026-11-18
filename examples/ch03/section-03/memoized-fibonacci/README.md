@@ -19,6 +19,8 @@ O(n) time and O(n) additional memory versus exponential work for naive recursion
 ```sh
 cargo run --bin ch03-memoized-fibonacci
 cargo test --bin ch03-memoized-fibonacci
+python3 examples/ch03/section-03/memoized-fibonacci/main.py
+python3 -m unittest examples/ch03/section-03/memoized-fibonacci/main.py
 ```
 
 ## Extension problem

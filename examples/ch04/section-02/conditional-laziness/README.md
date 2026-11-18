@@ -19,6 +19,8 @@ Execution cost depends on the selected branch, not the total expression tree. Er
 ```sh
 cargo run --bin ch04-conditional-laziness
 cargo test --bin ch04-conditional-laziness
+python3 examples/ch04/section-02/conditional-laziness/main.py
+python3 -m unittest examples/ch04/section-02/conditional-laziness/main.py
 ```
 
 ## Extend the example

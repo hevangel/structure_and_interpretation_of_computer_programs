@@ -19,6 +19,8 @@ Composing two functions adds their costs; applying a function n times takes O(n)
 ```sh
 cargo run --bin ch01-function-composition
 cargo test --bin ch01-function-composition
+python3 examples/ch01/section-03/function-composition/main.py
+python3 -m unittest examples/ch01/section-03/function-composition/main.py
 ```
 
 ## Extension challenge

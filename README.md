@@ -1,16 +1,16 @@
-# Structure and Interpretation of Computer Programs — Rust companion
+# Structure and Interpretation of Computer Programs — Rust & Python Companion
 
-An original, open-source learning companion to the classic **Wizard Book**, with 73 independently written and commented Rust programs, adjacent example explanations, introductions to all 22 major sections and 95 numbered subsections, automated checks, and a zero-build static site.
+An original, open-source learning companion to the classic **Wizard Book**, with **95 independently written and tested programs in both Rust and Python**, adjacent example explanations, introductions to all 22 major sections and 95 subsection study guides (`1.1.1`–`5.5.7` plus Source Academy's `3.2.5` web supplement), automated checks, and a zero-build static site with embedded syntax-highlighted source code.
 
-**Status:** scaffold and representative examples; this does **not** yet contain every example from all editions. See [COVERAGE.md](COVERAGE.md).
+**Status:** broad concept and multi-part system coverage across Chapters 1–5; this does **not** yet contain every exercise or snippet from all editions. See [COVERAGE.md](COVERAGE.md).
 
 ## Start here
 
-- [Open the static code/Markdown browser](index.html) (enable GitHub Pages for hosted browsing).
+- [Open the static code/Markdown browser](index.html) (embeds Rust + Python source tabs with syntax highlighting; enable GitHub Pages for hosted browsing).
 - [Chapter introductions](chapters/) and [edition crosswalk](docs/editions.md).
-- Browse `examples/chXX/section-YY/example-name/{main.rs,README.md}`.
-- Run `cargo test --all-targets` to verify all Rust examples.
-- Run one: `cargo run --bin ch01-newton-sqrt`.
+- Browse `examples/chXX/section-YY/example-name/{main.rs,main.py,README.md}`.
+- Verify all Rust examples: `cargo test --all-targets` (single target: `cargo run --bin ch01-newton-sqrt`).
+- Verify a Python example: `python3 -m unittest examples/ch01/section-01/newton-sqrt/main.py` (or run `python3 examples/ch01/section-01/newton-sqrt/main.py`).
 
 ## Editions and evolving adaptations
 
@@ -20,12 +20,12 @@ The textbook is by Harold Abelson and Gerald Jay Sussman, with Julie Sussman; th
 
 ## Learning path
 
-Read chapter introductions, then numbered subsection `INTRO.md` notes, then code and its sibling `README.md`. Each code example includes executable assertions, comments about invariants, and standard-library-only Rust.
+Read chapter introductions, then numbered subsection `INTRO.md` notes, then each example's `README.md` alongside its `main.rs` and `main.py` implementations. Every code example includes executable assertions and uses only the Rust and Python standard libraries.
 
 ## Static hosting
 
-The root `index.html` fetches `manifest.json`, Markdown files and Rust source using relative paths. Host the repository root with GitHub Pages (deploy from `main` / `/ (root)`) or any static web server. `file://` browsing cannot normally fetch local files because of browser restrictions. No bundler or CDN is needed.
+The root `index.html` fetches `manifest.json`, Markdown files, and both Rust and Python source files using relative paths, embedding syntax-highlighted Rust (`main.rs`), Python (`main.py`), and side-by-side code views directly on each example page. Host the repository root with GitHub Pages (deploy from `main` / `/ (root)`) or any static web server. `file://` browsing cannot normally fetch local files because of browser restrictions. No bundler or CDN is needed.
 
 ## Authorship and scope
 
-The Rust implementations and explanations are independently authored educational adaptations, **not** verbatim reproductions of the published textbook. Exact examples, exercises, and solution coverage across editions remain a long-term inventory task. Contributions should follow [docs/porting-guide.md](docs/porting-guide.md) and [coverage methodology](docs/coverage-methodology.md). Use `python3 tools/verify_catalog.py` to validate the file index and internal links.
+The Rust and Python implementations and explanations are independently authored educational adaptations, **not** verbatim reproductions of the published textbook. Exact examples, exercises, and solution coverage across editions remain a long-term inventory task. Contributions should follow [docs/porting-guide.md](docs/porting-guide.md) and [coverage methodology](docs/coverage-methodology.md). Use `python3 tools/verify_catalog.py` to validate the file index, Rust/Python entrypoints, and internal links.

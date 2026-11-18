@@ -17,16 +17,20 @@ fn passes_fermat(n: u64, base: u64) -> bool {
     n >= 2 && mod_pow(base, n, n) == base % n
 }
 fn trial_prime(n: u64) -> bool {
-    if n < 2 { return false; }
+    if n < 2 {
+        return false;
+    }
     let mut divisor = 2;
     while divisor <= n / divisor {
-        if n % divisor == 0 { return false; }
+        if n % divisor == 0 {
+            return false;
+        }
         divisor += 1;
     }
     true
 }
 fn main() {
-    println!("561 passes base-2 Fermat? {}", passes_fermat(561,2));
+    println!("561 passes base-2 Fermat? {}", passes_fermat(561, 2));
     println!("561 is actually prime? {}", trial_prime(561));
 }
 #[cfg(test)]
@@ -34,9 +38,9 @@ mod tests {
     use super::*;
     #[test]
     fn prime_test_is_not_proof() {
-        assert_eq!(mod_pow(2,10,1000),24);
-        assert!(passes_fermat(13,2));
-        assert!(passes_fermat(561,2));
+        assert_eq!(mod_pow(2, 10, 1000), 24);
+        assert!(passes_fermat(13, 2));
+        assert!(passes_fermat(561, 2));
         assert!(!trial_prime(561));
         assert!(trial_prime(563));
     }

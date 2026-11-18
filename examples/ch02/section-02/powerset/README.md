@@ -19,6 +19,8 @@ Time and total output storage are O(n·2^n), because the result actually contain
 ```sh
 cargo run --bin ch02-powerset
 cargo test --bin ch02-powerset
+python3 examples/ch02/section-02/powerset/main.py
+python3 -m unittest examples/ch02/section-02/powerset/main.py
 ```
 
 ## Exercise

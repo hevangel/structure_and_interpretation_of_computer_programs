@@ -1,5 +1,5 @@
 {
-  "project": "SICP Rust Companion",
+  "project": "SICP Rust & Python Companion",
   "scope": "Representative examples only; not exhaustive",
   "editions": [
     "1984-scheme",
@@ -10,7 +10,7 @@
   "entries": [
     {
       "kind": "guide",
-      "title": "README — Start here",
+      "title": "README \u2014 Start here",
       "path": "README.md"
     },
     {
@@ -126,11 +126,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-01/newton-sqrt/README.md",
       "source": "examples/ch01/section-01/newton-sqrt/main.rs",
-      "bin": "ch01-newton-sqrt"
+      "bin": "ch01-newton-sqrt",
+      "python_source": "examples/ch01/section-01/newton-sqrt/main.py"
     },
     {
       "kind": "source",
-      "title": "1.1 Square roots by iterative improvement — Rust source",
+      "title": "1.1 Square roots by iterative improvement \u2014 Rust source",
       "chapter": "01",
       "section": "1.1",
       "edition": "shared",
@@ -144,15 +145,35 @@
       "edition": "shared",
       "path": "examples/ch01/section-01/cube-root-newton/README.md",
       "source": "examples/ch01/section-01/cube-root-newton/main.rs",
-      "bin": "ch01-cube-root-newton"
+      "bin": "ch01-cube-root-newton",
+      "python_source": "examples/ch01/section-01/cube-root-newton/main.py"
     },
     {
       "kind": "source",
-      "title": "1.1 Cube roots by Newton iteration — Rust source",
+      "title": "1.1 Cube roots by Newton iteration \u2014 Rust source",
       "chapter": "01",
       "section": "1.1",
       "edition": "shared",
       "path": "examples/ch01/section-01/cube-root-newton/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.1 Evaluation orders and lexical block scope",
+      "chapter": "01",
+      "section": "1.1",
+      "edition": "shared",
+      "path": "examples/ch01/section-01/evaluation-orders/README.md",
+      "source": "examples/ch01/section-01/evaluation-orders/main.rs",
+      "python_source": "examples/ch01/section-01/evaluation-orders/main.py",
+      "bin": "ch01-evaluation-orders"
+    },
+    {
+      "kind": "source",
+      "title": "1.1 Evaluation orders and lexical block scope \u2014 Rust source",
+      "chapter": "01",
+      "section": "1.1",
+      "edition": "shared",
+      "path": "examples/ch01/section-01/evaluation-orders/main.rs"
     },
     {
       "kind": "section",
@@ -223,11 +244,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-02/factorial-processes/README.md",
       "source": "examples/ch01/section-02/factorial-processes/main.rs",
-      "bin": "ch01-factorial-processes"
+      "bin": "ch01-factorial-processes",
+      "python_source": "examples/ch01/section-02/factorial-processes/main.py"
     },
     {
       "kind": "source",
-      "title": "1.2 Recursive and iterative factorial — Rust source",
+      "title": "1.2 Recursive and iterative factorial \u2014 Rust source",
       "chapter": "01",
       "section": "1.2",
       "edition": "shared",
@@ -241,11 +263,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-02/sine-triple-angle/README.md",
       "source": "examples/ch01/section-02/sine-triple-angle/main.rs",
-      "bin": "ch01-sine-triple-angle"
+      "bin": "ch01-sine-triple-angle",
+      "python_source": "examples/ch01/section-02/sine-triple-angle/main.py"
     },
     {
       "kind": "source",
-      "title": "1.2 Sine by recursive argument reduction — Rust source",
+      "title": "1.2 Sine by recursive argument reduction \u2014 Rust source",
       "chapter": "01",
       "section": "1.2",
       "edition": "shared",
@@ -259,11 +282,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-02/fermat-test/README.md",
       "source": "examples/ch01/section-02/fermat-test/main.rs",
-      "bin": "ch01-fermat-test"
+      "bin": "ch01-fermat-test",
+      "python_source": "examples/ch01/section-02/fermat-test/main.py"
     },
     {
       "kind": "source",
-      "title": "1.2 Fermat primality and Carmichael counterexample — Rust source",
+      "title": "1.2 Fermat primality and Carmichael counterexample \u2014 Rust source",
       "chapter": "01",
       "section": "1.2",
       "edition": "shared",
@@ -277,11 +301,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-02/fast-multiplication/README.md",
       "source": "examples/ch01/section-02/fast-multiplication/main.rs",
-      "bin": "ch01-fast-multiplication"
+      "bin": "ch01-fast-multiplication",
+      "python_source": "examples/ch01/section-02/fast-multiplication/main.py"
     },
     {
       "kind": "source",
-      "title": "1.2 Multiplication by doubling and halving — Rust source",
+      "title": "1.2 Multiplication by doubling and halving \u2014 Rust source",
       "chapter": "01",
       "section": "1.2",
       "edition": "shared",
@@ -295,11 +320,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-02/counting-change/README.md",
       "source": "examples/ch01/section-02/counting-change/main.rs",
-      "bin": "ch01-counting-change"
+      "bin": "ch01-counting-change",
+      "python_source": "examples/ch01/section-02/counting-change/main.py"
     },
     {
       "kind": "source",
-      "title": "1.2 Counting coin-change combinations — Rust source",
+      "title": "1.2 Counting coin-change combinations \u2014 Rust source",
       "chapter": "01",
       "section": "1.2",
       "edition": "shared",
@@ -313,11 +339,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-02/pascal-triangle/README.md",
       "source": "examples/ch01/section-02/pascal-triangle/main.rs",
-      "bin": "ch01-pascal-triangle"
+      "bin": "ch01-pascal-triangle",
+      "python_source": "examples/ch01/section-02/pascal-triangle/main.py"
     },
     {
       "kind": "source",
-      "title": "1.2 Pascal triangle as a recursive process — Rust source",
+      "title": "1.2 Pascal triangle as a recursive process \u2014 Rust source",
       "chapter": "01",
       "section": "1.2",
       "edition": "shared",
@@ -331,11 +358,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-02/fast-exponentiation/README.md",
       "source": "examples/ch01/section-02/fast-exponentiation/main.rs",
-      "bin": "ch01-fast-exponentiation"
+      "bin": "ch01-fast-exponentiation",
+      "python_source": "examples/ch01/section-02/fast-exponentiation/main.py"
     },
     {
       "kind": "source",
-      "title": "1.2 Exponentiation by repeated squaring — Rust source",
+      "title": "1.2 Exponentiation by repeated squaring \u2014 Rust source",
       "chapter": "01",
       "section": "1.2",
       "edition": "shared",
@@ -349,11 +377,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-02/euclidean-gcd/README.md",
       "source": "examples/ch01/section-02/euclidean-gcd/main.rs",
-      "bin": "ch01-euclidean-gcd"
+      "bin": "ch01-euclidean-gcd",
+      "python_source": "examples/ch01/section-02/euclidean-gcd/main.py"
     },
     {
       "kind": "source",
-      "title": "1.2 Euclid's greatest-common-divisor algorithm — Rust source",
+      "title": "1.2 Euclid's greatest-common-divisor algorithm \u2014 Rust source",
       "chapter": "01",
       "section": "1.2",
       "edition": "shared",
@@ -367,11 +396,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-02/fibonacci-processes/README.md",
       "source": "examples/ch01/section-02/fibonacci-processes/main.rs",
-      "bin": "ch01-fibonacci-processes"
+      "bin": "ch01-fibonacci-processes",
+      "python_source": "examples/ch01/section-02/fibonacci-processes/main.py"
     },
     {
       "kind": "source",
-      "title": "1.2 Fibonacci recurrence and process shape — Rust source",
+      "title": "1.2 Fibonacci recurrence and process shape \u2014 Rust source",
       "chapter": "01",
       "section": "1.2",
       "edition": "shared",
@@ -385,15 +415,35 @@
       "edition": "shared",
       "path": "examples/ch01/section-02/prime-testing/README.md",
       "source": "examples/ch01/section-02/prime-testing/main.rs",
-      "bin": "ch01-prime-testing"
+      "bin": "ch01-prime-testing",
+      "python_source": "examples/ch01/section-02/prime-testing/main.py"
     },
     {
       "kind": "source",
-      "title": "1.2 Trial-division primality test — Rust source",
+      "title": "1.2 Trial-division primality test \u2014 Rust source",
       "chapter": "01",
       "section": "1.2",
       "edition": "shared",
       "path": "examples/ch01/section-02/prime-testing/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.2 Fermat primality, Carmichael numbers, and Miller\u2013Rabin",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/fermat-miller-rabin/README.md",
+      "source": "examples/ch01/section-02/fermat-miller-rabin/main.rs",
+      "python_source": "examples/ch01/section-02/fermat-miller-rabin/main.py",
+      "bin": "ch01-fermat-miller-rabin"
+    },
+    {
+      "kind": "source",
+      "title": "1.2 Fermat primality, Carmichael numbers, and Miller\u2013Rabin \u2014 Rust source",
+      "chapter": "01",
+      "section": "1.2",
+      "edition": "shared",
+      "path": "examples/ch01/section-02/fermat-miller-rabin/main.rs"
     },
     {
       "kind": "section",
@@ -446,11 +496,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-03/accumulate/README.md",
       "source": "examples/ch01/section-03/accumulate/main.rs",
-      "bin": "ch01-accumulate"
+      "bin": "ch01-accumulate",
+      "python_source": "examples/ch01/section-03/accumulate/main.py"
     },
     {
       "kind": "source",
-      "title": "1.3 Higher-order accumulation — Rust source",
+      "title": "1.3 Higher-order accumulation \u2014 Rust source",
       "chapter": "01",
       "section": "1.3",
       "edition": "shared",
@@ -464,11 +515,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-03/function-composition/README.md",
       "source": "examples/ch01/section-03/function-composition/main.rs",
-      "bin": "ch01-function-composition"
+      "bin": "ch01-function-composition",
+      "python_source": "examples/ch01/section-03/function-composition/main.py"
     },
     {
       "kind": "source",
-      "title": "1.3 Function composition and repeated application — Rust source",
+      "title": "1.3 Function composition and repeated application \u2014 Rust source",
       "chapter": "01",
       "section": "1.3",
       "edition": "shared",
@@ -482,11 +534,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-03/half-interval-method/README.md",
       "source": "examples/ch01/section-03/half-interval-method/main.rs",
-      "bin": "ch01-half-interval-method"
+      "bin": "ch01-half-interval-method",
+      "python_source": "examples/ch01/section-03/half-interval-method/main.py"
     },
     {
       "kind": "source",
-      "title": "1.3 Bisection and the intermediate value theorem — Rust source",
+      "title": "1.3 Bisection and the intermediate value theorem \u2014 Rust source",
       "chapter": "01",
       "section": "1.3",
       "edition": "shared",
@@ -500,11 +553,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-03/fixed-point/README.md",
       "source": "examples/ch01/section-03/fixed-point/main.rs",
-      "bin": "ch01-fixed-point"
+      "bin": "ch01-fixed-point",
+      "python_source": "examples/ch01/section-03/fixed-point/main.py"
     },
     {
       "kind": "source",
-      "title": "1.3 Fixed-point iteration — Rust source",
+      "title": "1.3 Fixed-point iteration \u2014 Rust source",
       "chapter": "01",
       "section": "1.3",
       "edition": "shared",
@@ -518,11 +572,12 @@
       "edition": "shared",
       "path": "examples/ch01/section-03/simpson-integration/README.md",
       "source": "examples/ch01/section-03/simpson-integration/main.rs",
-      "bin": "ch01-simpson-integration"
+      "bin": "ch01-simpson-integration",
+      "python_source": "examples/ch01/section-03/simpson-integration/main.py"
     },
     {
       "kind": "source",
-      "title": "1.3 Higher-order numerical integration — Rust source",
+      "title": "1.3 Higher-order numerical integration \u2014 Rust source",
       "chapter": "01",
       "section": "1.3",
       "edition": "shared",
@@ -536,15 +591,54 @@
       "edition": "shared",
       "path": "examples/ch01/section-03/continued-fraction/README.md",
       "source": "examples/ch01/section-03/continued-fraction/main.rs",
-      "bin": "ch01-continued-fraction"
+      "bin": "ch01-continued-fraction",
+      "python_source": "examples/ch01/section-03/continued-fraction/main.py"
     },
     {
       "kind": "source",
-      "title": "1.3 Continued-fraction approximations — Rust source",
+      "title": "1.3 Continued-fraction approximations \u2014 Rust source",
       "chapter": "01",
       "section": "1.3",
       "edition": "shared",
       "path": "examples/ch01/section-03/continued-fraction/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.3 Filtered accumulation, half-interval roots, and continued fractions",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/half-interval-filtered/README.md",
+      "source": "examples/ch01/section-03/half-interval-filtered/main.rs",
+      "python_source": "examples/ch01/section-03/half-interval-filtered/main.py",
+      "bin": "ch01-half-interval-filtered"
+    },
+    {
+      "kind": "source",
+      "title": "1.3 Filtered accumulation, half-interval roots, and continued fractions \u2014 Rust source",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/half-interval-filtered/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "1.3 First-class returned functions: Newton transform, smoothing, and iterative improvement",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/newton-transform-smoothed/README.md",
+      "source": "examples/ch01/section-03/newton-transform-smoothed/main.rs",
+      "python_source": "examples/ch01/section-03/newton-transform-smoothed/main.py",
+      "bin": "ch01-newton-transform-smoothed"
+    },
+    {
+      "kind": "source",
+      "title": "1.3 First-class returned functions: Newton transform, smoothing, and iterative improvement \u2014 Rust source",
+      "chapter": "01",
+      "section": "1.3",
+      "edition": "shared",
+      "path": "examples/ch01/section-03/newton-transform-smoothed/main.rs"
     },
     {
       "kind": "chapter",
@@ -603,11 +697,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-01/rational-numbers/README.md",
       "source": "examples/ch02/section-01/rational-numbers/main.rs",
-      "bin": "ch02-rational-numbers"
+      "bin": "ch02-rational-numbers",
+      "python_source": "examples/ch02/section-01/rational-numbers/main.py"
     },
     {
       "kind": "source",
-      "title": "2.1 Rational numbers as an abstract data type — Rust source",
+      "title": "2.1 Rational numbers as an abstract data type \u2014 Rust source",
       "chapter": "02",
       "section": "2.1",
       "edition": "shared",
@@ -621,11 +716,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-01/interval-arithmetic/README.md",
       "source": "examples/ch02/section-01/interval-arithmetic/main.rs",
-      "bin": "ch02-interval-arithmetic"
+      "bin": "ch02-interval-arithmetic",
+      "python_source": "examples/ch02/section-01/interval-arithmetic/main.py"
     },
     {
       "kind": "source",
-      "title": "2.1 Arithmetic on intervals — Rust source",
+      "title": "2.1 Arithmetic on intervals \u2014 Rust source",
       "chapter": "02",
       "section": "2.1",
       "edition": "shared",
@@ -639,11 +735,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-01/church-numerals/README.md",
       "source": "examples/ch02/section-01/church-numerals/main.rs",
-      "bin": "ch02-church-numerals"
+      "bin": "ch02-church-numerals",
+      "python_source": "examples/ch02/section-01/church-numerals/main.py"
     },
     {
       "kind": "source",
-      "title": "2.1 Church numerals as higher-order functions — Rust source",
+      "title": "2.1 Church numerals as higher-order functions \u2014 Rust source",
       "chapter": "02",
       "section": "2.1",
       "edition": "shared",
@@ -657,11 +754,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-01/geometric-segments/README.md",
       "source": "examples/ch02/section-01/geometric-segments/main.rs",
-      "bin": "ch02-geometric-segments"
+      "bin": "ch02-geometric-segments",
+      "python_source": "examples/ch02/section-01/geometric-segments/main.py"
     },
     {
       "kind": "source",
-      "title": "2.1 Geometric segments and abstract rectangles — Rust source",
+      "title": "2.1 Geometric segments and abstract rectangles \u2014 Rust source",
       "chapter": "02",
       "section": "2.1",
       "edition": "shared",
@@ -675,11 +773,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-01/functional-pairs/README.md",
       "source": "examples/ch02/section-01/functional-pairs/main.rs",
-      "bin": "ch02-functional-pairs"
+      "bin": "ch02-functional-pairs",
+      "python_source": "examples/ch02/section-01/functional-pairs/main.py"
     },
     {
       "kind": "source",
-      "title": "2.1 Pairs represented as functions — Rust source",
+      "title": "2.1 Pairs represented as functions \u2014 Rust source",
       "chapter": "02",
       "section": "2.1",
       "edition": "shared",
@@ -736,11 +835,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-02/recursive-trees/README.md",
       "source": "examples/ch02/section-02/recursive-trees/main.rs",
-      "bin": "ch02-recursive-trees"
+      "bin": "ch02-recursive-trees",
+      "python_source": "examples/ch02/section-02/recursive-trees/main.py"
     },
     {
       "kind": "source",
-      "title": "2.2 Recursive tree folds — Rust source",
+      "title": "2.2 Recursive tree folds \u2014 Rust source",
       "chapter": "02",
       "section": "2.2",
       "edition": "shared",
@@ -754,11 +854,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-02/matrix-operations/README.md",
       "source": "examples/ch02/section-02/matrix-operations/main.rs",
-      "bin": "ch02-matrix-operations"
+      "bin": "ch02-matrix-operations",
+      "python_source": "examples/ch02/section-02/matrix-operations/main.py"
     },
     {
       "kind": "source",
-      "title": "2.2 Sequence processing and matrix multiplication — Rust source",
+      "title": "2.2 Sequence processing and matrix multiplication \u2014 Rust source",
       "chapter": "02",
       "section": "2.2",
       "edition": "shared",
@@ -769,17 +870,18 @@
       "title": "2.2 Picture language: compositional images",
       "chapter": "02",
       "section": "2.2",
-      "edition": "1996-scheme",
+      "edition": "shared",
       "path": "examples/ch02/section-02/picture-composition/README.md",
       "source": "examples/ch02/section-02/picture-composition/main.rs",
-      "bin": "ch02-picture-composition"
+      "bin": "ch02-picture-composition",
+      "python_source": "examples/ch02/section-02/picture-composition/main.py"
     },
     {
       "kind": "source",
-      "title": "2.2 Picture language: compositional images — Rust source",
+      "title": "2.2 Picture language: compositional images \u2014 Rust source",
       "chapter": "02",
       "section": "2.2",
-      "edition": "1996-scheme",
+      "edition": "shared",
       "path": "examples/ch02/section-02/picture-composition/main.rs"
     },
     {
@@ -790,11 +892,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-02/powerset/README.md",
       "source": "examples/ch02/section-02/powerset/main.rs",
-      "bin": "ch02-powerset"
+      "bin": "ch02-powerset",
+      "python_source": "examples/ch02/section-02/powerset/main.py"
     },
     {
       "kind": "source",
-      "title": "2.2 Power set by recursive decomposition — Rust source",
+      "title": "2.2 Power set by recursive decomposition \u2014 Rust source",
       "chapter": "02",
       "section": "2.2",
       "edition": "shared",
@@ -808,11 +911,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-02/balanced-mobiles/README.md",
       "source": "examples/ch02/section-02/balanced-mobiles/main.rs",
-      "bin": "ch02-balanced-mobiles"
+      "bin": "ch02-balanced-mobiles",
+      "python_source": "examples/ch02/section-02/balanced-mobiles/main.py"
     },
     {
       "kind": "source",
-      "title": "2.2 Recursive mobiles and torque balance — Rust source",
+      "title": "2.2 Recursive mobiles and torque balance \u2014 Rust source",
       "chapter": "02",
       "section": "2.2",
       "edition": "shared",
@@ -826,11 +930,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-02/horner-evaluation/README.md",
       "source": "examples/ch02/section-02/horner-evaluation/main.rs",
-      "bin": "ch02-horner-evaluation"
+      "bin": "ch02-horner-evaluation",
+      "python_source": "examples/ch02/section-02/horner-evaluation/main.py"
     },
     {
       "kind": "source",
-      "title": "2.2 Horner's rule as a fold — Rust source",
+      "title": "2.2 Horner's rule as a fold \u2014 Rust source",
       "chapter": "02",
       "section": "2.2",
       "edition": "shared",
@@ -844,11 +949,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-02/prime-sum-pairs/README.md",
       "source": "examples/ch02/section-02/prime-sum-pairs/main.rs",
-      "bin": "ch02-prime-sum-pairs"
+      "bin": "ch02-prime-sum-pairs",
+      "python_source": "examples/ch02/section-02/prime-sum-pairs/main.py"
     },
     {
       "kind": "source",
-      "title": "2.2 Prime-sum pairs using nested enumeration — Rust source",
+      "title": "2.2 Prime-sum pairs using nested enumeration \u2014 Rust source",
       "chapter": "02",
       "section": "2.2",
       "edition": "shared",
@@ -862,15 +968,54 @@
       "edition": "shared",
       "path": "examples/ch02/section-02/fold-direction/README.md",
       "source": "examples/ch02/section-02/fold-direction/main.rs",
-      "bin": "ch02-fold-direction"
+      "bin": "ch02-fold-direction",
+      "python_source": "examples/ch02/section-02/fold-direction/main.py"
     },
     {
       "kind": "source",
-      "title": "2.2 Left and right folds are not interchangeable — Rust source",
+      "title": "2.2 Left and right folds are not interchangeable \u2014 Rust source",
       "chapter": "02",
       "section": "2.2",
       "edition": "shared",
       "path": "examples/ch02/section-02/fold-direction/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.2 Geometric frame-mapped picture language and painters",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/frame-painters/README.md",
+      "source": "examples/ch02/section-02/frame-painters/main.rs",
+      "python_source": "examples/ch02/section-02/frame-painters/main.py",
+      "bin": "ch02-frame-painters"
+    },
+    {
+      "kind": "source",
+      "title": "2.2 Geometric frame-mapped picture language and painters \u2014 Rust source",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/frame-painters/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.2 Binary mobiles, fold direction, and nested mappings",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/nested-mappings-mobiles/README.md",
+      "source": "examples/ch02/section-02/nested-mappings-mobiles/main.rs",
+      "python_source": "examples/ch02/section-02/nested-mappings-mobiles/main.py",
+      "bin": "ch02-nested-mappings-mobiles"
+    },
+    {
+      "kind": "source",
+      "title": "2.2 Binary mobiles, fold direction, and nested mappings \u2014 Rust source",
+      "chapter": "02",
+      "section": "2.2",
+      "edition": "shared",
+      "path": "examples/ch02/section-02/nested-mappings-mobiles/main.rs"
     },
     {
       "kind": "section",
@@ -923,11 +1068,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-03/symbolic-differentiation/README.md",
       "source": "examples/ch02/section-03/symbolic-differentiation/main.rs",
-      "bin": "ch02-symbolic-differentiation"
+      "bin": "ch02-symbolic-differentiation",
+      "python_source": "examples/ch02/section-03/symbolic-differentiation/main.py"
     },
     {
       "kind": "source",
-      "title": "2.3 Symbolic differentiation — Rust source",
+      "title": "2.3 Symbolic differentiation \u2014 Rust source",
       "chapter": "02",
       "section": "2.3",
       "edition": "shared",
@@ -941,11 +1087,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-03/binary-search-tree/README.md",
       "source": "examples/ch02/section-03/binary-search-tree/main.rs",
-      "bin": "ch02-binary-search-tree"
+      "bin": "ch02-binary-search-tree",
+      "python_source": "examples/ch02/section-03/binary-search-tree/main.py"
     },
     {
       "kind": "source",
-      "title": "2.3 Ordered sets as binary search trees — Rust source",
+      "title": "2.3 Ordered sets as binary search trees \u2014 Rust source",
       "chapter": "02",
       "section": "2.3",
       "edition": "shared",
@@ -959,11 +1106,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-03/huffman-coding/README.md",
       "source": "examples/ch02/section-03/huffman-coding/main.rs",
-      "bin": "ch02-huffman-coding"
+      "bin": "ch02-huffman-coding",
+      "python_source": "examples/ch02/section-03/huffman-coding/main.py"
     },
     {
       "kind": "source",
-      "title": "2.3 Huffman prefix-code construction — Rust source",
+      "title": "2.3 Huffman prefix-code construction \u2014 Rust source",
       "chapter": "02",
       "section": "2.3",
       "edition": "shared",
@@ -977,11 +1125,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-03/ordered-set-operations/README.md",
       "source": "examples/ch02/section-03/ordered-set-operations/main.rs",
-      "bin": "ch02-ordered-set-operations"
+      "bin": "ch02-ordered-set-operations",
+      "python_source": "examples/ch02/section-03/ordered-set-operations/main.py"
     },
     {
       "kind": "source",
-      "title": "2.3 Set union and intersection by merging — Rust source",
+      "title": "2.3 Set union and intersection by merging \u2014 Rust source",
       "chapter": "02",
       "section": "2.3",
       "edition": "shared",
@@ -995,15 +1144,35 @@
       "edition": "shared",
       "path": "examples/ch02/section-03/tree-to-ordered-list/README.md",
       "source": "examples/ch02/section-03/tree-to-ordered-list/main.rs",
-      "bin": "ch02-tree-to-ordered-list"
+      "bin": "ch02-tree-to-ordered-list",
+      "python_source": "examples/ch02/section-03/tree-to-ordered-list/main.py"
     },
     {
       "kind": "source",
-      "title": "2.3 Tree traversal as ordered-sequence conversion — Rust source",
+      "title": "2.3 Tree traversal as ordered-sequence conversion \u2014 Rust source",
       "chapter": "02",
       "section": "2.3",
       "edition": "shared",
       "path": "examples/ch02/section-03/tree-to-ordered-list/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.3 Balanced ordered-set BST operations and infix differentiation",
+      "chapter": "02",
+      "section": "2.3",
+      "edition": "shared",
+      "path": "examples/ch02/section-03/ordered-sets-infix-deriv/README.md",
+      "source": "examples/ch02/section-03/ordered-sets-infix-deriv/main.rs",
+      "python_source": "examples/ch02/section-03/ordered-sets-infix-deriv/main.py",
+      "bin": "ch02-ordered-sets-infix-deriv"
+    },
+    {
+      "kind": "source",
+      "title": "2.3 Balanced ordered-set BST operations and infix differentiation \u2014 Rust source",
+      "chapter": "02",
+      "section": "2.3",
+      "edition": "shared",
+      "path": "examples/ch02/section-03/ordered-sets-infix-deriv/main.rs"
     },
     {
       "kind": "section",
@@ -1047,15 +1216,35 @@
       "edition": "shared",
       "path": "examples/ch02/section-04/complex-representations/README.md",
       "source": "examples/ch02/section-04/complex-representations/main.rs",
-      "bin": "ch02-complex-representations"
+      "bin": "ch02-complex-representations",
+      "python_source": "examples/ch02/section-04/complex-representations/main.py"
     },
     {
       "kind": "source",
-      "title": "2.4 Complex numbers with two representations — Rust source",
+      "title": "2.4 Complex numbers with two representations \u2014 Rust source",
       "chapter": "02",
       "section": "2.4",
       "edition": "shared",
       "path": "examples/ch02/section-04/complex-representations/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.4 Data-directed dispatch table (put, get, apply_generic)",
+      "chapter": "02",
+      "section": "2.4",
+      "edition": "shared",
+      "path": "examples/ch02/section-04/data-directed-dispatch/README.md",
+      "source": "examples/ch02/section-04/data-directed-dispatch/main.rs",
+      "python_source": "examples/ch02/section-04/data-directed-dispatch/main.py",
+      "bin": "ch02-data-directed-dispatch"
+    },
+    {
+      "kind": "source",
+      "title": "2.4 Data-directed dispatch table (put, get, apply_generic) \u2014 Rust source",
+      "chapter": "02",
+      "section": "2.4",
+      "edition": "shared",
+      "path": "examples/ch02/section-04/data-directed-dispatch/main.rs"
     },
     {
       "kind": "section",
@@ -1099,11 +1288,12 @@
       "edition": "shared",
       "path": "examples/ch02/section-05/generic-arithmetic/README.md",
       "source": "examples/ch02/section-05/generic-arithmetic/main.rs",
-      "bin": "ch02-generic-arithmetic"
+      "bin": "ch02-generic-arithmetic",
+      "python_source": "examples/ch02/section-05/generic-arithmetic/main.py"
     },
     {
       "kind": "source",
-      "title": "2.5 Generic arithmetic with a numeric tower — Rust source",
+      "title": "2.5 Generic arithmetic with a numeric tower \u2014 Rust source",
       "chapter": "02",
       "section": "2.5",
       "edition": "shared",
@@ -1117,15 +1307,54 @@
       "edition": "shared",
       "path": "examples/ch02/section-05/sparse-polynomial-arithmetic/README.md",
       "source": "examples/ch02/section-05/sparse-polynomial-arithmetic/main.rs",
-      "bin": "ch02-sparse-polynomial-arithmetic"
+      "bin": "ch02-sparse-polynomial-arithmetic",
+      "python_source": "examples/ch02/section-05/sparse-polynomial-arithmetic/main.py"
     },
     {
       "kind": "source",
-      "title": "2.5 Sparse polynomial addition and multiplication — Rust source",
+      "title": "2.5 Sparse polynomial addition and multiplication \u2014 Rust source",
       "chapter": "02",
       "section": "2.5",
       "edition": "shared",
       "path": "examples/ch02/section-05/sparse-polynomial-arithmetic/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.5 Four-level numeric tower, coercion, raise, and drop",
+      "chapter": "02",
+      "section": "2.5",
+      "edition": "shared",
+      "path": "examples/ch02/section-05/numeric-tower-coercion/README.md",
+      "source": "examples/ch02/section-05/numeric-tower-coercion/main.rs",
+      "python_source": "examples/ch02/section-05/numeric-tower-coercion/main.py",
+      "bin": "ch02-numeric-tower-coercion"
+    },
+    {
+      "kind": "source",
+      "title": "2.5 Four-level numeric tower, coercion, raise, and drop \u2014 Rust source",
+      "chapter": "02",
+      "section": "2.5",
+      "edition": "shared",
+      "path": "examples/ch02/section-05/numeric-tower-coercion/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "2.5 Symbolic polynomial algebra, pseudo-remainder GCD, and rational functions",
+      "chapter": "02",
+      "section": "2.5",
+      "edition": "shared",
+      "path": "examples/ch02/section-05/symbolic-polynomials/README.md",
+      "source": "examples/ch02/section-05/symbolic-polynomials/main.rs",
+      "python_source": "examples/ch02/section-05/symbolic-polynomials/main.py",
+      "bin": "ch02-symbolic-polynomials"
+    },
+    {
+      "kind": "source",
+      "title": "2.5 Symbolic polynomial algebra, pseudo-remainder GCD, and rational functions \u2014 Rust source",
+      "chapter": "02",
+      "section": "2.5",
+      "edition": "shared",
+      "path": "examples/ch02/section-05/symbolic-polynomials/main.rs"
     },
     {
       "kind": "chapter",
@@ -1175,11 +1404,12 @@
       "edition": "shared",
       "path": "examples/ch03/section-01/bank-account/README.md",
       "source": "examples/ch03/section-01/bank-account/main.rs",
-      "bin": "ch03-bank-account"
+      "bin": "ch03-bank-account",
+      "python_source": "examples/ch03/section-01/bank-account/main.py"
     },
     {
       "kind": "source",
-      "title": "3.1 Stateful bank account with invariants — Rust source",
+      "title": "3.1 Stateful bank account with invariants \u2014 Rust source",
       "chapter": "03",
       "section": "3.1",
       "edition": "shared",
@@ -1193,11 +1423,12 @@
       "edition": "shared",
       "path": "examples/ch03/section-01/joint-account/README.md",
       "source": "examples/ch03/section-01/joint-account/main.rs",
-      "bin": "ch03-joint-account"
+      "bin": "ch03-joint-account",
+      "python_source": "examples/ch03/section-01/joint-account/main.py"
     },
     {
       "kind": "source",
-      "title": "3.1 Joint account with shared local state — Rust source",
+      "title": "3.1 Joint account with shared local state \u2014 Rust source",
       "chapter": "03",
       "section": "3.1",
       "edition": "shared",
@@ -1211,11 +1442,12 @@
       "edition": "shared",
       "path": "examples/ch03/section-01/monte-carlo-pi/README.md",
       "source": "examples/ch03/section-01/monte-carlo-pi/main.rs",
-      "bin": "ch03-monte-carlo-pi"
+      "bin": "ch03-monte-carlo-pi",
+      "python_source": "examples/ch03/section-01/monte-carlo-pi/main.py"
     },
     {
       "kind": "source",
-      "title": "3.1 Monte Carlo simulation with explicit pseudo-random state — Rust source",
+      "title": "3.1 Monte Carlo simulation with explicit pseudo-random state \u2014 Rust source",
       "chapter": "03",
       "section": "3.1",
       "edition": "shared",
@@ -1281,15 +1513,35 @@
       "edition": "shared",
       "path": "examples/ch03/section-02/lexical-environments/README.md",
       "source": "examples/ch03/section-02/lexical-environments/main.rs",
-      "bin": "ch03-lexical-environments"
+      "bin": "ch03-lexical-environments",
+      "python_source": "examples/ch03/section-02/lexical-environments/main.py"
     },
     {
       "kind": "source",
-      "title": "3.2 Lexical scope and environment frames — Rust source",
+      "title": "3.2 Lexical scope and environment frames \u2014 Rust source",
       "chapter": "03",
       "section": "3.2",
       "edition": "shared",
       "path": "examples/ch03/section-02/lexical-environments/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.2 Environment model mutation and CSE step machine",
+      "chapter": "03",
+      "section": "3.2",
+      "edition": "2022-javascript",
+      "path": "examples/ch03/section-02/cse-environment-machine/README.md",
+      "source": "examples/ch03/section-02/cse-environment-machine/main.rs",
+      "python_source": "examples/ch03/section-02/cse-environment-machine/main.py",
+      "bin": "ch03-cse-environment-machine"
+    },
+    {
+      "kind": "source",
+      "title": "3.2 Environment model mutation and CSE step machine \u2014 Rust source",
+      "chapter": "03",
+      "section": "3.2",
+      "edition": "2022-javascript",
+      "path": "examples/ch03/section-02/cse-environment-machine/main.rs"
     },
     {
       "kind": "section",
@@ -1351,11 +1603,12 @@
       "edition": "shared",
       "path": "examples/ch03/section-03/mutable-queue/README.md",
       "source": "examples/ch03/section-03/mutable-queue/main.rs",
-      "bin": "ch03-mutable-queue"
+      "bin": "ch03-mutable-queue",
+      "python_source": "examples/ch03/section-03/mutable-queue/main.py"
     },
     {
       "kind": "source",
-      "title": "3.3 Mutable FIFO queue abstraction — Rust source",
+      "title": "3.3 Mutable FIFO queue abstraction \u2014 Rust source",
       "chapter": "03",
       "section": "3.3",
       "edition": "shared",
@@ -1369,11 +1622,12 @@
       "edition": "shared",
       "path": "examples/ch03/section-03/constraint-propagation/README.md",
       "source": "examples/ch03/section-03/constraint-propagation/main.rs",
-      "bin": "ch03-constraint-propagation"
+      "bin": "ch03-constraint-propagation",
+      "python_source": "examples/ch03/section-03/constraint-propagation/main.py"
     },
     {
       "kind": "source",
-      "title": "3.3 Bidirectional constraint propagation — Rust source",
+      "title": "3.3 Bidirectional constraint propagation \u2014 Rust source",
       "chapter": "03",
       "section": "3.3",
       "edition": "shared",
@@ -1387,11 +1641,12 @@
       "edition": "shared",
       "path": "examples/ch03/section-03/digital-circuit-simulator/README.md",
       "source": "examples/ch03/section-03/digital-circuit-simulator/main.rs",
-      "bin": "ch03-digital-circuit-simulator"
+      "bin": "ch03-digital-circuit-simulator",
+      "python_source": "examples/ch03/section-03/digital-circuit-simulator/main.py"
     },
     {
       "kind": "source",
-      "title": "3.3 Event-driven digital circuit simulator — Rust source",
+      "title": "3.3 Event-driven digital circuit simulator \u2014 Rust source",
       "chapter": "03",
       "section": "3.3",
       "edition": "shared",
@@ -1405,11 +1660,12 @@
       "edition": "shared",
       "path": "examples/ch03/section-03/shared-pairs/README.md",
       "source": "examples/ch03/section-03/shared-pairs/main.rs",
-      "bin": "ch03-shared-pairs"
+      "bin": "ch03-shared-pairs",
+      "python_source": "examples/ch03/section-03/shared-pairs/main.py"
     },
     {
       "kind": "source",
-      "title": "3.3 Aliasing with mutable pairs and weak references — Rust source",
+      "title": "3.3 Aliasing with mutable pairs and weak references \u2014 Rust source",
       "chapter": "03",
       "section": "3.3",
       "edition": "shared",
@@ -1423,15 +1679,54 @@
       "edition": "shared",
       "path": "examples/ch03/section-03/memoized-fibonacci/README.md",
       "source": "examples/ch03/section-03/memoized-fibonacci/main.rs",
-      "bin": "ch03-memoized-fibonacci"
+      "bin": "ch03-memoized-fibonacci",
+      "python_source": "examples/ch03/section-03/memoized-fibonacci/main.py"
     },
     {
       "kind": "source",
-      "title": "3.3 Memoization with a mutable table — Rust source",
+      "title": "3.3 Memoization with a mutable table \u2014 Rust source",
       "chapter": "03",
       "section": "3.3",
       "edition": "shared",
       "path": "examples/ch03/section-03/memoized-fibonacci/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.3 Mutable pair cycle detection and O(1) deque",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/cycle-detection-deque/README.md",
+      "source": "examples/ch03/section-03/cycle-detection-deque/main.rs",
+      "python_source": "examples/ch03/section-03/cycle-detection-deque/main.py",
+      "bin": "ch03-cycle-detection-deque"
+    },
+    {
+      "kind": "source",
+      "title": "3.3 Mutable pair cycle detection and O(1) deque \u2014 Rust source",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/cycle-detection-deque/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.3 1D/2D/N-D local tables and dynamic memoization",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/local-tables-memoize/README.md",
+      "source": "examples/ch03/section-03/local-tables-memoize/main.rs",
+      "python_source": "examples/ch03/section-03/local-tables-memoize/main.py",
+      "bin": "ch03-local-tables-memoize"
+    },
+    {
+      "kind": "source",
+      "title": "3.3 1D/2D/N-D local tables and dynamic memoization \u2014 Rust source",
+      "chapter": "03",
+      "section": "3.3",
+      "edition": "shared",
+      "path": "examples/ch03/section-03/local-tables-memoize/main.rs"
     },
     {
       "kind": "section",
@@ -1466,11 +1761,12 @@
       "edition": "shared",
       "path": "examples/ch03/section-04/serialized-transfers/README.md",
       "source": "examples/ch03/section-04/serialized-transfers/main.rs",
-      "bin": "ch03-serialized-transfers"
+      "bin": "ch03-serialized-transfers",
+      "python_source": "examples/ch03/section-04/serialized-transfers/main.py"
     },
     {
       "kind": "source",
-      "title": "3.4 Concurrency and serialized transfers — Rust source",
+      "title": "3.4 Concurrency and serialized transfers \u2014 Rust source",
       "chapter": "03",
       "section": "3.4",
       "edition": "shared",
@@ -1536,11 +1832,12 @@
       "edition": "shared",
       "path": "examples/ch03/section-05/lazy-streams/README.md",
       "source": "examples/ch03/section-05/lazy-streams/main.rs",
-      "bin": "ch03-lazy-streams"
+      "bin": "ch03-lazy-streams",
+      "python_source": "examples/ch03/section-05/lazy-streams/main.py"
     },
     {
       "kind": "source",
-      "title": "3.5 Lazy streams with Rust iterators — Rust source",
+      "title": "3.5 Lazy streams with Rust iterators \u2014 Rust source",
       "chapter": "03",
       "section": "3.5",
       "edition": "shared",
@@ -1551,17 +1848,18 @@
       "title": "3.5 Numerical integration as a lazy stream",
       "chapter": "03",
       "section": "3.5",
-      "edition": "1996-scheme",
+      "edition": "shared",
       "path": "examples/ch03/section-05/stream-integration/README.md",
       "source": "examples/ch03/section-05/stream-integration/main.rs",
-      "bin": "ch03-stream-integration"
+      "bin": "ch03-stream-integration",
+      "python_source": "examples/ch03/section-05/stream-integration/main.py"
     },
     {
       "kind": "source",
-      "title": "3.5 Numerical integration as a lazy stream — Rust source",
+      "title": "3.5 Numerical integration as a lazy stream \u2014 Rust source",
       "chapter": "03",
       "section": "3.5",
-      "edition": "1996-scheme",
+      "edition": "shared",
       "path": "examples/ch03/section-05/stream-integration/main.rs"
     },
     {
@@ -1572,11 +1870,12 @@
       "edition": "shared",
       "path": "examples/ch03/section-05/lazy-prime-stream/README.md",
       "source": "examples/ch03/section-05/lazy-prime-stream/main.rs",
-      "bin": "ch03-lazy-prime-stream"
+      "bin": "ch03-lazy-prime-stream",
+      "python_source": "examples/ch03/section-05/lazy-prime-stream/main.py"
     },
     {
       "kind": "source",
-      "title": "3.5 A lazy stream of prime numbers — Rust source",
+      "title": "3.5 A lazy stream of prime numbers \u2014 Rust source",
       "chapter": "03",
       "section": "3.5",
       "edition": "shared",
@@ -1590,15 +1889,54 @@
       "edition": "shared",
       "path": "examples/ch03/section-05/zero-crossings/README.md",
       "source": "examples/ch03/section-05/zero-crossings/main.rs",
-      "bin": "ch03-zero-crossings"
+      "bin": "ch03-zero-crossings",
+      "python_source": "examples/ch03/section-05/zero-crossings/main.py"
     },
     {
       "kind": "source",
-      "title": "3.5 Signal processing with adjacent stream samples — Rust source",
+      "title": "3.5 Signal processing with adjacent stream samples \u2014 Rust source",
       "chapter": "03",
       "section": "3.5",
       "edition": "shared",
       "path": "examples/ch03/section-05/zero-crossings/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.5 Memoized lazy streams, sieve, and formal power series",
+      "chapter": "03",
+      "section": "3.5",
+      "edition": "shared",
+      "path": "examples/ch03/section-05/memoized-streams-series/README.md",
+      "source": "examples/ch03/section-05/memoized-streams-series/main.rs",
+      "python_source": "examples/ch03/section-05/memoized-streams-series/main.py",
+      "bin": "ch03-memoized-streams-series"
+    },
+    {
+      "kind": "source",
+      "title": "3.5 Memoized lazy streams, sieve, and formal power series \u2014 Rust source",
+      "chapter": "03",
+      "section": "3.5",
+      "edition": "shared",
+      "path": "examples/ch03/section-05/memoized-streams-series/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "3.5 Accelerated streams, infinite pairs, and delayed-feedback ODE solver",
+      "chapter": "03",
+      "section": "3.5",
+      "edition": "shared",
+      "path": "examples/ch03/section-05/stream-acceleration-pairs/README.md",
+      "source": "examples/ch03/section-05/stream-acceleration-pairs/main.rs",
+      "python_source": "examples/ch03/section-05/stream-acceleration-pairs/main.py",
+      "bin": "ch03-stream-acceleration-pairs"
+    },
+    {
+      "kind": "source",
+      "title": "3.5 Accelerated streams, infinite pairs, and delayed-feedback ODE solver \u2014 Rust source",
+      "chapter": "03",
+      "section": "3.5",
+      "edition": "shared",
+      "path": "examples/ch03/section-05/stream-acceleration-pairs/main.rs"
     },
     {
       "kind": "chapter",
@@ -1684,11 +2022,12 @@
       "edition": "shared",
       "path": "examples/ch04/section-01/tiny-evaluator/README.md",
       "source": "examples/ch04/section-01/tiny-evaluator/main.rs",
-      "bin": "ch04-tiny-evaluator"
+      "bin": "ch04-tiny-evaluator",
+      "python_source": "examples/ch04/section-01/tiny-evaluator/main.py"
     },
     {
       "kind": "source",
-      "title": "4.1 Expression evaluator with lexical bindings — Rust source",
+      "title": "4.1 Expression evaluator with lexical bindings \u2014 Rust source",
       "chapter": "04",
       "section": "4.1",
       "edition": "shared",
@@ -1702,11 +2041,12 @@
       "edition": "shared",
       "path": "examples/ch04/section-01/lexical-closures/README.md",
       "source": "examples/ch04/section-01/lexical-closures/main.rs",
-      "bin": "ch04-lexical-closures"
+      "bin": "ch04-lexical-closures",
+      "python_source": "examples/ch04/section-01/lexical-closures/main.py"
     },
     {
       "kind": "source",
-      "title": "4.1 Evaluator with lexical closures — Rust source",
+      "title": "4.1 Evaluator with lexical closures \u2014 Rust source",
       "chapter": "04",
       "section": "4.1",
       "edition": "shared",
@@ -1720,11 +2060,12 @@
       "edition": "2022-javascript",
       "path": "examples/ch04/section-01/javascript-parser/README.md",
       "source": "examples/ch04/section-01/javascript-parser/main.rs",
-      "bin": "ch04-javascript-parser"
+      "bin": "ch04-javascript-parser",
+      "python_source": "examples/ch04/section-01/javascript-parser/main.py"
     },
     {
       "kind": "source",
-      "title": "4.1 Expression parsing with operator precedence — Rust source",
+      "title": "4.1 Expression parsing with operator precedence \u2014 Rust source",
       "chapter": "04",
       "section": "4.1",
       "edition": "2022-javascript",
@@ -1738,15 +2079,54 @@
       "edition": "shared",
       "path": "examples/ch04/section-01/analysis-then-execution/README.md",
       "source": "examples/ch04/section-01/analysis-then-execution/main.rs",
-      "bin": "ch04-analysis-then-execution"
+      "bin": "ch04-analysis-then-execution",
+      "python_source": "examples/ch04/section-01/analysis-then-execution/main.py"
     },
     {
       "kind": "source",
-      "title": "4.1 Separate syntactic analysis from execution — Rust source",
+      "title": "4.1 Separate syntactic analysis from execution \u2014 Rust source",
       "chapter": "04",
       "section": "4.1",
       "edition": "shared",
       "path": "examples/ch04/section-01/analysis-then-execution/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "4.1 Analyzing evaluator (separating syntax analysis from execution)",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "shared",
+      "path": "examples/ch04/section-01/analyzing-evaluator/README.md",
+      "source": "examples/ch04/section-01/analyzing-evaluator/main.rs",
+      "python_source": "examples/ch04/section-01/analyzing-evaluator/main.py",
+      "bin": "ch04-analyzing-evaluator"
+    },
+    {
+      "kind": "source",
+      "title": "4.1 Analyzing evaluator (separating syntax analysis from execution) \u2014 Rust source",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "shared",
+      "path": "examples/ch04/section-01/analyzing-evaluator/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "4.1 Full metacircular evaluator (quote, cond, define, set!, let*, scan_out_defines)",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "shared",
+      "path": "examples/ch04/section-01/metacircular-evaluator/README.md",
+      "source": "examples/ch04/section-01/metacircular-evaluator/main.rs",
+      "python_source": "examples/ch04/section-01/metacircular-evaluator/main.py",
+      "bin": "ch04-metacircular-evaluator"
+    },
+    {
+      "kind": "source",
+      "title": "4.1 Full metacircular evaluator (quote, cond, define, set!, let*, scan_out_defines) \u2014 Rust source",
+      "chapter": "04",
+      "section": "4.1",
+      "edition": "shared",
+      "path": "examples/ch04/section-01/metacircular-evaluator/main.rs"
     },
     {
       "kind": "section",
@@ -1790,11 +2170,12 @@
       "edition": "shared",
       "path": "examples/ch04/section-02/memoized-thunk/README.md",
       "source": "examples/ch04/section-02/memoized-thunk/main.rs",
-      "bin": "ch04-memoized-thunk"
+      "bin": "ch04-memoized-thunk",
+      "python_source": "examples/ch04/section-02/memoized-thunk/main.py"
     },
     {
       "kind": "source",
-      "title": "4.2 Call-by-need with a memoized thunk — Rust source",
+      "title": "4.2 Call-by-need with a memoized thunk \u2014 Rust source",
       "chapter": "04",
       "section": "4.2",
       "edition": "shared",
@@ -1808,15 +2189,35 @@
       "edition": "shared",
       "path": "examples/ch04/section-02/conditional-laziness/README.md",
       "source": "examples/ch04/section-02/conditional-laziness/main.rs",
-      "bin": "ch04-conditional-laziness"
+      "bin": "ch04-conditional-laziness",
+      "python_source": "examples/ch04/section-02/conditional-laziness/main.py"
     },
     {
       "kind": "source",
-      "title": "4.2 Conditional evaluation avoids unneeded computation — Rust source",
+      "title": "4.2 Conditional evaluation avoids unneeded computation \u2014 Rust source",
       "chapter": "04",
       "section": "4.2",
       "edition": "shared",
       "path": "examples/ch04/section-02/conditional-laziness/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "4.2 Normal-order lazy evaluator with memoized thunks and lazy lists",
+      "chapter": "04",
+      "section": "4.2",
+      "edition": "shared",
+      "path": "examples/ch04/section-02/lazy-evaluator/README.md",
+      "source": "examples/ch04/section-02/lazy-evaluator/main.rs",
+      "python_source": "examples/ch04/section-02/lazy-evaluator/main.py",
+      "bin": "ch04-lazy-evaluator"
+    },
+    {
+      "kind": "source",
+      "title": "4.2 Normal-order lazy evaluator with memoized thunks and lazy lists \u2014 Rust source",
+      "chapter": "04",
+      "section": "4.2",
+      "edition": "shared",
+      "path": "examples/ch04/section-02/lazy-evaluator/main.rs"
     },
     {
       "kind": "section",
@@ -1860,11 +2261,12 @@
       "edition": "shared",
       "path": "examples/ch04/section-03/n-queens-search/README.md",
       "source": "examples/ch04/section-03/n-queens-search/main.rs",
-      "bin": "ch04-n-queens-search"
+      "bin": "ch04-n-queens-search",
+      "python_source": "examples/ch04/section-03/n-queens-search/main.py"
     },
     {
       "kind": "source",
-      "title": "4.3 N-queens nondeterministic search — Rust source",
+      "title": "4.3 N-queens nondeterministic search \u2014 Rust source",
       "chapter": "04",
       "section": "4.3",
       "edition": "shared",
@@ -1878,15 +2280,35 @@
       "edition": "shared",
       "path": "examples/ch04/section-03/multiple-dwelling/README.md",
       "source": "examples/ch04/section-03/multiple-dwelling/main.rs",
-      "bin": "ch04-multiple-dwelling"
+      "bin": "ch04-multiple-dwelling",
+      "python_source": "examples/ch04/section-03/multiple-dwelling/main.py"
     },
     {
       "kind": "source",
-      "title": "4.3 Backtracking constraint search: five dwellings — Rust source",
+      "title": "4.3 Backtracking constraint search: five dwellings \u2014 Rust source",
       "chapter": "04",
       "section": "4.3",
       "edition": "shared",
       "path": "examples/ch04/section-03/multiple-dwelling/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "4.3 Nondeterministic continuation-passing amb evaluator",
+      "chapter": "04",
+      "section": "4.3",
+      "edition": "shared",
+      "path": "examples/ch04/section-03/amb-evaluator/README.md",
+      "source": "examples/ch04/section-03/amb-evaluator/main.rs",
+      "python_source": "examples/ch04/section-03/amb-evaluator/main.py",
+      "bin": "ch04-amb-evaluator"
+    },
+    {
+      "kind": "source",
+      "title": "4.3 Nondeterministic continuation-passing amb evaluator \u2014 Rust source",
+      "chapter": "04",
+      "section": "4.3",
+      "edition": "shared",
+      "path": "examples/ch04/section-03/amb-evaluator/main.rs"
     },
     {
       "kind": "section",
@@ -1939,11 +2361,12 @@
       "edition": "shared",
       "path": "examples/ch04/section-04/logic-relations/README.md",
       "source": "examples/ch04/section-04/logic-relations/main.rs",
-      "bin": "ch04-logic-relations"
+      "bin": "ch04-logic-relations",
+      "python_source": "examples/ch04/section-04/logic-relations/main.py"
     },
     {
       "kind": "source",
-      "title": "4.4 Relational queries with variable bindings — Rust source",
+      "title": "4.4 Relational queries with variable bindings \u2014 Rust source",
       "chapter": "04",
       "section": "4.4",
       "edition": "shared",
@@ -1957,15 +2380,35 @@
       "edition": "shared",
       "path": "examples/ch04/section-04/ancestor-relation/README.md",
       "source": "examples/ch04/section-04/ancestor-relation/main.rs",
-      "bin": "ch04-ancestor-relation"
+      "bin": "ch04-ancestor-relation",
+      "python_source": "examples/ch04/section-04/ancestor-relation/main.py"
     },
     {
       "kind": "source",
-      "title": "4.4 Recursive ancestor relation by graph traversal — Rust source",
+      "title": "4.4 Recursive ancestor relation by graph traversal \u2014 Rust source",
       "chapter": "04",
       "section": "4.4",
       "edition": "shared",
       "path": "examples/ch04/section-04/ancestor-relation/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "4.4 Logic query engine with rules, variable-renaming unification, and frame streams",
+      "chapter": "04",
+      "section": "4.4",
+      "edition": "shared",
+      "path": "examples/ch04/section-04/query-unification-engine/README.md",
+      "source": "examples/ch04/section-04/query-unification-engine/main.rs",
+      "python_source": "examples/ch04/section-04/query-unification-engine/main.py",
+      "bin": "ch04-query-unification-engine"
+    },
+    {
+      "kind": "source",
+      "title": "4.4 Logic query engine with rules, variable-renaming unification, and frame streams \u2014 Rust source",
+      "chapter": "04",
+      "section": "4.4",
+      "edition": "shared",
+      "path": "examples/ch04/section-04/query-unification-engine/main.rs"
     },
     {
       "kind": "chapter",
@@ -2033,11 +2476,12 @@
       "edition": "shared",
       "path": "examples/ch05/section-01/register-gcd/README.md",
       "source": "examples/ch05/section-01/register-gcd/main.rs",
-      "bin": "ch05-register-gcd"
+      "bin": "ch05-register-gcd",
+      "python_source": "examples/ch05/section-01/register-gcd/main.py"
     },
     {
       "kind": "source",
-      "title": "5.1 Design a register-machine controller — Rust source",
+      "title": "5.1 Design a register-machine controller \u2014 Rust source",
       "chapter": "05",
       "section": "5.1",
       "edition": "shared",
@@ -2051,11 +2495,12 @@
       "edition": "shared",
       "path": "examples/ch05/section-01/explicit-stack-factorial/README.md",
       "source": "examples/ch05/section-01/explicit-stack-factorial/main.rs",
-      "bin": "ch05-explicit-stack-factorial"
+      "bin": "ch05-explicit-stack-factorial",
+      "python_source": "examples/ch05/section-01/explicit-stack-factorial/main.py"
     },
     {
       "kind": "source",
-      "title": "5.1 Factorial with an explicit control stack — Rust source",
+      "title": "5.1 Factorial with an explicit control stack \u2014 Rust source",
       "chapter": "05",
       "section": "5.1",
       "edition": "shared",
@@ -2112,11 +2557,12 @@
       "edition": "shared",
       "path": "examples/ch05/section-02/register-simulator/README.md",
       "source": "examples/ch05/section-02/register-simulator/main.rs",
-      "bin": "ch05-register-simulator"
+      "bin": "ch05-register-simulator",
+      "python_source": "examples/ch05/section-02/register-simulator/main.py"
     },
     {
       "kind": "source",
-      "title": "5.2 Small register-machine simulator — Rust source",
+      "title": "5.2 Small register-machine simulator \u2014 Rust source",
       "chapter": "05",
       "section": "5.2",
       "edition": "shared",
@@ -2130,11 +2576,12 @@
       "edition": "shared",
       "path": "examples/ch05/section-02/two-pass-assembler/README.md",
       "source": "examples/ch05/section-02/two-pass-assembler/main.rs",
-      "bin": "ch05-two-pass-assembler"
+      "bin": "ch05-two-pass-assembler",
+      "python_source": "examples/ch05/section-02/two-pass-assembler/main.py"
     },
     {
       "kind": "source",
-      "title": "5.2 Two-pass assembler with symbolic jump labels — Rust source",
+      "title": "5.2 Two-pass assembler with symbolic jump labels \u2014 Rust source",
       "chapter": "05",
       "section": "5.2",
       "edition": "shared",
@@ -2173,15 +2620,35 @@
       "edition": "shared",
       "path": "examples/ch05/section-03/mark-sweep-gc/README.md",
       "source": "examples/ch05/section-03/mark-sweep-gc/main.rs",
-      "bin": "ch05-mark-sweep-gc"
+      "bin": "ch05-mark-sweep-gc",
+      "python_source": "examples/ch05/section-03/mark-sweep-gc/main.py"
     },
     {
       "kind": "source",
-      "title": "5.3 Reachability-based mark/sweep garbage collection — Rust source",
+      "title": "5.3 Reachability-based mark/sweep garbage collection \u2014 Rust source",
       "chapter": "05",
       "section": "5.3",
       "edition": "shared",
       "path": "examples/ch05/section-03/mark-sweep-gc/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "5.3 Vector-memory pairs and Cheney stop-and-copy garbage collector",
+      "chapter": "05",
+      "section": "5.3",
+      "edition": "shared",
+      "path": "examples/ch05/section-03/stop-and-copy-gc/README.md",
+      "source": "examples/ch05/section-03/stop-and-copy-gc/main.rs",
+      "python_source": "examples/ch05/section-03/stop-and-copy-gc/main.py",
+      "bin": "ch05-stop-and-copy-gc"
+    },
+    {
+      "kind": "source",
+      "title": "5.3 Vector-memory pairs and Cheney stop-and-copy garbage collector \u2014 Rust source",
+      "chapter": "05",
+      "section": "5.3",
+      "edition": "shared",
+      "path": "examples/ch05/section-03/stop-and-copy-gc/main.rs"
     },
     {
       "kind": "section",
@@ -2234,11 +2701,12 @@
       "edition": "shared",
       "path": "examples/ch05/section-04/explicit-control/README.md",
       "source": "examples/ch05/section-04/explicit-control/main.rs",
-      "bin": "ch05-explicit-control"
+      "bin": "ch05-explicit-control",
+      "python_source": "examples/ch05/section-04/explicit-control/main.py"
     },
     {
       "kind": "source",
-      "title": "5.4 Explicit-control expression evaluator — Rust source",
+      "title": "5.4 Explicit-control expression evaluator \u2014 Rust source",
       "chapter": "05",
       "section": "5.4",
       "edition": "shared",
@@ -2322,11 +2790,12 @@
       "edition": "shared",
       "path": "examples/ch05/section-05/bytecode-compiler/README.md",
       "source": "examples/ch05/section-05/bytecode-compiler/main.rs",
-      "bin": "ch05-bytecode-compiler"
+      "bin": "ch05-bytecode-compiler",
+      "python_source": "examples/ch05/section-05/bytecode-compiler/main.py"
     },
     {
       "kind": "source",
-      "title": "5.5 Compile expressions to stack-machine bytecode — Rust source",
+      "title": "5.5 Compile expressions to stack-machine bytecode \u2014 Rust source",
       "chapter": "05",
       "section": "5.5",
       "edition": "shared",
@@ -2340,11 +2809,12 @@
       "edition": "2022-javascript",
       "path": "examples/ch05/section-05/javascript-tail-calls/README.md",
       "source": "examples/ch05/section-05/javascript-tail-calls/main.rs",
-      "bin": "ch05-javascript-tail-calls"
+      "bin": "ch05-javascript-tail-calls",
+      "python_source": "examples/ch05/section-05/javascript-tail-calls/main.py"
     },
     {
       "kind": "source",
-      "title": "5.5 Tail calls through a trampoline — Rust source",
+      "title": "5.5 Tail calls through a trampoline \u2014 Rust source",
       "chapter": "05",
       "section": "5.5",
       "edition": "2022-javascript",
@@ -2358,11 +2828,12 @@
       "edition": "shared",
       "path": "examples/ch05/section-05/lexical-addresses/README.md",
       "source": "examples/ch05/section-05/lexical-addresses/main.rs",
-      "bin": "ch05-lexical-addresses"
+      "bin": "ch05-lexical-addresses",
+      "python_source": "examples/ch05/section-05/lexical-addresses/main.py"
     },
     {
       "kind": "source",
-      "title": "5.5 Compile variable names to lexical addresses — Rust source",
+      "title": "5.5 Compile variable names to lexical addresses \u2014 Rust source",
       "chapter": "05",
       "section": "5.5",
       "edition": "shared",
@@ -2376,15 +2847,35 @@
       "edition": "shared",
       "path": "examples/ch05/section-05/constant-folding-compiler/README.md",
       "source": "examples/ch05/section-05/constant-folding-compiler/main.rs",
-      "bin": "ch05-constant-folding-compiler"
+      "bin": "ch05-constant-folding-compiler",
+      "python_source": "examples/ch05/section-05/constant-folding-compiler/main.py"
     },
     {
       "kind": "source",
-      "title": "5.5 Constant folding before bytecode generation — Rust source",
+      "title": "5.5 Constant folding before bytecode generation \u2014 Rust source",
       "chapter": "05",
       "section": "5.5",
       "edition": "shared",
       "path": "examples/ch05/section-05/constant-folding-compiler/main.rs"
+    },
+    {
+      "kind": "example",
+      "title": "5.5 Register compiler with preserving, linkages, and lexical addressing",
+      "chapter": "05",
+      "section": "5.5",
+      "edition": "shared",
+      "path": "examples/ch05/section-05/register-compiler/README.md",
+      "source": "examples/ch05/section-05/register-compiler/main.rs",
+      "python_source": "examples/ch05/section-05/register-compiler/main.py",
+      "bin": "ch05-register-compiler"
+    },
+    {
+      "kind": "source",
+      "title": "5.5 Register compiler with preserving, linkages, and lexical addressing \u2014 Rust source",
+      "chapter": "05",
+      "section": "5.5",
+      "edition": "shared",
+      "path": "examples/ch05/section-05/register-compiler/main.rs"
     }
   ]
 }

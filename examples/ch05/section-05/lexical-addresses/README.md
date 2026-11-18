@@ -19,6 +19,8 @@ Compilation lookup is O(depth × frame width) in this simple implementation; a c
 ```sh
 cargo run --bin ch05-lexical-addresses
 cargo test --bin ch05-lexical-addresses
+python3 examples/ch05/section-05/lexical-addresses/main.py
+python3 -m unittest examples/ch05/section-05/lexical-addresses/main.py
 ```
 
 ## Extend the example

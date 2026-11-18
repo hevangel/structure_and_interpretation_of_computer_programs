@@ -19,6 +19,8 @@ O(n) time and O(n) explicit stack memory; compare it with the constant-memory it
 ```sh
 cargo run --bin ch05-explicit-stack-factorial
 cargo test --bin ch05-explicit-stack-factorial
+python3 examples/ch05/section-01/explicit-stack-factorial/main.py
+python3 -m unittest examples/ch05/section-01/explicit-stack-factorial/main.py
 ```
 
 ## Extend the example

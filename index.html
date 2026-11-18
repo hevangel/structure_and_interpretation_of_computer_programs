@@ -1,29 +1,274 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SICP in Rust — The Wizard Book Companion</title>
+<title>SICP in Rust & Python — The Wizard Book Companion</title>
 <style>
-:root{color-scheme:dark;--bg:#0a1020;--surface:#121c30;--border:#2e3b54;--ink:#eaf0fa;--sub:#a8bad0;--accent:#78d1c0;--gold:#e9b86b}
+:root{color-scheme:dark;--bg:#0a1020;--surface:#121c30;--surface-2:#17233b;--border:#2e3b54;--ink:#eaf0fa;--sub:#a8bad0;--accent:#78d1c0;--gold:#e9b86b;--py:#7ec8ff;--rs:#f4a261}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,Segoe UI,sans-serif}
 header{padding:1.2rem 1.6rem;border-bottom:1px solid var(--border);background:#10192a}header h1{margin:0;color:var(--gold);font-size:1.45rem}header p{margin:.2rem 0;color:var(--sub)}
-.layout{display:grid;grid-template-columns:minmax(230px,310px) minmax(0,1fr);min-height:calc(100vh - 110px)}nav{border-right:1px solid var(--border);padding:1rem;overflow:auto;max-height:calc(100vh - 110px);position:sticky;top:0}
-main{padding:2rem;min-width:0;max-width:1150px}#filter{width:100%;background:var(--surface);color:var(--ink);border:1px solid var(--border);padding:.65rem;border-radius:8px}
+.layout{display:grid;grid-template-columns:minmax(240px,320px) minmax(0,1fr);min-height:calc(100vh - 110px)}
+nav{border-right:1px solid var(--border);padding:1rem;overflow:auto;max-height:calc(100vh - 110px);position:sticky;top:0}
+main{padding:2rem;min-width:0;max-width:1280px}
+#filter{width:100%;background:var(--surface);color:var(--ink);border:1px solid var(--border);padding:.65rem;border-radius:8px}
 #catalog{margin-top:1rem}#catalog button{width:100%;text-align:left;border:0;border-radius:6px;color:var(--ink);background:transparent;padding:.35rem .5rem;cursor:pointer;font:inherit}#catalog button:hover,#catalog button[aria-current=true]{background:#243753}
 .group{margin-top:1rem;color:var(--gold);font-weight:700;font-size:.9rem}.sub{padding-left:12px}.kind{font-size:.69rem;color:var(--accent);margin-right:.4rem;text-transform:uppercase}
 h1,h2,h3{line-height:1.3}h1{font-size:2rem}h2{margin-top:2rem;border-bottom:1px solid var(--border);padding-bottom:.4rem}a{color:var(--accent)}a:hover{text-decoration-thickness:2px}
-article{overflow-wrap:anywhere}p,li{max-width:80ch}pre{background:#080e19;border:1px solid var(--border);border-radius:9px;padding:1rem;overflow:auto;font:13px/1.6 ui-monospace,Consolas,monospace}code{font-family:ui-monospace,Consolas,monospace}
-p code,li code{background:#243149;border-radius:3px;padding:.1rem .25rem}table{border-collapse:collapse;width:100%}td,th{border:1px solid var(--border);padding:.5rem;text-align:left}
-.meta{display:flex;gap:1rem;flex-wrap:wrap;color:var(--sub);font-size:.85rem}.meta a{color:var(--accent)}
+article{overflow-wrap:anywhere}p,li{max-width:80ch}
+pre{background:#080e19;border:1px solid var(--border);border-radius:9px;padding:.9rem 1rem;overflow:auto;font:13px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;margin:.5rem 0 1rem;tab-size:4}
+code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+p code,li code{background:#243149;border-radius:3px;padding:.1rem .28rem}
+table{border-collapse:collapse;width:100%;margin:1rem 0}td,th{border:1px solid var(--border);padding:.5rem;text-align:left}
+.meta{display:flex;gap:1rem;flex-wrap:wrap;color:var(--sub);font-size:.85rem;margin-bottom:.75rem}.meta a{color:var(--accent)}
 mark{background:#3e4f28;color:#fff}
+
+/* Embedded source section on example pages */
+.source-section{margin-top:2.2rem;padding-top:.5rem;border-top:1px solid var(--border)}
+.source-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.65rem;background:var(--surface);border:1px solid var(--border);border-radius:10px 10px 0 0;padding:.55rem .8rem}
+.tab-group{display:flex;gap:.4rem;flex-wrap:wrap}
+.tab-btn,.copy-btn{background:var(--surface-2);color:var(--ink);border:1px solid var(--border);border-radius:6px;padding:.35rem .7rem;cursor:pointer;font:600 13px/1.2 system-ui,Segoe UI,sans-serif;display:inline-flex;align-items:center;gap:.35rem}
+.tab-btn:hover,.copy-btn:hover{border-color:var(--accent)}
+.tab-btn[aria-selected=true]{background:#223856;border-color:var(--accent);color:#fff}
+.lang-dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+.dot-rs{background:var(--rs)}.dot-py{background:var(--py)}
+.toolbar-actions{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;font-size:.82rem;color:var(--sub)}
+.source-panels{border:1px solid var(--border);border-top:0;border-radius:0 0 10px 10px;background:#080e19;padding:.75rem}
+.source-panels.split{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.85rem}
+.code-pane{min-width:0}
+.pane-header{display:flex;justify-content:space-between;align-items:center;gap:.5rem;padding:.35rem .6rem;background:var(--surface);border:1px solid var(--border);border-bottom:0;border-radius:8px 8px 0 0;font-size:.82rem;color:var(--sub)}
+.pane-header strong{color:var(--ink)}
+.code-pane pre{margin:0;border-radius:0 0 8px 8px;max-height:680px}
+.code-pane pre.numbered{counter-reset:line;padding-left:.4rem}
+.code-line{display:block;padding-right:.75rem;min-height:1.55em}
+.code-line::before{counter-increment:line;content:counter(line);display:inline-block;width:3.1ch;margin-right:.9rem;text-align:right;color:#4f6282;user-select:none}
+.run-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0 0;font-size:.82rem}
+.run-chip{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:.25rem .55rem;color:var(--sub)}
+.run-chip code{color:var(--ink)}
+
+/* Syntax highlighting tokens */
+.tok-kw{color:#ff8ea8;font-weight:600}
+.tok-ty{color:#e9b86b}
+.tok-fn{color:#82d9d0}
+.tok-str{color:#a8e6a3}
+.tok-num{color:#c9a7ff}
+.tok-com{color:#6f83a3;font-style:italic}
+.tok-mac{color:#7cc4ff}
+.tok-op{color:#9ab6d8}
+.tok-attr{color:#d7ba7d}
+
+@media(max-width:980px){.source-panels.split{grid-template-columns:1fr}}
 @media(max-width:760px){.layout{grid-template-columns:1fr}nav{position:static;max-height:35vh;border-right:0;border-bottom:1px solid var(--border)}main{padding:1rem}}
 </style></head>
-<body><header><h1>🧙 Structure and Interpretation of Computer Programs · Rust</h1><p>Original examples, guided reading, edition crosswalk, and source browser</p></header>
+<body><header><h1>🧙 Structure and Interpretation of Computer Programs · Rust &amp; Python</h1><p>Original examples in Rust and Python, guided reading, edition crosswalk, and syntax-highlighted source browser</p></header>
 <div class="layout"><nav aria-label="Documentation navigation"><input id="filter" type="search" placeholder="Search chapters, sections, examples..." aria-label="Filter entries"><div id="catalog">Loading index…</div></nav><main><div id="location" class="meta"></div><article id="document"><h1>Welcome</h1><p>Select a chapter, section, or runnable example on the left.</p><p>This is a work in progress; <a href="COVERAGE.md">coverage is not exhaustive</a>.</p></article></main></div>
 <script>
 "use strict";
 const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
 let activeDocumentPath="README.md";
+let preferredCodeTab="rust";
+const codeCache=new Map();
+
+const RUST_KW=new Set(["as","async","await","break","const","continue","crate","dyn","else","enum","extern","false","fn","for","if","impl","in","let","loop","match","mod","move","mut","pub","ref","return","self","Self","static","struct","super","trait","true","type","unsafe","use","where","while"]);
+const RUST_TY=new Set(["bool","char","f32","f64","i8","i16","i32","i64","i128","isize","str","u8","u16","u32","u64","u128","usize","Box","BTreeMap","BTreeSet","HashMap","HashSet","Mutex","Arc","Option","None","Some","Rc","RefCell","Result","Ok","Err","String","Vec"]);
+const PY_KW=new Set(["False","None","True","and","as","assert","async","await","break","case","class","continue","def","del","elif","else","except","finally","for","from","global","if","import","in","is","lambda","match","nonlocal","not","or","pass","raise","return","try","while","with","yield"]);
+const PY_TY=new Set(["int","float","str","bool","list","dict","set","tuple","bytes","object","Exception","ValueError","TypeError","RuntimeError","KeyError","IndexError","TestCase","Callable","Generic","TypeVar","Any","dataclass","field","self","cls","super","len","range","enumerate","zip","map","filter","sum","min","max","abs","round","sorted","reversed","isinstance","print"]);
+const JS_KW=new Set(["async","await","break","case","catch","class","const","continue","default","delete","do","else","export","extends","false","finally","for","function","if","import","in","instanceof","let","new","null","of","return","switch","this","throw","true","try","typeof","undefined","var","void","while","with","yield"]);
+const SCM_KW=new Set(["and","begin","case","cond","define","delay","else","force","if","lambda","let","let*","letrec","or","quasiquote","quote","set!","unquote","amb","require","assert","rule"]);
+const SH_KW=new Set(["cargo","python3","python","node","git","run","test","fmt","clippy","cd","sh"]);
+
+function normalizeLang(raw){
+ const l=(raw||"").trim().toLowerCase();
+ if(l==="rs"||l==="rust")return "rust";
+ if(l==="py"||l==="python")return "python";
+ if(l==="js"||l==="javascript")return "js";
+ if(l==="scm"||l==="scheme"||l==="lisp")return "scheme";
+ if(l==="sh"||l==="bash"||l==="zsh"||l==="shell")return "shell";
+ if(l==="toml"||l==="json")return l;
+ return "text";
+}
+
+function span(cls,text){return cls?'<span class="'+cls+'">'+esc(text)+'</span>':esc(text);}
+
+function highlightCode(source,rawLang){
+ const lang=normalizeLang(rawLang);
+ const s=String(source||"").replace(/\r/g,"");
+ if(lang==="text")return esc(s);
+ const n=s.length;
+ let out="",i=0;
+ const isIdStart=c=>(c>="a"&&c<="z")||(c>="A"&&c<="Z")||c==="_";
+ const isIdCont=c=>isIdStart(c)||(c>="0"&&c<="9");
+ const isDigit=c=>c>="0"&&c<="9";
+ const nextNonSpace=idx=>{while(idx<n&&(s[idx]===" "||s[idx]==="\t"))idx++;return idx;};
+
+ while(i<n){
+  const c=s[i];
+  // Comments
+  if((lang==="rust"||lang==="js")&&c==="/"&&s[i+1]==="/"){
+   let j=i+2;while(j<n&&s[j]!=="\n")j++;
+   out+=span("tok-com",s.slice(i,j));i=j;continue;
+  }
+  if((lang==="rust"||lang==="js")&&c==="/"&&s[i+1]==="*"){
+   let j=i+2,depth=1;
+   while(j<n&&depth>0){
+    if(lang==="rust"&&s[j]==="/"&&s[j+1]==="*"){depth++;j+=2;}
+    else if(s[j]==="*"&&s[j+1]==="/"){depth--;j+=2;}
+    else j++;
+   }
+   out+=span("tok-com",s.slice(i,j));i=j;continue;
+  }
+  if((lang==="python"||lang==="shell"||lang==="toml")&&c==="#"){
+   let j=i+1;while(j<n&&s[j]!=="\n")j++;
+   out+=span("tok-com",s.slice(i,j));i=j;continue;
+  }
+  if(lang==="scheme"&&c===";"){
+   let j=i+1;while(j<n&&s[j]!=="\n")j++;
+   out+=span("tok-com",s.slice(i,j));i=j;continue;
+  }
+
+  // Rust attributes #[...] / #![...]
+  if(lang==="rust"&&c==="#"&&(s[i+1]==="["||(s[i+1]==="!"&&s[i+2]==="["))){
+   let j=i+(s[i+1]==="!"?3:2),depth=1;
+   while(j<n&&depth>0){
+    if(s[j]==="[")depth++;
+    else if(s[j]==="]")depth--;
+    else if(s[j]==='"'){j++;while(j<n&&s[j]!=='"'){if(s[j]==="\\")j++;j++;}}
+    j++;
+   }
+   out+=span("tok-attr",s.slice(i,j));i=j;continue;
+  }
+
+  // Python decorators @...
+  if(lang==="python"&&c==="@"&&(i===0||/\s/.test(s[i-1]))){
+   let j=i+1;while(j<n&&(isIdCont(s[j])||s[j]==="."))j++;
+   out+=span("tok-attr",s.slice(i,j));i=j;continue;
+  }
+
+  // Python triple-quoted strings (optional f/r/b/u prefix)
+  if(lang==="python"){
+   const hasPref=(c==="f"||c==="r"||c==="b"||c==="u"||c==="F"||c==="R"||c==="B")&&(s[i+1]==='"'||s[i+1]==="'");
+   const qStart=hasPref?i+1:i;
+   const q=s[qStart];
+   if(q==='"'||q==="'"){
+    if(s.slice(qStart,qStart+3)===q+q+q){
+     const endTok=q+q+q;let j=qStart+3;
+     while(j<n&&s.slice(j,j+3)!==endTok){if(s[j]==="\\")j++;j++;}
+     j=Math.min(n,j+3);
+     out+=span("tok-str",s.slice(i,j));i=j;continue;
+    }
+    let j=qStart+1;
+    while(j<n&&s[j]!==q&&s[j]!=="\n"){if(s[j]==="\\")j++;j++;}
+    if(j<n&&s[j]===q)j++;
+    out+=span("tok-str",s.slice(i,j));i=j;continue;
+   }
+  }
+
+  // Rust raw strings r"..." / r#"..."#
+  if(lang==="rust"&&c==="r"&&(s[i+1]==='"'||s[i+1]==="#")){
+   let h=i+1;while(h<n&&s[h]==="#")h++;
+   if(s[h]==='"'){
+    const hashes="#".repeat(h-(i+1));
+    const closer='"'+hashes;
+    const endIdx=s.indexOf(closer,h+1);
+    const j=endIdx===-1?n:endIdx+closer.length;
+    out+=span("tok-str",s.slice(i,j));i=j;continue;
+   }
+  }
+
+  // Strings and JS templates
+  if(c==='"'||(c==="'"&&(lang==="js"||lang==="shell"))||(c==="`"&&lang==="js")){
+   let j=i+1;
+   while(j<n&&s[j]!==c){if(s[j]==="\\")j++;j++;}
+   if(j<n)j++;
+   out+=span("tok-str",s.slice(i,j));i=j;continue;
+  }
+
+  // Rust char literals vs lifetimes ('a vs 'x')
+  if(lang==="rust"&&c==="'"){
+   if(s[i+1]==="\\"){
+    let j=i+2;while(j<n&&s[j]!=="'"&&s[j]!=="\n")j++;
+    if(j<n&&s[j]==="'")j++;
+    out+=span("tok-str",s.slice(i,j));i=j;continue;
+   }
+   if(i+2<n&&s[i+2]==="'"){
+    out+=span("tok-str",s.slice(i,i+3));i+=3;continue;
+   }
+   if(i+1<n&&isIdStart(s[i+1])){
+    let j=i+2;while(j<n&&isIdCont(s[j]))j++;
+    out+=span("tok-ty",s.slice(i,j));i=j;continue;
+   }
+  }
+
+  // Scheme literals/symbols (#t, #f, 'sym)
+  if(lang==="scheme"&&c==="#"&&(s[i+1]==="t"||s[i+1]==="f")){
+   out+=span("tok-kw",s.slice(i,i+2));i+=2;continue;
+  }
+
+  // Numbers
+  if(isDigit(c)&&(i===0||!isIdCont(s[i-1]))){
+   let j=i;
+   if(s[j]==="0"&&(s[j+1]==="x"||s[j+1]==="X"||s[j+1]==="b"||s[j+1]==="o")){
+    j+=2;while(j<n&&/[0-9a-fA-F_]/.test(s[j]))j++;
+   }else{
+    while(j<n&&/[0-9_]/.test(s[j]))j++;
+    if(s[j]==="."&&isDigit(s[j+1])){j++;while(j<n&&/[0-9_]/.test(s[j]))j++;}
+    if((s[j]==="e"||s[j]==="E")&&(isDigit(s[j+1])||((s[j+1]==="+"||s[j+1]==="-")&&isDigit(s[j+2])))){
+     j++;if(s[j]==="+"||s[j]==="-")j++;while(j<n&&/[0-9_]/.test(s[j]))j++;
+    }
+   }
+   if(lang==="rust"){const m=/^(?:[iu](?:8|16|32|64|128|size)|f(?:32|64))/.exec(s.slice(j));if(m)j+=m[0].length;}
+   out+=span("tok-num",s.slice(i,j));i=j;continue;
+  }
+
+  // Shell flags
+  if(lang==="shell"&&c==="-"&&(i===0||/\s/.test(s[i-1]))){
+   let j=i+1;while(j<n&&/[A-Za-z0-9_-]/.test(s[j]))j++;
+   out+=span("tok-attr",s.slice(i,j));i=j;continue;
+  }
+
+  // Identifiers & keywords
+  if(isIdStart(c)||(lang==="scheme"&&/[a-zA-Z0-9_?!*+-/<>=]/.test(c)&&c!=="-"&&c!=="+")){
+   let j=i+1;
+   if(lang==="scheme")while(j<n&&/[a-zA-Z0-9_?!*+-/<>=]/.test(s[j]))j++;
+   else while(j<n&&isIdCont(s[j]))j++;
+   const word=s.slice(i,j);
+   let cls="";
+   if(lang==="rust"){
+    if(s[j]==="!"){j++;cls="tok-mac";}
+    else if(RUST_KW.has(word))cls="tok-kw";
+    else if(RUST_TY.has(word)||(/^[A-Z][A-Za-z0-9_]*$/.test(word)))cls="tok-ty";
+    else if(s[nextNonSpace(j)]==="(")cls="tok-fn";
+    out+=span(cls,s.slice(i,j));i=j;continue;
+   }
+   if(lang==="python"){
+    if(PY_KW.has(word))cls="tok-kw";
+    else if(PY_TY.has(word)||(/^[A-Z][A-Za-z0-9_]*$/.test(word)))cls="tok-ty";
+    else if(s[nextNonSpace(j)]==="(")cls="tok-fn";
+   }else if(lang==="js"){
+    if(JS_KW.has(word))cls="tok-kw";
+    else if(/^[A-Z][A-Za-z0-9_]*$/.test(word))cls="tok-ty";
+    else if(s[nextNonSpace(j)]==="(")cls="tok-fn";
+   }else if(lang==="scheme"){
+    if(SCM_KW.has(word))cls="tok-kw";
+   }else if(lang==="shell"){
+    if(SH_KW.has(word))cls="tok-kw";
+   }else if(lang==="json"||lang==="toml"){
+    if(word==="true"||word==="false"||word==="null")cls="tok-kw";
+   }
+   out+=span(cls,word);i=j;continue;
+  }
+
+  // Punctuation / operators
+  if("=+-*/<>!&|^%?:".includes(c)){out+=span("tok-op",c);i++;continue;}
+  out+=esc(c);i++;
+ }
+ return out;
+}
+
+function renderNumberedCode(code,lang){
+ const lines=String(code||"").replace(/\r/g,"").split("\n");
+ if(lines.length>1&&lines[lines.length-1]==="")lines.pop();
+ return highlightCode(lines.join("\n"),lang).split("\n").map(line=>'<span class="code-line">'+(line||" ")+"</span>").join("");
+}
+
 function markdownLink(label,url){
- // Relative Markdown URLs are relative to the Markdown file, not index.html.
  if(/^https?:\/\//i.test(url)){
    return '<a href="'+esc(url)+'" rel="noopener noreferrer" target="_blank">'+label+'</a>';
  }
@@ -31,7 +276,7 @@ function markdownLink(label,url){
  const absolute=new URL(url,new URL(activeDocumentPath,root));
  if(absolute.origin===root.origin&&absolute.pathname.startsWith(root.pathname)){
    const local=decodeURIComponent(absolute.pathname.slice(root.pathname.length));
-   if(items.some(item=>item.path===local)){
+   if(items.some(item=>item.path===local||item.python_source===local)){
      return '<a href="#'+encodeURIComponent(local)+'" data-doc="'+esc(local)+'">'+label+'</a>';
    }
  }
@@ -48,7 +293,7 @@ function inline(s){
 function markdown(raw){
  const lines=raw.replace(/\r/g,"").split("\n");let out=[],i=0;
  while(i<lines.length){let line=lines[i],m;
-  if(line.startsWith("```")){const language=line.slice(3).trim();i++;let body=[];while(i<lines.length&&!lines[i].startsWith("```"))body.push(lines[i++]);i++;out.push('<pre><code class="language-'+esc(language)+'">'+esc(body.join("\n"))+'</code></pre>');continue;}
+  if(line.startsWith("```")){const language=line.slice(3).trim();i++;let body=[];while(i<lines.length&&!lines[i].startsWith("```"))body.push(lines[i++]);i++;out.push('<pre><code class="language-'+esc(language||"text")+'">'+highlightCode(body.join("\n"),language)+'</code></pre>');continue;}
   if((m=/^(#{1,6})\s+(.*)$/.exec(line))){const depth=m[1].length;out.push('<h'+depth+'>'+inline(m[2])+'</h'+depth+'>');i++;continue;}
   if(/^\|/.test(line)){let data=[];while(i<lines.length&&/^\|/.test(lines[i]))data.push(lines[i++]);const rows=data.filter(v=>!/^\|\s*:?-+/.test(v)).map(v=>'<tr>'+v.replace(/^\||\|$/g,'').split('|').map(c=>'<td>'+inline(c.trim())+'</td>').join('')+'</tr>');out.push('<table>'+rows.join('')+'</table>');continue;}
   if(/^\s*[-*] /.test(line)){let b=[];while(i<lines.length&&/^\s*[-*] /.test(lines[i]))b.push('<li>'+inline(lines[i++].replace(/^\s*[-*] /,''))+'</li>');out.push('<ul>'+b.join('')+'</ul>');continue;}
@@ -58,11 +303,44 @@ function markdown(raw){
  }
  return out.join("\n");
 }
+
+function buildCodePane(title,filePath,code,lang,paneKey){
+ return '<div class="code-pane"><div class="pane-header"><div><strong>'+esc(title)+'</strong> · <a href="'+encodeURI(filePath)+'" target="_blank" rel="noopener">'+esc(filePath)+'</a></div><button class="copy-btn" type="button" data-copy="'+esc(paneKey)+'">Copy</button></div><pre class="numbered"><code class="language-'+esc(lang)+'">'+renderNumberedCode(code,lang)+'</code></pre></div>';
+}
+
+function renderSourceViewer(item,rustCode,pythonCode){
+ codeCache.set("rust",rustCode);
+ codeCache.set("python",pythonCode);
+ const rsLines=rustCode.replace(/\r/g,"").split("\n").length;
+ const pyLines=pythonCode.replace(/\r/g,"").split("\n").length;
+ const runChips=item.bin?('<div class="run-chips"><span class="run-chip">Rust: <code>cargo run --bin '+esc(item.bin)+'</code> · <code>cargo test --bin '+esc(item.bin)+'</code></span><span class="run-chip">Python: <code>python3 '+esc(item.python_source)+'</code> · <code>python3 -m unittest '+esc(item.python_source)+'</code></span></div>'):"";
+ return '<section class="source-section" aria-label="Source code"><h2>Source code (Rust &amp; Python)</h2>'+runChips+'<div class="source-toolbar" style="margin-top:.8rem"><div class="tab-group" role="tablist" aria-label="Source language view"><button class="tab-btn" type="button" role="tab" data-tab="rust" aria-selected="'+(preferredCodeTab==="rust")+'"><span class="lang-dot dot-rs"></span>Rust (main.rs · '+rsLines+' lines)</button><button class="tab-btn" type="button" role="tab" data-tab="python" aria-selected="'+(preferredCodeTab==="python")+'"><span class="lang-dot dot-py"></span>Python (main.py · '+pyLines+' lines)</button><button class="tab-btn" type="button" role="tab" data-tab="split" aria-selected="'+(preferredCodeTab==="split")+'">Side-by-Side</button></div><div class="toolbar-actions"><a href="'+encodeURI(item.source)+'" target="_blank" rel="noopener">Raw main.rs</a><a href="'+encodeURI(item.python_source)+'" target="_blank" rel="noopener">Raw main.py</a></div></div><div id="source-panels" class="source-panels"></div></section>';
+}
+
+function mountSourceTab(item){
+ const host=document.getElementById("source-panels");
+ if(!host)return;
+ const rustCode=codeCache.get("rust")||"";
+ const pythonCode=codeCache.get("python")||"";
+ host.className="source-panels"+(preferredCodeTab==="split"?" split":"");
+ if(preferredCodeTab==="split"){
+  host.innerHTML=buildCodePane("Rust",item.source,rustCode,"rust","rust")+buildCodePane("Python",item.python_source,pythonCode,"python","python");
+ }else if(preferredCodeTab==="python"){
+  host.innerHTML=buildCodePane("Python",item.python_source,pythonCode,"python","python");
+ }else{
+  host.innerHTML=buildCodePane("Rust",item.source,rustCode,"rust","rust");
+ }
+ document.querySelectorAll(".tab-btn[data-tab]").forEach(btn=>btn.setAttribute("aria-selected",String(btn.dataset.tab===preferredCodeTab)));
+}
+
 let items=[];
+let currentItem=null;
 const catalog=document.getElementById("catalog"),article=document.getElementById("document"),locationBar=document.getElementById("location");
 function renderList(query=""){
  const q=query.trim().toLowerCase();let out=[],last="";
- for(const x of items){if(q&&![x.title,x.path,x.section||"",x.edition||""].join(" ").toLowerCase().includes(q))continue;
+ for(const x of items){
+  if(x.kind==="source")continue;
+  if(q&&![x.title,x.path,x.source||"",x.python_source||"",x.bin||"",x.section||"",x.edition||""].join(" ").toLowerCase().includes(q))continue;
   const group=x.chapter?"Chapter "+Number(x.chapter):"Reference";
   if(last!==group){out.push('<div class="group">'+esc(group)+'</div>');last=group;}
   out.push('<div class="sub"><button data-id="'+esc(x.path)+'"><span class="kind">'+esc(x.kind)+'</span>'+esc(x.title)+'</button></div>');
@@ -70,24 +348,72 @@ function renderList(query=""){
  catalog.innerHTML=out.join("")||"<p>No matching entries.</p>";
  catalog.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>show(b.dataset.id)));
 }
+
+async function fetchText(path){
+ const response=await fetch(encodeURI(path));
+ if(!response.ok)throw Error("HTTP "+response.status+" fetching "+path);
+ return response.text();
+}
+
 async function show(path){
- const item=items.find(x=>x.path===path);if(!item)return;
+ let item=items.find(x=>x.path===path);
+ if(!item&&(path.endsWith(".rs")||path.endsWith(".py"))){
+  item={kind:"source",title:path,path,edition:"shared"};
+ }
+ if(!item)return;
+ currentItem=item;
  locationBar.textContent="Loading "+path;
- try{const response=await fetch(encodeURI(path));if(!response.ok)throw Error("HTTP "+response.status);
- const raw=await response.text(),isCode=path.endsWith(".rs");
- activeDocumentPath=path;
- article.innerHTML=isCode?'<h1>'+esc(item.title)+'</h1><pre><code>'+esc(raw)+'</code></pre>':markdown(raw);
- locationBar.innerHTML='<span>'+esc(item.kind)+' · '+esc(item.edition||"shared")+'</span><a href="'+encodeURI(path)+'" target="_blank" rel="noopener">Open raw file</a>';
- history.replaceState(null,"","#"+encodeURIComponent(path));
- document.querySelectorAll("#catalog button").forEach(b=>b.setAttribute("aria-current",String(b.dataset.id===path)));
+ try{
+  if(item.kind==="example"){
+   const [readmeRaw,rustCode,pythonCode]=await Promise.all([
+    fetchText(item.path),
+    fetchText(item.source),
+    fetchText(item.python_source)
+   ]);
+   activeDocumentPath=item.path;
+   article.innerHTML=markdown(readmeRaw)+renderSourceViewer(item,rustCode,pythonCode);
+   mountSourceTab(item);
+   locationBar.innerHTML='<span>'+esc(item.kind)+' · '+esc(item.edition||"shared")+'</span><a href="'+encodeURI(item.path)+'" target="_blank" rel="noopener">Open README</a><a href="'+encodeURI(item.source)+'" target="_blank" rel="noopener">Open main.rs</a><a href="'+encodeURI(item.python_source)+'" target="_blank" rel="noopener">Open main.py</a>';
+  }else{
+   const raw=await fetchText(path);
+   const isRs=path.endsWith(".rs"),isPy=path.endsWith(".py");
+   activeDocumentPath=path;
+   if(isRs||isPy){
+    const lang=isRs?"rust":"python";
+    codeCache.set(lang,raw);
+    article.innerHTML='<h1>'+esc(item.title)+'</h1>'+buildCodePane(isRs?"Rust":"Python",path,raw,lang,lang);
+   }else{
+    article.innerHTML=markdown(raw);
+   }
+   locationBar.innerHTML='<span>'+esc(item.kind)+' · '+esc(item.edition||"shared")+'</span><a href="'+encodeURI(path)+'" target="_blank" rel="noopener">Open raw file</a>';
+  }
+  history.replaceState(null,"","#"+encodeURIComponent(path));
+  document.querySelectorAll("#catalog button").forEach(b=>b.setAttribute("aria-current",String(b.dataset.id===path)));
  }catch(e){locationBar.textContent="Unable to load file";article.textContent=e.message+" — Host this repository through a web server or GitHub Pages.";}
 }
-article.addEventListener("click",event=>{
+article.addEventListener("click",async event=>{
+ const tabBtn=event.target.closest(".tab-btn[data-tab]");
+ if(tabBtn&&currentItem&&currentItem.kind==="example"){
+  preferredCodeTab=tabBtn.dataset.tab;
+  mountSourceTab(currentItem);
+  return;
+ }
+ const copyBtn=event.target.closest(".copy-btn[data-copy]");
+ if(copyBtn){
+  const text=codeCache.get(copyBtn.dataset.copy)||"";
+  try{
+   await navigator.clipboard.writeText(text);
+   const prev=copyBtn.textContent;
+   copyBtn.textContent="Copied!";
+   setTimeout(()=>{copyBtn.textContent=prev;},1200);
+  }catch(_){copyBtn.textContent="Copy unavailable";}
+  return;
+ }
  const anchor=event.target.closest("a[data-doc]");
  if(!anchor)return;
  event.preventDefault();
  show(anchor.dataset.doc);
 });
 document.getElementById("filter").addEventListener("input",e=>renderList(e.target.value));
-fetch("manifest.json").then(r=>{if(!r.ok)throw Error(r.status);return r.json();}).then(data=>{items=data.entries;renderList();const selected=decodeURIComponent(location.hash.slice(1));show(items.some(x=>x.path===selected)?selected:"README.md");}).catch(e=>{catalog.textContent="Cannot load manifest.json: "+e.message+". Serve through HTTP(S), not file://.";});
+fetch("manifest.json").then(r=>{if(!r.ok)throw Error(r.status);return r.json();}).then(data=>{items=data.entries;renderList();const selected=decodeURIComponent(location.hash.slice(1));show(items.some(x=>x.path===selected)||selected.endsWith(".py")||selected.endsWith(".rs")?selected:"README.md");}).catch(e=>{catalog.textContent="Cannot load manifest.json: "+e.message+". Serve through HTTP(S), not file://.";});
 </script></body></html>

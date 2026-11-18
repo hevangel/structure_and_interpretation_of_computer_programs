@@ -19,6 +19,8 @@ Generating row n requires O(n²) additions and O(n) live memory if only the curr
 ```sh
 cargo run --bin ch01-pascal-triangle
 cargo test --bin ch01-pascal-triangle
+python3 examples/ch01/section-02/pascal-triangle/main.py
+python3 -m unittest examples/ch01/section-02/pascal-triangle/main.py
 ```
 
 ## Extension challenge

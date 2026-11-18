@@ -19,9 +19,11 @@ O(n) calls to the supplied functions and O(1) extra space for the loop-based fol
 ```sh
 cargo run --bin ch01-accumulate
 cargo test --bin ch01-accumulate
+python3 examples/ch01/section-03/accumulate/main.py
+python3 -m unittest examples/ch01/section-03/accumulate/main.py
 ```
 
-The implementation has self-contained assertions and uses only the Rust standard library. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
 ## Try this
 

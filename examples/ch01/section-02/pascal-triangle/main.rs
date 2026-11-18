@@ -11,7 +11,9 @@ fn row(n: usize) -> Vec<u64> {
     current
 }
 fn main() {
-    for level in 0..6 { println!("{:?}", row(level)); }
+    for level in 0..6 {
+        println!("{:?}", row(level));
+    }
 }
 #[cfg(test)]
 mod tests {
@@ -19,11 +21,11 @@ mod tests {
     #[test]
     fn known_rows_and_symmetry() {
         assert_eq!(row(0), vec![1]);
-        assert_eq!(row(4), vec![1,4,6,4,1]);
+        assert_eq!(row(4), vec![1, 4, 6, 4, 1]);
         for n in 0..=15 {
             let values = row(n);
             assert_eq!(values.iter().sum::<u64>(), 1u64 << n);
-            assert!(values.iter().zip(values.iter().rev()).all(|(a,b)| a == b));
+            assert!(values.iter().zip(values.iter().rev()).all(|(a, b)| a == b));
         }
     }
 }

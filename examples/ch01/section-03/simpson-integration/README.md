@@ -19,9 +19,11 @@ O(n) evaluations and O(1) extra space. Smoothness assumptions determine truncati
 ```sh
 cargo run --bin ch01-simpson-integration
 cargo test --bin ch01-simpson-integration
+python3 examples/ch01/section-03/simpson-integration/main.py
+python3 -m unittest examples/ch01/section-03/simpson-integration/main.py
 ```
 
-The implementation has self-contained assertions and uses only the Rust standard library. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
 ## Try this
 

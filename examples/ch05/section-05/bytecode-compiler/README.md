@@ -19,9 +19,11 @@ Compilation and execution take O(nodes) time for this tree with no loops. Maximu
 ```sh
 cargo run --bin ch05-bytecode-compiler
 cargo test --bin ch05-bytecode-compiler
+python3 examples/ch05/section-05/bytecode-compiler/main.py
+python3 -m unittest examples/ch05/section-05/bytecode-compiler/main.py
 ```
 
-The implementation has self-contained assertions and uses only the Rust standard library. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
 ## Try this
 

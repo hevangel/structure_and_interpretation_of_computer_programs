@@ -19,6 +19,8 @@ One modular exponentiation uses O(log n) modular multiplications. Trial division
 ```sh
 cargo run --bin ch01-fermat-test
 cargo test --bin ch01-fermat-test
+python3 examples/ch01/section-02/fermat-test/main.py
+python3 -m unittest examples/ch01/section-02/fermat-test/main.py
 ```
 
 ## Extension challenge

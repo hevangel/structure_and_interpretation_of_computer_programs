@@ -1,11 +1,11 @@
-# Guide for adding a Rust example
+# Guide for adding a Rust & Python example
 
 1. Identify the book edition, chapter, section, and the mathematical idea—not merely an exercise number.
-2. Create `examples/chXX/section-YY/short-name/main.rs` with a standalone `fn main` and deterministic unit tests.
+2. Create both `examples/chXX/section-YY/short-name/main.rs` (standalone `fn main` + `#[cfg(test)]`) and `examples/chXX/section-YY/short-name/main.py` (`if __name__ == "__main__":` + `unittest.TestCase`, Python standard library only).
 3. Explain algorithms and non-obvious invariants with comments, not a line-by-line restatement.
-4. Add an adjacent `README.md` containing the problem, approach, expected behavior, complexity, Rust-specific details, and an extension challenge.
-5. Add an explicit `[[bin]]` target in `Cargo.toml` and an entry to `manifest.json` for the static catalog.
-6. Run `cargo fmt --all -- --check`, `cargo test --all-targets`, `cargo clippy --all-targets -- -D warnings`. Keep dependencies minimal and reproducible.
+4. Add an adjacent `README.md` containing the problem, approach, expected behavior, complexity, implementation details, run/test commands for both Rust and Python, and an extension challenge.
+5. Add an explicit `[[bin]]` target in `Cargo.toml` and matching entries (including `"source"` and `"python_source"`) in `manifest.json` for the static catalog.
+6. Run `cargo fmt --all -- --check`, `cargo test --all-targets`, `cargo clippy --all-targets -- -D warnings`, `python3 -m unittest <path>/main.py`, and `python3 tools/verify_catalog.py`. Keep dependencies minimal and reproducible (`std` only).
 7. Prefer original code, commentary, and tests. Link to the official text; do not copy its prose or any large copyrighted listing.
 
 ## Translation patterns

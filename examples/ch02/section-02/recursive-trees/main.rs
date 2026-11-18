@@ -1,5 +1,8 @@
 #[derive(Debug)]
-enum Tree { Leaf(i64), Branch(Vec<Tree>) }
+enum Tree {
+    Leaf(i64),
+    Branch(Vec<Tree>),
+}
 fn sum(tree: &Tree) -> i64 {
     match tree {
         Tree::Leaf(value) => *value,
@@ -13,13 +16,18 @@ fn count_leaves(tree: &Tree) -> usize {
     }
 }
 fn main() {
-    let t = Tree::Branch(vec![Tree::Leaf(2), Tree::Branch(vec![Tree::Leaf(3),Tree::Leaf(5)])]);
+    let t = Tree::Branch(vec![
+        Tree::Leaf(2),
+        Tree::Branch(vec![Tree::Leaf(3), Tree::Leaf(5)]),
+    ]);
     println!("{} leaves, sum {}", count_leaves(&t), sum(&t));
 }
-#[cfg(test)] mod tests {
+#[cfg(test)]
+mod tests {
     use super::*;
-    #[test] fn folds_nesting() {
-        let t=Tree::Branch(vec![Tree::Leaf(2), Tree::Branch(vec![Tree::Leaf(3)])]);
+    #[test]
+    fn folds_nesting() {
+        let t = Tree::Branch(vec![Tree::Leaf(2), Tree::Branch(vec![Tree::Leaf(3)])]);
         assert_eq!(sum(&t), 5);
         assert_eq!(count_leaves(&t), 2);
     }

@@ -19,6 +19,8 @@ Each AST transformation visits O(n) nodes. This pure arithmetic language makes f
 ```sh
 cargo run --bin ch05-constant-folding-compiler
 cargo test --bin ch05-constant-folding-compiler
+python3 examples/ch05/section-05/constant-folding-compiler/main.py
+python3 -m unittest examples/ch05/section-05/constant-folding-compiler/main.py
 ```
 
 ## Extend the example

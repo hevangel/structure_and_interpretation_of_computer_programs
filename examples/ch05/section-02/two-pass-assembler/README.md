@@ -19,6 +19,8 @@ Assembly is O(n) expected time for n source entries. Execution is bounded by a s
 ```sh
 cargo run --bin ch05-two-pass-assembler
 cargo test --bin ch05-two-pass-assembler
+python3 examples/ch05/section-02/two-pass-assembler/main.py
+python3 -m unittest examples/ch05/section-02/two-pass-assembler/main.py
 ```
 
 ## Extend the example

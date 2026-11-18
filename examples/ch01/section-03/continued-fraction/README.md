@@ -19,9 +19,11 @@ O(k) steps and O(1) additional space; denominators must remain nonzero for the c
 ```sh
 cargo run --bin ch01-continued-fraction
 cargo test --bin ch01-continued-fraction
+python3 examples/ch01/section-03/continued-fraction/main.py
+python3 -m unittest examples/ch01/section-03/continued-fraction/main.py
 ```
 
-The implementation has self-contained assertions and uses only the Rust standard library. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
 ## Try this
 

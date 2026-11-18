@@ -19,6 +19,8 @@ Construction and selection are constant-time for Copy components. This illustrat
 ```sh
 cargo run --bin ch02-functional-pairs
 cargo test --bin ch02-functional-pairs
+python3 examples/ch02/section-01/functional-pairs/main.py
+python3 -m unittest examples/ch02/section-01/functional-pairs/main.py
 ```
 
 ## Exercise

@@ -1,4 +1,4 @@
-name: Rust examples
+name: Rust and Python examples
 on:
   push:
   pull_request:
@@ -10,15 +10,21 @@ jobs:
       - uses: dtolnay/rust-toolchain@stable
         with:
           components: clippy, rustfmt
-      - name: Compile and test all teaching examples
+      - name: Compile and test all Rust examples
         run: cargo test --all-targets
+      - name: Compile and test all Python examples
+        run: |
+          python3 - <<'EOF'
+          import pathlib, subprocess, sys
+          for py in sorted(pathlib.Path("examples").rglob("main.py")):
+              subprocess.run([sys.executable, "-m", "py_compile", str(py)], check=True)
+              subprocess.run([sys.executable, "-m", "unittest", str(py)], check=True)
+          EOF
       - name: Verify catalog files, Cargo targets, and Markdown links
         run: python3 tools/verify_catalog.py
       - name: Check static viewer JavaScript
         run: node tools/verify_site.mjs
-      - name: Formatting audit (nonblocking until normalized)
-        continue-on-error: true
+      - name: Formatting check
         run: cargo fmt --all -- --check
-      - name: Lint audit (nonblocking until normalized)
-        continue-on-error: true
+      - name: Clippy lint check
         run: cargo clippy --all-targets -- -D warnings

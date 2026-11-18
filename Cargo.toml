@@ -297,3 +297,92 @@ path = "examples/ch05/section-05/lexical-addresses/main.rs"
 [[bin]]
 name = "ch05-constant-folding-compiler"
 path = "examples/ch05/section-05/constant-folding-compiler/main.rs"
+
+[[bin]]
+name = "ch01-evaluation-orders"
+path = "examples/ch01/section-01/evaluation-orders/main.rs"
+
+[[bin]]
+name = "ch01-fermat-miller-rabin"
+path = "examples/ch01/section-02/fermat-miller-rabin/main.rs"
+
+[[bin]]
+name = "ch01-half-interval-filtered"
+path = "examples/ch01/section-03/half-interval-filtered/main.rs"
+
+[[bin]]
+name = "ch01-newton-transform-smoothed"
+path = "examples/ch01/section-03/newton-transform-smoothed/main.rs"
+
+[[bin]]
+name = "ch02-frame-painters"
+path = "examples/ch02/section-02/frame-painters/main.rs"
+
+[[bin]]
+name = "ch02-nested-mappings-mobiles"
+path = "examples/ch02/section-02/nested-mappings-mobiles/main.rs"
+
+[[bin]]
+name = "ch02-ordered-sets-infix-deriv"
+path = "examples/ch02/section-03/ordered-sets-infix-deriv/main.rs"
+
+[[bin]]
+name = "ch02-data-directed-dispatch"
+path = "examples/ch02/section-04/data-directed-dispatch/main.rs"
+
+[[bin]]
+name = "ch02-numeric-tower-coercion"
+path = "examples/ch02/section-05/numeric-tower-coercion/main.rs"
+
+[[bin]]
+name = "ch02-symbolic-polynomials"
+path = "examples/ch02/section-05/symbolic-polynomials/main.rs"
+
+[[bin]]
+name = "ch03-cse-environment-machine"
+path = "examples/ch03/section-02/cse-environment-machine/main.rs"
+
+[[bin]]
+name = "ch03-cycle-detection-deque"
+path = "examples/ch03/section-03/cycle-detection-deque/main.rs"
+
+[[bin]]
+name = "ch03-local-tables-memoize"
+path = "examples/ch03/section-03/local-tables-memoize/main.rs"
+
+[[bin]]
+name = "ch03-memoized-streams-series"
+path = "examples/ch03/section-05/memoized-streams-series/main.rs"
+
+[[bin]]
+name = "ch03-stream-acceleration-pairs"
+path = "examples/ch03/section-05/stream-acceleration-pairs/main.rs"
+
+[[bin]]
+name = "ch04-analyzing-evaluator"
+path = "examples/ch04/section-01/analyzing-evaluator/main.rs"
+
+[[bin]]
+name = "ch04-metacircular-evaluator"
+path = "examples/ch04/section-01/metacircular-evaluator/main.rs"
+
+[[bin]]
+name = "ch04-lazy-evaluator"
+path = "examples/ch04/section-02/lazy-evaluator/main.rs"
+
+[[bin]]
+name = "ch04-amb-evaluator"
+path = "examples/ch04/section-03/amb-evaluator/main.rs"
+
+[[bin]]
+name = "ch04-query-unification-engine"
+path = "examples/ch04/section-04/query-unification-engine/main.rs"
+
+[[bin]]
+name = "ch05-stop-and-copy-gc"
+path = "examples/ch05/section-03/stop-and-copy-gc/main.rs"
+
+[[bin]]
+name = "ch05-register-compiler"
+path = "examples/ch05/section-05/register-compiler/main.rs"
+

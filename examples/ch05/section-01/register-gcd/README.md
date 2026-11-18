@@ -19,9 +19,11 @@ The machine performs logarithmically many steps with O(1) register storage.
 ```sh
 cargo run --bin ch05-register-gcd
 cargo test --bin ch05-register-gcd
+python3 examples/ch05/section-01/register-gcd/main.py
+python3 -m unittest examples/ch05/section-01/register-gcd/main.py
 ```
 
-The implementation has self-contained assertions and uses only the Rust standard library. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
 ## Try this
 

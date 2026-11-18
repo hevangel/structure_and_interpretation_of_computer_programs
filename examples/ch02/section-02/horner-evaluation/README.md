@@ -19,6 +19,8 @@ O(n) arithmetic operations and O(1) auxiliary memory. This avoids separately for
 ```sh
 cargo run --bin ch02-horner-evaluation
 cargo test --bin ch02-horner-evaluation
+python3 examples/ch02/section-02/horner-evaluation/main.py
+python3 -m unittest examples/ch02/section-02/horner-evaluation/main.py
 ```
 
 ## Exercise

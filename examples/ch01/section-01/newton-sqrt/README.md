@@ -19,9 +19,11 @@ Each update needs constant work. Near the root, the number of correct digits typ
 ```sh
 cargo run --bin ch01-newton-sqrt
 cargo test --bin ch01-newton-sqrt
+python3 examples/ch01/section-01/newton-sqrt/main.py
+python3 -m unittest examples/ch01/section-01/newton-sqrt/main.py
 ```
 
-The implementation has self-contained assertions and uses only the Rust standard library. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
 ## Try this
 

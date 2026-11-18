@@ -19,9 +19,11 @@ Evaluation traverses the expression tree; cloning a map per let is simple but ad
 ```sh
 cargo run --bin ch04-tiny-evaluator
 cargo test --bin ch04-tiny-evaluator
+python3 examples/ch04/section-01/tiny-evaluator/main.py
+python3 -m unittest examples/ch04/section-01/tiny-evaluator/main.py
 ```
 
-The implementation has self-contained assertions and uses only the Rust standard library. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
 ## Try this
 

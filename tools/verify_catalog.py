@@ -6,6 +6,7 @@ No external dependencies or network access are required.
 """
 from __future__ import annotations
 
+import ast
 import json
 import re
 import sys
@@ -49,9 +50,12 @@ if len(targets) != len(package.get("bin", [])):
     fail("Duplicate Cargo binary names")
 for ex in examples:
     src = ROOT / ex["source"]
+    py_rel = ex.get("python_source")
     readme = ROOT / ex["path"]
     if ex["source"] != str(Path(ex["path"]).parent / "main.rs"):
         fail(f"Source must be adjacent to README: {ex['path']}")
+    if py_rel != str(Path(ex["path"]).parent / "main.py"):
+        fail(f"Python source must be adjacent to README: {ex['path']}")
     if targets.get(ex["bin"]) != ex["source"]:
         fail(f"Cargo target missing or incorrect: {ex['bin']}")
     if src.is_file():
@@ -60,10 +64,26 @@ for ex in examples:
             fail(f"Missing runnable main: {src.relative_to(ROOT)}")
         if "#[cfg(test)]" not in code:
             fail(f"Missing unit-test module: {src.relative_to(ROOT)}")
+    if py_rel:
+        py_src = ROOT / py_rel
+        if not py_src.is_file():
+            fail(f"Missing Python source: {py_rel}")
+        else:
+            py_code = py_src.read_text(encoding="utf-8")
+            try:
+                ast.parse(py_code, filename=str(py_src))
+            except SyntaxError as exc:
+                fail(f"Python syntax error in {py_rel}: {exc}")
+            if 'if __name__ == "__main__":' not in py_code:
+                fail(f"Missing Python __main__ entrypoint: {py_rel}")
+            if "unittest" not in py_code:
+                fail(f"Missing Python unittest suite: {py_rel}")
     if readme.is_file():
         explanation = readme.read_text(encoding="utf-8")
         if not explanation.startswith("# "):
             fail(f"README needs a heading: {readme.relative_to(ROOT)}")
+        if ex["bin"] not in explanation or (py_rel and py_rel not in explanation):
+            fail(f"README missing Rust/Python run commands: {readme.relative_to(ROOT)}")
 if set(targets) != {x["bin"] for x in examples}:
     fail("A Cargo bin exists without a matching manifest example")
 
@@ -87,7 +107,7 @@ if errors:
         print("ERROR:", error, file=sys.stderr)
     raise SystemExit(1)
 print(
-    f"Catalog validated: {len(entries)} links, {len(examples)} Rust examples, "
+    f"Catalog validated: {len(entries)} links, {len(examples)} Rust + Python examples, "
     f"{sum(x['kind']=='subsection' for x in entries)} subsection guides, "
     f"{len(markdown_files)} Markdown files."
 )

@@ -19,6 +19,8 @@ At most 5! complete permutations are examined; early pruning avoids many of them
 ```sh
 cargo run --bin ch04-multiple-dwelling
 cargo test --bin ch04-multiple-dwelling
+python3 examples/ch04/section-03/multiple-dwelling/main.py
+python3 -m unittest examples/ch04/section-03/multiple-dwelling/main.py
 ```
 
 ## Extend the example

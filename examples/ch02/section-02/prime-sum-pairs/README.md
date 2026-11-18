@@ -19,6 +19,8 @@ O(n² sqrt n) time with simple trial division and O(n²) worst-case output stora
 ```sh
 cargo run --bin ch02-prime-sum-pairs
 cargo test --bin ch02-prime-sum-pairs
+python3 examples/ch02/section-02/prime-sum-pairs/main.py
+python3 -m unittest examples/ch02/section-02/prime-sum-pairs/main.py
 ```
 
 ## Exercise

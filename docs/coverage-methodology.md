@@ -16,7 +16,7 @@ A subsection introduction describes a concept but is **not a code port**. A repr
 | `verified` | Tests document and validate the specific item's semantics | Yes |
 | `different` | Port intentionally diverges and the reason is explained | No, until parity is resolved |
 
-**Current repository status:** 59 runnable concept examples, 22 section introductions, 95 numbered subsection notes. This is not a source-item parity count. There is currently no exhaustive edition-by-edition inventory or verified exercise-solution parity.
+**Current repository status:** 95 runnable Rust and Python concept examples, 22 section introductions, and 95 subsection study notes. This is not a source-item parity count. There is currently no exhaustive edition-by-edition inventory or verified exercise-solution parity.
 
 ## Reliable source inventory workflow
 

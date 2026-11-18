@@ -19,6 +19,8 @@ O(log b) additions and O(1) auxiliary memory. Operands are deliberately bounded 
 ```sh
 cargo run --bin ch01-fast-multiplication
 cargo test --bin ch01-fast-multiplication
+python3 examples/ch01/section-02/fast-multiplication/main.py
+python3 -m unittest examples/ch01/section-02/fast-multiplication/main.py
 ```
 
 ## Extension challenge

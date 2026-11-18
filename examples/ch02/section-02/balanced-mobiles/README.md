@@ -19,6 +19,8 @@ O(nodes) traversal time and O(height) recursion stack, where a node is a branch 
 ```sh
 cargo run --bin ch02-balanced-mobiles
 cargo test --bin ch02-balanced-mobiles
+python3 examples/ch02/section-02/balanced-mobiles/main.py
+python3 -m unittest examples/ch02/section-02/balanced-mobiles/main.py
 ```
 
 ## Exercise

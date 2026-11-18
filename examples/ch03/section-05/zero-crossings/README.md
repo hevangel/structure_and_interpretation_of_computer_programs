@@ -19,6 +19,8 @@ O(n) time and O(k) output storage for k reported crossings; the streaming state 
 ```sh
 cargo run --bin ch03-zero-crossings
 cargo test --bin ch03-zero-crossings
+python3 examples/ch03/section-05/zero-crossings/main.py
+python3 -m unittest examples/ch03/section-05/zero-crossings/main.py
 ```
 
 ## Extension problem

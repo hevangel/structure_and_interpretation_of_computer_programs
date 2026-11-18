@@ -1,30 +1,32 @@
-# Bidirectional constraint propagation
+# Retractable constraint propagation (`forget!`, `averager`, `squarer`)
 
-**Book section:** 3.3. **Edition:** shared.
+**Book concepts:** Section 3.3 (Subsection 3.3.5). **Edition applicability:** shared conceptual material across editions.
 
-## Concept
+## What this demonstrates
 
-A relation such as x+y=z can infer any missing quantity if two values are known. A network of connected constraints propagates newly discovered values.
+Non-directional constraint networks propagate newly known quantities in any direction, track provenance (`informant`) so `forget_value` retracts only values derived from the forgotten source without erasing independent user constraints, and build expression-style combinators (`c+`, `c*`, `c/`, `cv`, `averager`, `squarer`).
 
-## Rust implementation
+## Implementation walkthrough
 
-Store connectors as optional numbers and encode add and multiply constraints. Iterate to a fixed point, inferring missing values and rejecting conflicting assignments. A Celsius/Fahrenheit network demonstrates propagation in both directions.
+Each `Connector` records its current value, the `Informant` that supplied it (`User` or a specific `Constraint` ID), and connected constraint listeners. When a constraint infers a missing value, it tags the connector with its own identity; calling `forget_value` clears downstream inferred connectors and lets remaining constraints recompute from surviving user inputs.
 
-## Complexity and invariants
+## Complexity and correctness
 
-For a small finite network, each pass scans O(C) constraints; at most O(V) previously unknown connectors gain values. Contradictions should be reported explicitly.
+Propagating or retracting a value traverses each reachable constraint edge in the connected component once (`O(C)` for acyclic topologies) and immediately rejects conflicting assignments as contradictions.
 
-## Run and test
+## Run it
 
 ```sh
 cargo run --bin ch03-constraint-propagation
 cargo test --bin ch03-constraint-propagation
+python3 examples/ch03/section-03/constraint-propagation/main.py
+python3 -m unittest examples/ch03/section-03/constraint-propagation/main.py
 ```
 
-## Extension exercise
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
-Add a nonlinear or ambiguous constraint and decide when multiple solutions must be represented.
+## Try this
 
-This is independently authored Rust teaching code, not a verbatim textbook translation.
+Attach a `Probe` listener to each connector so every `set_value` and `forget_value` prints a chronological propagation trace.
 
-[Section introduction](../../../../chapters/ch03/section-03/INTRO.md)
+[Section introduction](../../../../chapters/ch03/section-03/INTRO.md) · [Coverage](../../../../COVERAGE.md)

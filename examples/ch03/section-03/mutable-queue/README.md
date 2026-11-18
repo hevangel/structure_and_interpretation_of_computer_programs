@@ -19,9 +19,11 @@ Push and pop are amortized O(1), and checking length is O(1). A linked-pair impl
 ```sh
 cargo run --bin ch03-mutable-queue
 cargo test --bin ch03-mutable-queue
+python3 examples/ch03/section-03/mutable-queue/main.py
+python3 -m unittest examples/ch03/section-03/mutable-queue/main.py
 ```
 
-The implementation has self-contained assertions and uses only the Rust standard library. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
 ## Try this
 

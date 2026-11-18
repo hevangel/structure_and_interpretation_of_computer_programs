@@ -19,6 +19,8 @@ For a and b nonzero terms, multiplication takes O(ab log(ab)) time with a balanc
 ```sh
 cargo run --bin ch02-sparse-polynomial-arithmetic
 cargo test --bin ch02-sparse-polynomial-arithmetic
+python3 examples/ch02/section-05/sparse-polynomial-arithmetic/main.py
+python3 -m unittest examples/ch02/section-05/sparse-polynomial-arithmetic/main.py
 ```
 
 ## Exercise

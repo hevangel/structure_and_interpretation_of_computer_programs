@@ -1,17 +1,17 @@
 # Coverage ledger
 
-This is an original Rust learning companion, not a reproduction of the book's text or source. **73 independently written example programs and 95 numbered subsection study guides are implemented, but this is not exhaustive coverage of any edition's exact source snippets or exercises.**
+This is an original Rust and Python learning companion, not a reproduction of the book's text or source. **95 independently written example programs (in both Rust `main.rs` and Python `main.py`) and 95 subsection study guides (`1.1.1`–`5.5.7` plus Source Academy's `3.2.5`) are implemented, though this is not yet exhaustive coverage of every exercise across all editions.**
 
-| Chapter | Major sections introduced | Rust example programs | Complete example inventory |
+| Chapter | Major sections introduced | Rust & Python examples | Complete exercise inventory |
 | --- | ---: | ---: | --- |
-| 1. Building abstractions with procedures | 3 | 18 | No |
-| 2. Building abstractions with data | 5 | 21 | No |
-| 3. Modularity, objects, and state | 5 | 14 | No |
-| 4. Metalinguistic abstraction | 4 | 10 | No |
-| 5. Computing with register machines | 5 | 10 | No |
-| **Total** | **22** | **73** | **Pending** |
+| 1. Building abstractions with procedures | 3 | 22 | No |
+| 2. Building abstractions with data | 5 | 27 | No |
+| 3. Modularity, objects, and state | 5 | 19 | No |
+| 4. Metalinguistic abstraction | 4 | 15 | No |
+| 5. Computing with register machines | 5 | 12 | No |
+| **Total** | **22** | **95** | **Pending** |
 
-The 1984 original, 1996 Scheme second edition, 2022 JavaScript adaptation, and the developing 2026 SICPy/Python adaptation all differ. Their exact example inventories are not interchangeable. See [coverage methodology](docs/coverage-methodology.md). Rust analogues are tagged `shared`, `1996-scheme`, or `2022-javascript` in [manifest.json](manifest.json).
+The 1984 original, 1996 Scheme second edition, 2022 JavaScript adaptation, and the developing 2026 SICPy/Python adaptation all differ. Their exact example inventories are not interchangeable. See [coverage methodology](docs/coverage-methodology.md). Example entries are tagged `shared`, `1996-scheme`, or `2022-javascript` in [manifest.json](manifest.json).
 
 ## Next steps for exhaustive coverage
 

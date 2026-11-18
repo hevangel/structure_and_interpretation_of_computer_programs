@@ -19,9 +19,11 @@ Worst-case search is exponential, but pruning prevents much useless exploration.
 ```sh
 cargo run --bin ch04-n-queens-search
 cargo test --bin ch04-n-queens-search
+python3 examples/ch04/section-03/n-queens-search/main.py
+python3 -m unittest examples/ch04/section-03/n-queens-search/main.py
 ```
 
-The implementation has self-contained assertions and uses only the Rust standard library. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
 ## Try this
 

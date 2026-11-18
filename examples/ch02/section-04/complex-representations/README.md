@@ -19,9 +19,11 @@ Each operation takes O(1) time. Floating-point rounding means results should be 
 ```sh
 cargo run --bin ch02-complex-representations
 cargo test --bin ch02-complex-representations
+python3 examples/ch02/section-04/complex-representations/main.py
+python3 -m unittest examples/ch02/section-04/complex-representations/main.py
 ```
 
-The implementation has self-contained assertions and uses only the Rust standard library. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
 ## Try this
 

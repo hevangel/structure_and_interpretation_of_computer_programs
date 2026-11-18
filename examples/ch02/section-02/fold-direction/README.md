@@ -19,6 +19,8 @@ Both use O(n) time and constant extra space with slice iterators. They need not 
 ```sh
 cargo run --bin ch02-fold-direction
 cargo test --bin ch02-fold-direction
+python3 examples/ch02/section-02/fold-direction/main.py
+python3 -m unittest examples/ch02/section-02/fold-direction/main.py
 ```
 
 ## Exercise

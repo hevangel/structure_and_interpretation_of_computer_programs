@@ -19,6 +19,8 @@ A prime request uses incremental trial division; memory grows with the number of
 ```sh
 cargo run --bin ch03-lazy-prime-stream
 cargo test --bin ch03-lazy-prime-stream
+python3 examples/ch03/section-05/lazy-prime-stream/main.py
+python3 -m unittest examples/ch03/section-05/lazy-prime-stream/main.py
 ```
 
 ## Extension problem

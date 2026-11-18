@@ -19,6 +19,8 @@ O(log((b-a)/tolerance)) evaluations and constant space; the guarantee requires c
 ```sh
 cargo run --bin ch01-half-interval-method
 cargo test --bin ch01-half-interval-method
+python3 examples/ch01/section-03/half-interval-method/main.py
+python3 -m unittest examples/ch01/section-03/half-interval-method/main.py
 ```
 
 ## Extension challenge

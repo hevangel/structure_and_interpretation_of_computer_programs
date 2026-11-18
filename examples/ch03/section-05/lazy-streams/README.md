@@ -19,9 +19,11 @@ The iterator uses O(1) intermediate memory for finite prefix consumption; each n
 ```sh
 cargo run --bin ch03-lazy-streams
 cargo test --bin ch03-lazy-streams
+python3 examples/ch03/section-05/lazy-streams/main.py
+python3 -m unittest examples/ch03/section-05/lazy-streams/main.py
 ```
 
-The implementation has self-contained assertions and uses only the Rust standard library. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
 ## Try this
 

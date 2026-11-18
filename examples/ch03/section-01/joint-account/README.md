@@ -19,6 +19,8 @@ Each handle is an alias of the same account. RefCell enforces borrow rules at ru
 ```sh
 cargo run --bin ch03-joint-account
 cargo test --bin ch03-joint-account
+python3 examples/ch03/section-01/joint-account/main.py
+python3 -m unittest examples/ch03/section-01/joint-account/main.py
 ```
 
 ## Extension problem

@@ -19,6 +19,8 @@ Rc<RefCell<T>> is single-threaded. Cyclic strong references leak under reference
 ```sh
 cargo run --bin ch03-shared-pairs
 cargo test --bin ch03-shared-pairs
+python3 examples/ch03/section-03/shared-pairs/main.py
+python3 -m unittest examples/ch03/section-03/shared-pairs/main.py
 ```
 
 ## Extension problem

@@ -19,6 +19,8 @@ O(log(|x|/threshold)) recursive depth for large inputs and constant work per lev
 ```sh
 cargo run --bin ch01-sine-triple-angle
 cargo test --bin ch01-sine-triple-angle
+python3 examples/ch01/section-02/sine-triple-angle/main.py
+python3 -m unittest examples/ch01/section-02/sine-triple-angle/main.py
 ```
 
 ## Extension challenge

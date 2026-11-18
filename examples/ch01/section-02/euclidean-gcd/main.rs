@@ -5,10 +5,14 @@ fn gcd(mut a: u64, mut b: u64) -> u64 {
     }
     a
 }
-fn main() { println!("gcd(206, 40) = {}", gcd(206, 40)); }
-#[cfg(test)] mod tests {
+fn main() {
+    println!("gcd(206, 40) = {}", gcd(206, 40));
+}
+#[cfg(test)]
+mod tests {
     use super::*;
-    #[test] fn common_divisors() {
+    #[test]
+    fn common_divisors() {
         assert_eq!(gcd(206, 40), 2);
         assert_eq!(gcd(0, 9), 9);
         assert_eq!(gcd(13, 13), 13);

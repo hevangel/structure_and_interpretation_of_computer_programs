@@ -19,9 +19,11 @@ Applying the numeral n takes O(n) function calls; this representation teaches th
 ```sh
 cargo run --bin ch02-church-numerals
 cargo test --bin ch02-church-numerals
+python3 examples/ch02/section-01/church-numerals/main.py
+python3 -m unittest examples/ch02/section-01/church-numerals/main.py
 ```
 
-The implementation has self-contained assertions and uses only the Rust standard library. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
+The implementation has self-contained assertions and uses only the Rust and Python standard libraries. Compare the results and internal representation with the original edition; it is an independently written teaching example, not a line-for-line translation.
 
 ## Try this
 
