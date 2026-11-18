@@ -6,7 +6,7 @@ An original, open-source learning companion to the classic **Wizard Book**, with
 
 ## Start here
 
-- [Open the static code/Markdown browser](index.html) (embeds Rust + Python source tabs with syntax highlighting; enable GitHub Pages for hosted browsing).
+- **Live interactive companion:** [Open SICP Rust & Python Browser on GitHub Pages](https://hevangel.github.io/structure_and_interpretation_of_computer_programs/) (embeds syntax-highlighted Rust & Python source code inside every example page; local file: [index.html](index.html)).
 - [Chapter introductions](chapters/) and [edition crosswalk](docs/editions.md).
 - Browse `examples/chXX/section-YY/example-name/{main.rs,main.py,README.md}`.
 - Verify all Rust examples: `cargo test --all-targets` (single target: `cargo run --bin ch01-newton-sqrt`).
@@ -24,7 +24,7 @@ Read chapter introductions, then numbered subsection `INTRO.md` notes, then each
 
 ## Static hosting
 
-The root `index.html` fetches `manifest.json`, Markdown files, and both Rust and Python source files using relative paths, embedding syntax-highlighted Rust (`main.rs`), Python (`main.py`), and side-by-side code views directly on each example page. Host the repository root with GitHub Pages (deploy from `main` / `/ (root)`) or any static web server. `file://` browsing cannot normally fetch local files because of browser restrictions. No bundler or CDN is needed.
+The root [`index.html`](index.html) is hosted via GitHub Pages (`main` / `/ (root)`) at <https://hevangel.github.io/structure_and_interpretation_of_computer_programs/>. It fetches `manifest.json`, Markdown files, and both Rust and Python source files using relative paths, embedding syntax-highlighted Rust (`main.rs`), Python (`main.py`), and side-by-side code views directly on each example page. You can also serve the repository root with any local static web server (`python3 -m http.server`); `file://` browsing cannot normally fetch local files because of browser restrictions. No bundler or CDN is needed.
 
 ## Authorship and scope
 
